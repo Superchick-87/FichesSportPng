@@ -1,0 +1,224 @@
+.PlayerNumber{font-size: 15px;font-family: 'Oswald', sans-serif;font-weight: 500;}
+
+/*////////////////// EUROPE //////////////////*/
+
+.Gloucester{background-color: #b5282f; fill: #b5282f; color:#FFFFFF;}
+.GloucesterNumber{fill: #FFFFFF;}
+
+.Bath{background-color: #1050CF; fill: #1050CF; color:#FFFFFF;}
+.BathNumber{fill: #FFFFFF;}
+
+.Bristol{background-color: #063a69; fill: #063a69; color:#FFFFFF;}
+.BristolNumber{fill: #FFFFFF;}
+
+.Edimbourg{background-color: #1E1A53; fill: #1E1A53; color:#FFFFFF;}
+.EdimbourgNumber{fill: #FFFFFF;}
+
+.Sale{background-color: #063a69; fill: #063a69; color:#FFFFFF;}
+.SaleNumber{fill: #FFFFFF;}
+
+.Trevise{background-color: #007235; fill: #007235; color:#FFFFFF;}
+.TreviseNumber{fill: #FFFFFF;}
+
+.Cardiff{background-color: #93D4FC; fill: #93D4FC; color:black;}
+.CardiffNumber{fill:black;}
+
+.Connacht{background-color: #007235; fill: #007235; color:#FFFFFF;}
+.ConnachtNumber{fill: #FFFFFF;}
+
+.Exeter{background-color: black; fill: black; color:#FFFFFF;}
+.ExeterNumber{fill: #FFFFFF;}
+
+.Glasgow{background-color: #323232; fill: #323232; color:#FFFFFF;}
+.GlasgowNumber{fill: #FFFFFF;}
+
+.Harlequins{background-color: #93D4FC; fill: #93D4FC; color:black;}
+.HarlequinsNumber{fill:black;}
+
+.Leinster{background-color: #1050CF; fill: #1050CF; color:#FFFFFF;}
+.LeinsterNumber{fill: #FFFFFF;}
+
+.Leicester{background-color: #043427; fill: #043427; color:#FFFFFF;}
+.LeicesterNumber{fill: #FFFFFF;}
+
+.LondonIrish{background-color: #007235; fill: #007235; color:#FFFFFF;}
+.LondonIrishNumber{fill: #FFFFFF;}
+
+.Munster{background-color: #b5282f; fill: #b5282f; color:#FFFFFF;}
+.MunsterNumber{fill: #FFFFFF;}
+
+.NewportDragons{background-color: #323232; fill: #323232; color:#FFFFFF;}
+.NewportDragonsNumber{fill: #FFFFFF;}
+
+.Newcastle{background-color: black; fill: black; color:#FFFFFF;}
+.NewcastleNumber{fill: #FFFFFF;}
+
+.Northampton{background-color: #007235; fill: #007235; color:#FFFFFF;}
+.NorthamptonNumber{fill: #FFFFFF;}
+
+.Ospreys{background-color: black; fill: black; color:#FFFFFF;}
+.OspreysNumber{fill: #FFFFFF;}
+
+.Saracens{background-color: black; fill: black; color:#FFFFFF;}
+.SaracensNumber{fill: #FFFFFF;}
+
+.Scarlets{background-color: #ff000a; fill: #ff000a; color:#FFFFFF;}
+.ScarletsNumber{fill: #FFFFFF;}
+
+.Sharks{background-color: black; fill: black; color:#FFFFFF;}
+.SharksNumber{fill: #FFFFFF;}
+
+.Ulster{background-color: #cdcdcd; fill: #cdcdcd; color:#FF000A;}
+.UlsterNumber{fill: #FF000A;}
+
+.Wasps{background-color: black; fill: black; color:#FFFFFF;}
+.WaspsNumber{fill: #FFFFFF;}
+
+.Worcester{background-color: #063a69; fill: #063a69; color:#FFFFFF;}
+.WorcesterNumber{fill: #FFFFFF;}
+
+.Zebre{background-color: black; fill: black; color:#FF0083;}
+.ZebreNumber{fill: #FF0083;}
+
+/*////////////////// SIX NATIONS //////////////////*/
+
+.Angleterre{background-color: #b5282f; fill: #b5282f; color:#FFFFFF;}
+.AngleterreNumber{fill: #FFFFFF;}
+
+.Ecosse{background-color: #063a69; fill: #063a69; color:#FFFFFF;}
+.EcosseNumber{fill: #FFFFFF;}
+
+.France{background-color: #0033FF; fill: #0033FF; color:#FFFFFF;}
+.FranceNumber{fill: #FFFFFF;}
+
+.Galles{background-color: #cc3f3d; fill: #cc3f3d; color:#FFFFFF;}
+.GallesNumber{fill: #FFFFFF;}
+
+.Irlande{background-color: #3d9a47; fill: #3d9a47; color:#FFFFFF;}
+.IrlandeNumber{fill: #FFFFFF;}
+
+.Italie{background-color: #0053a1; fill: #0053a1; color:#ffce78;}
+.ItalieNumber{fill: #ffce78;}
+
+/*////////////////// MONDE //////////////////*/
+
+.AfriqueDuSud{background-color: #007964 ; fill: #007964; color:#f1b700;}
+.AfriqueDuSudNumber{fill: #f1b700;}
+
+.Argentine{background-color: #93D4FC; fill: #93D4FC; color:black;}
+.ArgentineNumber{fill:black;}
+
+.Australie{background-color: #f1b700; fill: #f1b700; color:#007964;}
+.AustralieNumber{fill: #007964;}
+
+.Georgie{background-color: #b5282f; fill: #b5282f; color:#FFFFFF;}
+.GeorgieNumber{fill: #FFFFFF;}
+
+.Japon{background-color: #ff000a; fill: #ff000a; color:#FFFFFF;}
+.JaponNumber{fill: #FFFFFF;}
+
+.NouvelleZelande{background-color: black; fill: black; color:#FFFFFF;}
+.NouvelleZelandeNumber{fill: #FFFFFF;}
+
+/*////////////////// TOP 14 - PRO D2 //////////////////*/
+
+.Agen{background-color: #1050CF; fill: #1050CF; color:#FFFFFF;}
+.AgenNumber{fill: #FFFFFF;}
+
+.AixEnProvence{background-color: #DFDFDFFF; fill: #DFDFDFFF; color:black;}
+.AixEnProvenceNumber{fill: black;}
+
+.Aurillac{background-color: #DFDFDFFF; fill: #DFDFDFFF; color:black;}
+.AurillacNumber{fill: black;}
+
+.Bayonne{background-color: #8fcef1; fill: #8fcef1; color:black;}
+.BayonneNumber{fill: black;}
+
+.Beziers{background-color: #E7E7E7; fill: #E7E7E7; color:black;}
+.BeziersNumber{fill: black;}
+
+.Biarritz{background-color: #E7E7E7; fill: #E7E7E7; color:#FF000A;}
+.BiarritzNumber{fill: #FF000A;}
+
+.BordeauxBegles{background-color: #6A001C; fill: #6A001C; color:#FFFFFF;}
+.BordeauxBeglesNumber{fill: #FFFFFF;}
+
+.BourgEnBresse{background-color: #6b4183; fill: #6b4183; color:#FFFFFF;}
+.BourgEnBresseNumber{fill: #FFFFFF;}
+
+.Brive{background-color: black; fill: black; color:#FFFFFF;}
+.BriveNumber{fill: #FFFFFF;}
+
+.Carcassonne{background-color: #FFF710FF; fill: #FFF710FF; color:black;}
+.CarcassonneNumber{fill: black;}
+
+.Castres{background-color: #2131AD; fill: #2131AD; color:#FFFFFF;}
+.CastresNumber{fill: #FFFFFF;}
+
+.Clermont{background-color: #FFF710FF; fill: #FFF710FF; color:black;}
+.ClermontNumber{fill: black;}
+
+.Grenoble{background-color: #00569f; fill: #00569f; color:#FFFFFF;}
+.GrenobleNumber{fill: #FFFFFF;}
+
+.Colomiers{background-color: #003665; fill: #003665; color:#FFFFFF;}
+.ColomiersNumber{fill: #FFFFFF;}
+
+.LaRochelle{background-color: #3F3F3F; fill: #3F3F3F; color:#FFFFFF;}
+.LaRochelleNumber{fill: #FFFFFF;}
+
+.Lyon{background-color: black; fill: black; color:#FFFFFF;}
+.LyonNumber{fill: #FFFFFF;}
+
+.Massy{background-color: #8fcef1; fill: #8fcef1; color:black;}
+.MassyNumber{fill: black;}
+
+.MontDeMarsan{background-color: #ffce00; fill: #ffce00; color:black;}
+.MontDeMarsanNumber{fill: black;}
+
+.Montauban{background-color: #007953; fill: #007953; color:#FFFFFF;}
+.MontaubanNumber{fill: #FFFFFF;}
+
+.Montpellier{background-color: #00569f; fill: #00569f; color:#FFFFFF;}
+.MontpellierNumber{fill: #FFFFFF;}
+
+.Narbonne{background-color: #FF5733; fill: #FF5733; color:#102f50;}
+.NarbonneNumber{fill: white;}
+
+.Nevers{background-color: #ffd900; fill: #ffd900; color:#102f50;}
+.NeversNumber{fill: #102f50;}
+
+.Oyonnax{background-color: black; fill: black; color:#FFFFFF;}
+.OyonnaxNumber{fill: #FFFFFF;}
+
+.Pau{background-color: #007235; fill: #007235; color:#FFFFFF;}
+.PauNumber{fill: #FFFFFF;}
+
+.Perpignan{background-color: #E1003D; fill: #E1003D; color:#FFFFFF;}
+.PerpignanNumber{fill: #FFFFFF;}
+
+.Racing{background-color: #93D4FC; fill: #93D4FC; color:black;}
+.RacingNumber{fill: black;}
+
+.Rouen{background-color: black; fill: black; color:#FFFFFF;}
+.RouenNumber{fill: #FFFFFF;}
+
+.SoyauxAngouleme{background-color: #671f8b; fill: #671f8b; color:#FFFFFF;}
+.SoyauxAngoulemeNumber{fill: #FFFFFF;}
+
+.StadeFrancais{background-color: #ff4e95; fill: #ff4e95; color:#FFFFFF;}
+.StadeFrancaisNumber{fill: #FFFFFF;}
+
+.Toulon{background-color: #1C1C1C; fill: #1C1C1C; color:#FFFFFF;}
+.ToulonNumber{fill: #FFFFFF;}
+
+.Toulouse{background-color: #CF1A00; fill: #CF1A00; color:#FFFFFF;}
+.ToulouseNumber{fill: #FFFFFF;}
+
+.ValenceRomans{background-color: #F2F2F2; fill: #F2F2F2; color:black;}
+.ValenceRomansNumber{fill: black;}
+
+.Vannes{background-color: #002b57; fill: #002b57; color:#FFFFFF;}
+.VannesNumber{fill: #FFFFFF;}
+
+.Nul{background-color: #9f9f9f;}

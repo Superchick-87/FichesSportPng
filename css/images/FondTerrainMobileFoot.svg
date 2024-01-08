@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY st0 "fill:#D0DF99;">
+	<!ENTITY st1 "fill:none;stroke:#A48A77;stroke-width:1.0504;stroke-miterlimit:10;">
+	<!ENTITY st2 "fill-rule:evenodd;clip-rule:evenodd;fill:#AECD6B;">
+	<!ENTITY st3 "fill:#AECD6B;">
+	<!ENTITY st4 "fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;">
+	<!ENTITY st5 "fill:#FFFFFF;">
+	<!ENTITY st6 "fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;">
+	<!ENTITY st7 "fill:none;stroke:#B1B3B4;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+	<!ENTITY st8 "fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+]>
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="320px" height="610px" viewBox="0 0 320 610" style="enable-background:new 0 0 320 610;" xml:space="preserve">
+<g id="terrain">
+	<g>
+		<g>
+			<path style="&st0;" d="M17.7,580.7c-5.5,0-10-4.5-10-10V39.3c0-5.5,4.5-10,10-10h284.7c5.5,0,10,4.5,10,10v531.4
+				c0,5.5-4.5,10-10,10H17.7z"/>
+			<path style="&st1;" d="M17.7,580.7c-5.5,0-10-4.5-10-10V39.3c0-5.5,4.5-10,10-10h284.7c5.5,0,10,4.5,10,10v531.4
+				c0,5.5-4.5,10-10,10H17.7z"/>
+		</g>
+		<g>
+			<g>
+				<g>
+					<rect x="17" y="68.2" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="127.4" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="186.6" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="245.8" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="305" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="364.2" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="423.4" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="482.6" style="&st2;" width="286" height="29.6"/>
+				</g>
+				<g>
+					<rect x="17" y="541.8" style="&st2;" width="286" height="29.6"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<path style="&st3;" d="M303,38.6v532.7H17V38.6H303 M305,36.6h-2H17h-2v2v532.7v2h2h286h2v-2V38.6L305,36.6L305,36.6z"/>
+		</g>
+		<g>
+			<line style="&st4;" x1="303" y1="305" x2="17" y2="305"/>
+		</g>
+		<g>
+			<path style="&st4;" d="M303,52.7c-7.7,0-14-6.3-14-14"/>
+		</g>
+		<g>
+			<path style="&st4;" d="M303,557.3c-7.7,0-14,6.3-14,14"/>
+		</g>
+		<g>
+			<path style="&st4;" d="M17,52.7c7.7,0,14-6.3,14-14"/>
+		</g>
+		<g>
+			<path style="&st4;" d="M17,557.3c7.7,0,14,6.3,14,14"/>
+		</g>
+		<g>
+			<g>
+				<path style="&st5;" d="M244,40.6v84.8H76V40.6H244 M246,38.6H74v88.8h172L246,38.6L246,38.6z"/>
+			</g>
+			<g>
+				<path style="&st5;" d="M203.8,40.6v25.6h-87.6V40.6H203.8 M205.8,38.6h-91.6v29.6h91.6V38.6L205.8,38.6z"/>
+			</g>
+			<g>
+				<circle style="&st6;" cx="160" cy="97.8" r="4.7"/>
+			</g>
+			<g>
+				<path style="&st5;" d="M194.7,127.4c-7.1,11.3-20,18.8-34.7,18.8s-27.6-7.5-34.7-18.8H194.7 M198.3,125.4h-3.6h-69.4h-3.6
+					l1.9,3.1c7.8,12.4,21.4,19.7,36.4,19.7s28.6-7.4,36.4-19.7L198.3,125.4L198.3,125.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path style="&st5;" d="M244,484.6v84.8H76v-84.8L244,484.6 M246,482.6H74v88.8h172L246,482.6L246,482.6z"/>
+			</g>
+			<g>
+				<path style="&st5;" d="M203.8,543.8v25.6h-87.6v-25.6H203.8 M205.8,541.8h-91.6v29.6h91.6V541.8L205.8,541.8z"/>
+			</g>
+			<g>
+				<circle style="&st6;" cx="160" cy="512.2" r="4.7"/>
+			</g>
+			<g>
+				<path style="&st5;" d="M160,463.8c14.7,0,27.6,7.5,34.7,18.8h-69.4C132.4,471.3,145.3,463.8,160,463.8 M160,461.8
+					c-15,0-28.6,7.4-36.4,19.7l-1.9,3.1h3.6h69.4h3.6l-1.9-3.1C188.6,469.1,175,461.8,160,461.8L160,461.8z"/>
+			</g>
+		</g>
+		<circle style="&st4;" cx="160" cy="305" r="43.9"/>
+		<g>
+			<rect x="128.2" y="20" style="&st7;" width="63.5" height="22.4"/>
+			<polyline style="&st7;" points="191.8,42.4 182.4,51.8 182.4,5 			"/>
+			<polyline style="&st7;" points="128.2,42.4 137.6,51.8 137.6,5 			"/>
+			<polyline style="&st7;" points="191.8,20 182.4,5 137.6,5 128.2,20 			"/>
+		</g>
+		<g>
+			<rect x="125.4" y="29.3" style="&st8;" width="69.2" height="15.9"/>
+			<polyline style="&st8;" points="194.6,45.2 185.2,51.8 185.2,18.1 			"/>
+			<polyline style="&st8;" points="125.4,45.2 134.8,51.8 134.8,18.1 			"/>
+			<polyline style="&st8;" points="194.6,29.3 185.2,18.1 134.8,18.1 125.4,29.3 			"/>
+		</g>
+		<g>
+			<rect x="128.2" y="567.6" style="&st7;" width="63.5" height="22.4"/>
+			<polyline style="&st7;" points="128.2,567.6 137.6,558.2 137.6,605 			"/>
+			<polyline style="&st7;" points="191.8,567.6 182.4,558.2 182.4,605 			"/>
+			<polyline style="&st7;" points="128.2,590 137.6,605 182.4,605 191.8,590 			"/>
+		</g>
+		<g>
+			<rect x="125.4" y="564.8" style="&st8;" width="69.2" height="15.9"/>
+			<polyline style="&st8;" points="125.4,564.8 134.8,558.2 134.8,591.9 			"/>
+			<polyline style="&st8;" points="194.6,564.8 185.2,558.2 185.2,591.9 			"/>
+			<polyline style="&st8;" points="125.4,580.7 134.8,591.9 185.2,591.9 194.6,580.7 			"/>
+		</g>
+	</g>
+</g>
+</svg>

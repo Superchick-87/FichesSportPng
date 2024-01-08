@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+#mobile{
+  display: none;
+}
+body{
+  margin: 0 auto;
+  text-align: center;
+}
+footer{
+  width:100%;
+  height: 18px;
+  background-image:url(images/signature.svg);
+  background-repeat:no-repeat;
+  background-position:center;
+  -webkit-print-color-adjust: exact;
+ }
+#desktop{
+  width: 650px;
+  margin: 0 auto;
+}
+h2{
+  font-family: 'Oswald', sans-serif;
+  fill: black;
+  font-size: 25px;
+  line-height: 0px;
+  font-weight: 400;
+}
+hr{
+  width: 85%;
+  border-top: 1px dotted black;
+}
+div.tooltipDesktop {
+  color: white;
+  position: absolute;
+  text-align: left;
+  padding: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px sans-serif;
+  font-weight: light;
+  background: rgba(0,0,0,.8);
+  border: 4px solid white;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.centrer{
+  justify-content: center;
+}
+.tooltipGenerique{
+  display: flex;
+  justify-content: flex-start;
+}
+.tvback{
+  height:30px;
+  margin:5px 5px 0px 5px;
+}
+.lieu{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+.BlocLogosEquipes{
+  display: flex;
+  justify-content: space-between;
+  margin: -5px 10px 0 10px;
+}
+.BlocEquipeDom{
+  display: flex;
+  justify-content: flex-start;
+  width: 40%;
+}
+.BlocEquipeExt{
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+.arbitre{
+  font-family: 'Oswald', sans-serif;
+  fill: black;
+  font-size: 17px;
+  font-weight: 400;
+  /*margin: -5px auto;*/
+  margin-top: -9px;
+    margin-bottom: 2px;
+}
+.miTps{
+  font-family: 'Oswald', sans-serif;
+  fill: black;
+  font-size: 17px;
+  font-weight: 400;
+  overflow-wrap: nowrap;
+  white-space: nowrap;
+}
+.blocQtps{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.Qtps{
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 17px;
+  font-weight: 200;
+  background-color: black;
+  margin: 0px 5px auto;
+  padding: 0px 5px 0px 5px;
+}
+.blocInfo{
+  font-family: 'Oswald', sans-serif;
+}
+.InfoSsTerrainGauche{
+  width: 95%;
+  font-family: 'Oswald', sans-serif;
+  text-align: left;
+  margin: 0px 3px 0 40px;
+}
+.InfoSsTerrainDroite{
+  width: 95%;
+  font-family: 'Oswald', sans-serif;
+  text-align: right;
+  margin: 0px 40px 0 3px;
+}
+.BlocSsTerrain{
+  display: flex;
+  justify-content: space-around;
+}
+.titre{
+  fill: black;
+  font-size: 35px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.Score{
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+  background-color: black;
+  color: white;
+  margin: auto;
+  width: max-content;
+  padding: 0px 10px 2px;
+}
+.classScore{
+  color: black;
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 4px;
+  }
+.equipeA{
+  text-align: left;
+  line-height: 35px;
+}
+.equipeB{
+  text-align: right;
+  line-height: 35px;
+}
+.logoGauche{
+  height: 70px;
+  margin: 10px;
+}
+.logoDroite{
+  height: 70px;
+  margin: 10px;
+}
+.sstitreGauche{
+  color: white;
+  font-size: 15px;
+  text-indent: 3px;
+  background-color: black;
+  margin-top: 10px;
+  -webkit-print-color-adjust: exact;
+}
+.sstitreDroite{
+  color: white;
+  font-size: 15px;
+  direction: rtl;
+  text-indent: 3px;
+  background-color: black;
+  margin-top: 10px;
+  -webkit-print-color-adjust: exact;
+}
+.text{
+  font-size: 14px;
+  margin: 2PX 0 5px 0;
+  font-weight: 300;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+}
+.playername{
+  fill: black;
+  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.PlayernameToolTip{
+  fill: black;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+#compoDesktop{
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 650px;
+  height: 340px;
+  margin: 0 auto 10px;
+}
+
+.image{
+  width: 80px;
+  margin-right: 5px;
+  opacity: 1;
+}
+.nationalite{
+  width: 30px;
+  height: 20px;
+  opacity: 1;
+}
+.tooltipGenerique{
+  display: flex;
+  justify-content: space-around;
+}
+.tooltipGeneriqueDesign{
+  display: flex;
+  justify-content: space-around;
+}
+.stats{height: 30px; opacity: 1;}
+
+/*SERIE EN COURS*/
+.BlocSerieEnCours{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.textS{
+  line-height: 1.8em;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.TraitTitreSerie{
+  width:30%;
+}
+.VictoireSerie{
+  width: 30px;
+  height: 30px;
+  border: 6px solid #258b64;
+  background-color: #258b64;
+  border-radius: 50%;
+  text-align: center;
+  color:white;
+  margin: 0px 5px auto;
+  -webkit-print-color-adjust: exact;
+}
+.NulSerie{
+  width: 30px;
+  height: 30px;
+  border: 6px solid #9f9f9f;
+  background-color: #9f9f9f;
+  border-radius: 50%;
+  text-align: center;
+  color:white;
+  margin: 0px 5px auto;
+  -webkit-print-color-adjust: exact;
+}
+.DefaiteSerie{
+  width: 30px;
+  height: 30px;
+  border: 6px solid red;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  color:white;
+  margin: 0px 5px auto;
+  -webkit-print-color-adjust: exact;
+}
+
+/*CONFRONTATIONS*/
+
+.BlocTitreConfrontations{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.BlocConfrontations{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: -20px;
+  color: white;
+}
+.confrontationEquipeA{
+  text-align: left;
+  color:white;
+}
+.TraitTitreConfrontations{
+  width:22%;
+}
+.flex{
+  display:flex;
+}
+#VictoiresDom, #Nul, #VictoiresExt{
+  -webkit-print-color-adjust: exact;
+}
+/********************* FOOT *********************/
+.tableF{
+  text-align: left;
+  margin:0px auto;
+  background-color: #232323FF;
+  padding: 0px auto;
+  width: 480px;
+}
+p{
+  margin: 0px;
+  padding: 0px;
+  line-height: 25px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  vertical-align: top;
+}
+.barre{
+  background-color: grey;
+  height: 8px;
+  margin-top: 7px;
+  margin-right: 3px;
+}
+.traitVert{
+  border-left: 1px solid #FFFFFF7F;
+  border-right: 1px solid #FFFFFF7F;
+}
+.espaceDroit{
+  padding-right: 5px;
+}
+.espaceGauche{
+  padding-left: 5px;
+}
+.espaceGauche2{
+  margin-left: 23px;
+}
+.separation{
+  width: 2px;
+}
+.blanc{
+  color: white;
+  margin-top: 0px;
+}
+.gris{
+  color: #BCBCBCFF
+}
+.PlayernameToolTipFoot {
+    color: white;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  vertical-align: baseline;
+  height: 35px;
+}
+.decalageHaut{
+  margin-top: 0px;
+}
+.decalageHaut2{
+  margin-top: -6px;
+}
+.decalageHaut3{
+  margin-top: 5px;
+}
+
+.decalage{
+  margin-right: 6px;
+}
+.espace{
+  height: 25px;
+}
+.top{
+  vertical-align: top;
+}
+.carton{
+  border-radius: 6px;
+  height: 40px;
+  width: 25px;
+  color: black;
+}
+.jaune{
+  background-color: #FFD700;
+}
+.rouge{
+  background-color: #FF000F;
+}
+.but{
+  height: 40px;
+  width: 40px;
+  color: black;
+  background-image: url('images/but.svg');
+  background-repeat:no-repeat;
+  background-position-x: center;
+}
+.chiffreGros{
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+  padding: 0px;
+  text-align: center;
+}
+.InfosToolTip2{
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFFFF
+  line-height: 1.2;
+  opacity: 1;
+}
+.chiffre{
+  text-align: center;
+  font-size: 30px;
+  color:black;
+  line-height: 50px;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+  vertical-align: middle;
+  background-repeat:no-repeat;
+  margin-top: 10px;
+  margin-right: 4px;
+  opacity: 0.4;
+}
+.maillotFoot{
+  background-image: url('images/maillot2.svg');
+}
+.TextToolTip2{
+  font-size: 40px;
+  color:#BCBCBCFF;
+  line-height: 50px;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+}
+.photo{
+  width: 80px;
+}
+.col1{
+  width: 50px;
+  text-align:center;
+  padding-top: 6px;
+  padding-right: 4px;
+}
+.col2{
+  width: 42%;
+  padding: 0px 5px 0px 5px;
+}
+.nationalite{
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 1;
+}
+.picto{
+  width: 17px;
+  margin-right: 5px;
+}
+.libele{
+  text-align: center;
+  vertical-align: bottom;
+  padding-bottom: 8px;
+}
+/********************* FOOT FIN *********************/
+
+/********************* BASKET *********************/
+.maillotBasket{
+  background-image: url('images/maillotBasket2.svg');
+  background-repeat: no-repeat;
+}
+.decalageHaut{
+  padding-top: 12px;
+}
+
+/********************* BASKET FIN *********************/
+
+@media only screen and (max-device-width:450px){
+  body{
+    height: 100%;
+  }
+  hr{
+    width: 85%;
+    border-top: 1px dotted black;
+  }
+  #desktop{
+    display: none;
+  }
+  #mobile{
+    display: block;
+  }
+  .miTps{
+    margin-top: -20;
+  }
+  .fond{
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+  }
+   .tooltipGenerique{
+    display: flex;
+    justify-content: flex-start;
+  }
+  div.tooltipMobile {
+    color: white;
+    position: absolute;
+    text-align: left;
+    width: 98%;
+    padding: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px sans-serif;
+    font-weight: light;
+    background: rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+  .image{
+    width: 80px;
+    margin: 5px 10px 5px 5px;
+    opacity: 1;
+  }
+  .blocInfo{
+    width: 98%;
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+  }
+  .logoMobile{
+    height: 100px;
+    margin: 10px auto;
+    /* width: 80px; */
+  }
+  .nomargeRight{
+    margin-right: 0px;
+  }
+  .nomargeLeft{
+    margin-left: 0px;
+  }
+  .sstitre{
+    color: white;
+    font-size: 15px;
+    text-indent: 3px;
+    background-color: black;
+    margin-top: 5px;
+  }
+  .titre{
+    display: block;
+    color: black;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .classScore{
+    color: black;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0 auto;
+  }
+  .Score{
+    width: auto;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .titreBas{
+    fill: black;
+    font-size: 35px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-top: -30px;
+  }
+  .text{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    width: 100%;
+  }
+  .blocTitre{
+    text-align: center;
+  }
+  .arbitre{
+    margin-top: 5px;
+  }
+    /*SERIE EN COURS*/
+
+  .BlocSerieEnCours{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .textS{
+    margin: 0 auto 5px;
+    height: 50px;
+  }
+  .StatsConfrontations{
+    height:33px;
+  }
+  .logogauche{
+    height:100%;
+    width: auto;
+  }
+  .BlocConfrontations{
+    width: 95%;
+    margin: -8px auto 0px;
+  }
+  .Victoire{
+    margin: 0px 0px auto;
+    -webkit-print-color-adjust: exact;
+  }
+  .Defaite{
+    margin: 0px 0px auto;
+    -webkit-print-color-adjust: exact;
+  }
+  .logoGauche{
+    height: 50px;
+    margin-left: 0px;
+  }
+  .logoDroite{
+    height: 50px;
+    margin: 8px 0px 8px 8px;
+  }
+
+    /********************* FOOT *********************/
+
+  .tableF{
+    width: 98%;
+  }
+  p{
+    line-height: 15px;
+  }
+  .but{
+    height: 33px;
+    width: 50px;
+    background-position-x: 10px;
+    margin: 0px auto;
+  }
+  .carton{
+    border-radius: 4px;
+    height: 25px;
+    width: 20px;
+    line-height: 35px;
+    margin: 0px 2px 4px 0px;
+    margin-bottom: 4px;
+  }
+  .col2{
+    width: 22%;
+  }
+  .col1{
+    width: 160px;
+    text-align:left;
+    padding-top: 0px;
+    padding-right: 0px;
+  }
+  .chiffreGros{
+    font-size: 25px;
+    vertical-align: middle;
+  }
+  .decalageHaut{
+    margin-top: -10px;
+  }
+  .justifCartons{
+    display: flex;
+    justify-content: center;
+  }
+  .libele{
+    padding-bottom: 4px;
+  }
+  .PlayernameToolTipFoot {
+    height: 30px;
+  }
+}

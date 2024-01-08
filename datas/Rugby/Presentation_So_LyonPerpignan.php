@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('Mardi 4 mai','12h45','Lyon','Perpignan','Matmut','M. Dumoulin','M. Mahin','sghmgh smh mdfffgh smdgh smdgh gdfs','M. Truc','f hfggmgfj sfùhùflhhjsù hsùlhj ','','','','','','','','','','','3','0','0','3','M6','Tf1','2E/42 pts','1er/45 pts') ?>

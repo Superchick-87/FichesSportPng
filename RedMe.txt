@@ -1,0 +1,14 @@
+Mise à jour des feuilles de styles
+Afin d'éviter les problèmes de cache sur le server -> renommer + "_date"
+Format de date = _YYYYMMDD (exemple : _20211208)
+
+Fichiers concernés pour les équipes (web) sont :
+* colorSetBasket_date.css
+* colorSetFoot_date.css
+* colorSetRugby_date.css
+
+Fichiers appelant les feuilles de style sont :
+* indexFCompteRendu.php
+* indexFPresentation.php
+
+Ligne 15 : href="css/colorSet'.$sport.'_date.css"

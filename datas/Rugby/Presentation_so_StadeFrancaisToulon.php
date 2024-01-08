@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('Vendredi 25 novembre','15h59','Stade Français','Toulon','bb','bb','vv','GGG','FFF','GGG','','','','','','','','','','','1','1','1','3','Eurosport','Tf1','13e / 56 pts','18e / 46 pts') ?>

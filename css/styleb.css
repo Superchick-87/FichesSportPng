@@ -1,0 +1,18 @@
+.st0{fill:#F9C67F;}
+.st1{fill:#FAD088;}
+.st2{fill:#ECB663;}
+.st3{clip-path:url(#SVGID_2_);}
+.st4{clip-path:url(#SVGID_4_);}
+.st5{clip-path:url(#SVGID_8_);fill:#D4A86A;}
+.st6{fill:#FFFFFF;}
+.st7{fill:#FFFCF1;}
+.st8{fill:#F37C26;}
+.st9{clip-path:url(#SVGID_10_);fill:#1A171B;}
+.st10{fill:#A5A5A4;}
+.st11{clip-path:url(#SVGID_12_);fill:#1A171B;}
+.st12{fill:#BF232B;}
+.text-club{font-family:'Oswald-Regular'; fill:white;}
+.st14{font-size:11.25px;}
+.st15{fill:red;}
+.logo-club {background: url(Lyon.svg);} 
+ .color-club {fill: <?php echo $couleur; ?>;}

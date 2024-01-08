@@ -1,0 +1,53 @@
+.PlayerNumber{font-size: 15px;font-family: 'Oswald', sans-serif;font-weight: 500;}
+
+.Boulazac{background-color: #D3D3D3; fill: #D3D3D3; color:black;}
+.BoulazacNumber{fill: black;}
+
+.BoulogneLevallois{background-color: #D3D3D3; fill: #D3D3D3; color:#0f1b41;}
+.BoulogneLevalloisNumber{fill: #0f1b41;}
+
+.BourgEnBresse{background-color: #D3D3D3; fill: #D3D3D3; color:#dc0900;}
+.BourgEnBresseNumber{fill: #dc0900;}
+
+.Chalonsaone{background-color: #dc0900; fill: #dc0900; color:#FFFFFF;}
+.ChalonsaoneNumber{fill: #FFFFFF;}
+
+.ChalonsReims{background-color: #D3D3D3; fill: #D3D3D3; color:black;}
+.ChalonsReimsNumber{fill: black;}
+
+.Cholet{background-color: #dc0900; fill: #dc0900; color:#FFFFFF;}
+.CholetNumber{fill: #FFFFFF;}
+
+.Dijon{background-color: black; fill: black; color:#FFFFFF;}
+.DijonNumber{fill: #FFFFFF;}
+
+.GravelinesDunkerque{background-color: #e6931d; fill: #e6931d; color:black;}
+.GravelinesDunkerqueNumber{fill: black;}
+
+.LePortel{background-color: #D3D3D3; fill: #D3D3D3; color:#0D5001;}
+.LePortelNumber{fill: #0D5001;}
+
+.LyonVilleurbanne{background-color: #D3D3D3; fill: #D3D3D3; color:#000000;}
+.LyonVilleurbanneNumber{fill: black;}
+
+.Orleans{background-color: #e6931d; fill: #e6931d; color:black;}
+.OrleansNumber{fill: black;}
+
+.Monaco{background-color: #dc0900; fill: #dc0900; color:#FFFFFF;}
+.MonacoNumber{fill: #FFFFFF;}
+
+.LeMans{background-color: #e6701d; fill: #e6701d; color:#FFFFFF;}
+.LeMansNumber{fill:#FFFFFF;}
+
+.Nanterre{background-color: #D3D3D3; fill: #D3D3D3; color:#0D5001;}
+.NanterreNumber{fill: #0D5001;}
+
+.Limoges{background-color: #007944; fill: #007944; color:#FFFFFF;}
+.LimogesNumber{fill: #FFFFFF;}
+
+
+
+
+
+
+.Nul{background-color: #9f9f9f;}

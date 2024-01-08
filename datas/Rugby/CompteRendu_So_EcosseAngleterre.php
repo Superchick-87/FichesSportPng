@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('Mercredi 21 juillet','17h00','Ecosse','Angleterre','sss','TEST NICO','0','ensoleillé','trempé','1-1','1-1','V','V','V','V','V','V','V','','','','','-','-','-','-') ?>

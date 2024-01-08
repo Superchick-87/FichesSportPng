@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('Jeudi 19 août','16h31','Biarritz','Bordeaux-Bègles','Stade Matmut','M. DUPONT','DSI','eee','REDACTION','ff','','','','','','','','','','','4','1','0','5','BeinSport','CanalPlus','','') ?>

@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('Mardi 21 septembre','10h47','Pau','Lyon','TEST','TEST','TEST','TEST','TEST','TEST','','','','','','','','','','','2','0','1','3','RugbyPlus','','12e / 45 pts','12e / 45 pts') ?>
