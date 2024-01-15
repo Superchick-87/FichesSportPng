@@ -34,12 +34,25 @@
 				<?php 
 					foreach ($ChoixChampionnats as $ChoixChampionnatss) {
 		            	echo '<label class="containerIndex">
-		            	<input onclick=window.open(href="'.$redirectionIndex.'back'.ddc($typeFiche).'.php?Championnat='.urlencode($ChoixChampionnatss).'&editeur='.$editeur.'") target="_blank" class="single-checkbox transparant" type="radio" id="sel'.$ChoixChampionnatss.'" name="Championnat" value="'.$ChoixChampionnatss.'">
+		            	<input onclick=window.open(href="'.$redirectionIndex.'index_.php?Type='.ddc($typeFiche).'&Championnat='.urlencode($ChoixChampionnatss).'&editeur='.$editeur.'") target="_blank" class="single-checkbox transparant" type="radio" id="sel'.$ChoixChampionnatss.'" name="Championnat" value="'.$ChoixChampionnatss.'">
 		            	<img class="checkmarkIndex choix" src="css/images/'.ddc($ChoixChampionnatss).'.svg" alt="'.$ChoixChampionnatss.'">
 		            	</label>';};
                  ?>
 				</div>
 		</div>
+
+		<!-- <div class="boiteHaut">
+				<p id="AlertTv" class="">Sélectionner un championnat</p>
+				<div class="ListeChampionnats">
+				<?php 
+					foreach ($ChoixChampionnats as $ChoixChampionnatss) {
+		            	echo '<label class="containerIndex">
+		            	<input onclick=window.open(href="'.$redirectionIndex.'back'.ddc($typeFiche).'.php?Championnat='.urlencode($ChoixChampionnatss).'&editeur='.$editeur.'") target="_blank" class="single-checkbox transparant" type="radio" id="sel'.$ChoixChampionnatss.'" name="Championnat" value="'.$ChoixChampionnatss.'">
+		            	<img class="checkmarkIndex choix" src="css/images/'.ddc($ChoixChampionnatss).'.svg" alt="'.$ChoixChampionnatss.'">
+		            	</label>';};
+                 ?>
+				</div>
+		</div> -->
 	<footer style="background-image:url(css/images/signature<?php echo $editeur;?>.svg);"></footer>
 	</body>
 </html>

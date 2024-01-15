@@ -5,10 +5,10 @@
 // $redirectionIndex="https://infographie.sudouest.fr/FichesSport/";
 
 // local
-$redirectionPre = "http://localhost:8888/FichesSport_png/indexFPresentation.php?front=";
-$redirectionCompR = "http://localhost:8888/FichesSport_png/indexFCompteRendu.php?front=";
-$redirectionIndex = "http://localhost:8888/FichesSport_png/";
-$redirectionPre = "http://localhost:8888/FichesSport_png/indexFPresentation.php?front=";
+$redirectionPre = "http://localhost:8888/FichesSportPng/indexFPresentation.php?front=";
+$redirectionCompR = "http://localhost:8888/FichesSportPng/indexFCompteRendu.php?front=";
+$redirectionIndex = "http://localhost:8888/FichesSportPng/";
+$redirectionPre = "http://localhost:8888/FichesSportPng/indexFPresentation.php?front=";
 
 // superchick !
 // $redirectionPre="https://www.superchick.fr/FichesSport/indexFPresentation.php?front=";

@@ -1,15 +1,14 @@
-<?php
-session_start();
-if (!isset($_SESSION['count'])) {
-  $_SESSION['count'] = 0;
-} else {
-  $_SESSION['count']++;
-}
-?>
+
 <?php
 	$tutu = 'kgkgk';
-	$Championnat = urldecode($_GET['Championnat']);
+	// $Championnat = urldecode($_GET['Championnat']);
+	// $Championnat = "Top 14";
+	echo $Championnat = $_POST['Championnat'];
 	$editeur = $_GET['editeur'];
+	echo $_POST['choix1'];
+	echo $_POST['choix2'];
+	// echo '<h1>',$Championnat,'</h1>';
+	echo $editeur;
 	// echo $editeur;
 	include (dirname(__FILE__).'/includes/ddc.php');
 	include (dirname(__FILE__).'/includes/EquipesStades'.ddc($Championnat).'.php');
@@ -41,69 +40,28 @@ if (!isset($_SESSION['count'])) {
      */ -->
 	<body onload="javascript:affichageSchemaFoot(); menuDeroulant(); menuDeroulant_M();">
 	<header>
-		<img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
-		<h1><?php echo $Championnat; ?><br>Présentation</h1>
+		<!-- <img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
+		<h1><?php echo $Championnat; ?><br>Présentation</h1> -->
 		<!-- <h2>Back-office</h2> -->
-		<hr  class="separation">
+		<!-- <hr  class="separation"> -->
 	</header>
-	<h2>Rencontre</h2>
-	<p id="AlertSel" class="" style="display: block;">Sélectionner vos équipes</p>
+	<!-- <h2>Rencontre</h2>
+	<p id="AlertSel" class="" style="display: block;">Sélectionner vos équipes</p> -->
 
 	
 	<!-- // //////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////        CHOIX DES EQUIPES        ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////// // -->
-	<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:none;">
-	<table id="choix_D">
-		<tbody>
-		<tr>
-			<td class="EcussonClub" align="right">
-				<img id="M1ResultatRussie" class="ImageEcussonClubGauche" style="display:none;" src=""/></td>
-			<td><select class="SelEquipe" id="choix1" name="choix1" onchange="menuDeroulant_M();" >                 
-            <?php
-             	foreach ($grpa0 as $item) {
-                    echo '<option value="'.$item.'" id="MenuA">'.$item.'</option>';
-                    }
-                    echo'</select>';
-            ?> </td>
-			<td><select class="SelEquipe" id="choix2" name="choix2" onchange="menuDeroulant_M();">
-            <?php
-                 foreach ($grpa0 as $item) {
-                    echo '<option value="'.$item.'" id="MenuB" >'.$item.'</option>';
-                    }
-                    echo'</select>';                    
-            ?></td>
-			<td class="EcussonClub" align="left">
-				<img onselect="menuDeroulant_M();" id="M2ResultatRussie" class="ImageEcussonClubDroite" style="display:none;" src=""/></td>
-		</tr>
-		</tbody>
-	</table>
-	<div id="choix_M" class="choixEquipes">
-		<img  id="M1ResultatRussie" class="ImageEcussonClubGauche" style="display:none;" src=""/></td>
-		<select class="SelEquipe" id="choix1" name="choix1" onchange="menuDeroulant_M();" >                 
-            <?php
-				foreach ($grpa0 as $item) {
-					echo '<option value="'.$item.'" id="MenuA">'.$item.'</option>';
-					}
-					echo'</select>';
-			?>
-		<select class="SelEquipe" id="choix2" name="choix2" onchange="menuDeroulant_M();">
-            <?php
-				foreach ($grpa0 as $item) {
-					echo '<option value="'.$item.'" id="MenuB" >'.$item.'</option>';
-					}
-					echo'</select>';                    
-            ?>
-		<img onselect="menuDeroulant_M();" id="M2ResultatRussie" class="ImageEcussonClubDroite" style="display:none;" src=""/>
-	</div>
+	
 
 <!--=================================================
  =            		FORMULAIRE      	       		=
  =================================================-->
 
 	<form  id="Formulaire" method="get" action="verifPresentation.php" style="display:block;">
-		<input id="equipeA" type="text" name="RencontreA" value="" style="display:none;">
-		<input id="equipeB" type="text" name="RencontreB" value="" style="display:none;">
+	<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:none;">	
+	<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1'];?>" style="display:none;">
+		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2'];?>" style="display:none;">
 		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:none;">
 		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:none;">
 		<?php echo'<input id="Championnat" name="Championnat" value= "'.$Championnat.'" style="display:none;">' ?>
@@ -376,17 +334,11 @@ if (!isset($_SESSION['count'])) {
  =            		FIN FORMULAIRE      	       		=
  ======================================================-->
 	
-	<footer style="background-image:url(css/images/signature<?php echo $editeur;?>.png);"></footer>
-	</body>
-	<script type="text/javascript">
+	<!-- <footer style="background-image:url(css/images/signature<?php echo $editeur;?>.png);"></footer>
+	</body> -->
+	<!-- <script type="text/javascript">
 			
-			// function autocompletion() {
-			// 	var gpA10 = [<?php echo"'",include (dirname(__FILE__).'/includes/menu.php'),"'"; ?> ];
-			// 	$("#EquipeDom1,#EquipeDom2,#EquipeDom3,#EquipeDom4,#EquipeDom5,#EquipeDom6,#EquipeDom7,#EquipeDom8,#EquipeDom9,#EquipeDom10,#EquipeDom11,#EquipeDom12,#EquipeDom13,#EquipeDom14,#EquipeDom15,#EquipeExt1,#EquipeExt2,#EquipeExt3,#EquipeExt4,#EquipeExt5,#EquipeExt6,#EquipeExt7,#EquipeExt8,#EquipeExt9,#EquipeExt10,#EquipeExt11,#EquipeExt12,#EquipeExt13,#EquipeExt14,#EquipeExt15").autocomplete
-			// 	({
-			// 		source: gpA10
-			// 	});
-			// }
+
 	/**
     * Sert à effacer le champ N° quand le sport est "rugby"
     */	
@@ -413,15 +365,15 @@ if (!isset($_SESSION['count'])) {
 			       this.checked = false;
 			   }
 			});
-  		</script>
-		<script src="js/camelize.js" type="text/javascript"></script>
-		<script src="js/affichageSchemaFoot.js" type="text/javascript"></script>
+  		</script> -->
+		<!-- <script src="js/camelize.js" type="text/javascript"></script> -->
+		<!-- <script src="js/affichageSchemaFoot.js" type="text/javascript"></script>
 		<script src="js/menuDeroulant.js" type="text/javascript"></script>
 		<script>menuDeroulantBis();</script>
 		<script>menuDeroulant();</script>
-		<script>menuDeroulant_M();</script>
+		<script>menuDeroulant_M();</script> -->
 		
-		<script>
+		<!-- <script>
 			const element_D = document.getElementById('choix_D');
 			const element_M = document.getElementById('choix_M');
 			if (screen.width < 580) {
@@ -433,5 +385,5 @@ if (!isset($_SESSION['count'])) {
 			console.log(screen.width);
 			// function screem(){
 			// }
-		</script>
+		</script> -->
 </html>

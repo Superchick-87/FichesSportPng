@@ -110,7 +110,7 @@ function menuDeroulant() {
         var InputEquipeB = document.getElementById('equipeB');
 
 
-        if (MenuA == MenuA && MenuB !== MenuA) {
+        // if (MenuA == MenuA && MenuB !== MenuA) {
             // if (MenuA == MenuA) {
             ResultatA.style.display = "block";
             ResultatA.setAttribute("src", "css/images/clubs/"+discipline+"/"+camelize(MenuA)+".png");
@@ -119,7 +119,7 @@ function menuDeroulant() {
             ResultatB.style.display = "block";
             ResultatB.setAttribute("src", "css/images/clubs/"+discipline+"/"+camelize(MenuB)+".png");
             InputEquipeB.setAttribute("value", MenuB);
-        }
+        // }
         if (MenuA === 'Choix'){
             ResultatA.style.display = "block";
             ResultatA.setAttribute("src", "css/images/clubs/"+discipline+"/"+camelize(MenuA)+".png");
@@ -129,26 +129,27 @@ function menuDeroulant() {
             ResultatB.setAttribute("src", "css/images/clubs/"+discipline+"/"+camelize(MenuB)+".png");
             InputEquipeB.setAttribute("value", MenuB);
         }
-        if (MenuB !== MenuA){
-            Formulaire.style.display = "block";
-            AlertSel.style.display = "none";
-        }
-        if (MenuB === 'Choix'){
-            ResultatB.style.display = "block";
-            Formulaire.style.display = "none";
-            AlertSel.style.display = "block";
-            AlertSel.innerHTML = AlertSelB;
-        }
-        if (MenuA === 'Choix'){
-            ResultatA.style.display = "block";
-            Formulaire.style.display = "none";
-            AlertSel.style.display = "block";
-            AlertSel.innerHTML = AlertSelB;
-        }
-        if (MenuB === MenuA){
-            Formulaire.style.display = "none";
-            AlertSel.style.display = "block";
-            AlertSel.innerHTML = AlertSelA;
-        }
+        // if (MenuB !== MenuA){
+        //     Formulaire.style.display = "block";
+        //     AlertSel.style.display = "none";
+
+        // }
+        // if (MenuB === 'Choix'){
+        //     ResultatB.style.display = "block";
+        //     Formulaire.style.display = "none";
+        //     AlertSel.style.display = "block";
+        //     AlertSel.innerHTML = AlertSelB;
+        // }
+        // if (MenuA === 'Choix'){
+        //     ResultatA.style.display = "block";
+        //     Formulaire.style.display = "none";
+        //     AlertSel.style.display = "block";
+        //     AlertSel.innerHTML = AlertSelB;
+        // }
+        // if (MenuB === MenuA){
+        //     Formulaire.style.display = "none";
+        //     AlertSel.style.display = "block";
+        //     AlertSel.innerHTML = AlertSelA;
+        // }
        
      }
