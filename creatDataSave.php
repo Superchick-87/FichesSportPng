@@ -308,7 +308,7 @@ function nomFormat($a)
 					<legend>"RETOUR" pour modifier votre composition</legend>
 					<div>
 					<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)'/>
-					<input onclick="change_class()" name="SubmitBtn" type="submit" id="submitBtn" value="VALIDER"> --> -->
+					<input onclick="change_class()" name="SubmitBtn" type="submit" id="submitBtn" value="VALIDER"> -->
 <!-- </div>
 			</form>
 
