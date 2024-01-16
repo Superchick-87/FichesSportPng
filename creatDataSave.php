@@ -280,13 +280,11 @@ fclose($fichierv);
 
 
 
-// echo '
-// <div id="messageUrl" style="display:block;">
-// 		<legend>"VISUALISER" pour vérifier votre composition</legend>
-// 	    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'") target="_blank" />
-// 	    <legend>Copier / coller l\'iframe dans votre article pour le web</legend>
-// 	    <textarea onclick="this.select();" class="iframearea"> &lt;iframe src="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'" border="0" '.tailleiframe($editeur).'"&gt;&lt;/iframe></textarea>
-// </div>';
+echo '
+<div id="messageUrl" style="display:block;">
+		<legend>"VISUALISER" pour vérifier votre composition</legend>
+	    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="' . $redirectionPre . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '") target="_blank" />
+</div>';
 
 $RencontreF = ddc($ClubDom) . "" . ddc($ClubExt);
 // echo $RencontreF;
