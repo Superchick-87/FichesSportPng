@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Samedi 5 novembre','21h00','France','Australie','Stade de France (Saint-Denis)','Jaco Peyper (AFS)','Fabien Galthié','Mauvaka, Priso, Falatea, R.Taofifenua, Geraci, Macalou, Lucu, Jalibert','Dave Rennie','Fainga\'a, Gibbon, Robertson, Skelton, Samu, Gordon, Paisami, Hodge','','','','','','','','','','','2','0','3','5','France2','','','') ?>

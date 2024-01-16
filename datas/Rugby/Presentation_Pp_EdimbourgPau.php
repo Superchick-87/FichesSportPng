@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Vendredi 8 avril','21h00','Edimbourg','Pau','Dam Health Stadium, Edimbourg','Sara Cox (ANG)','Mike Blair','McBurney, Venter, Nel, Hodgson, Phillips, Shiel, Savala, Dean.','Sébastien Piqueronies','Rey, Corato, Vea, Metz, Habel-Kueffner, Le Bail, Henry, Carol.','','','','','','','','','','','0','0','0','0','','','2e, 10 pts','5e, 5 pts') ?>

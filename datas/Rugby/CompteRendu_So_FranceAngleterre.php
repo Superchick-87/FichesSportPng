@@ -1,5 +1,0 @@
-<?php $DatasFront=array ('Samedi 19 mars','21h00','France','Angleterre','Stade de France','Jaco Peyper','79176','clémente','bon','25-13','18-6','Fabien Galthié','Mauvaka remplace Marchand (50e), Taofifenua remplace Willemse (50e), Gros remplace Baille (50e), Haouas remplace Atonio (55e), Flament remplace Woki (72e), Cretin remplace Cros (72e), Ramos remplace Jaminet (76e), Lucu remplace Dupont (76e)','Eddie Jones','Daly remplace Nowell (27e), Sinckler remplace Stuart (50e), Chessum remplace Isiekwe (63e), Randall remplace Youngs (65e), Dombrandt remplace Underhill (65e), Marler remplace Genge (65e), Ford remplace Furbank (76e)','Essais : Fickou (15e), Cros (40e), Dupont (61e)
-Transformations : Jaminet (40e, 61e)
-Pénalités : Jaminet (9e, 24e)','Essai : Steward (48e)
-Transformation : Smith (48e)
-Pénalités : Smith (20e, 30e)','','','','','','-','-','-','-') ?>

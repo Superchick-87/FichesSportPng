@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Samedi 28 août','20h33','Brive','Lyon','Stade Matmut Atlantique','M. Dumoulin','Jean-Louis Gasset','fgqdmfgqdfhkgqd fùglhg ùqdfghkqdfùqdfl hkqdfùqdfhklg qdfùlgqdfhkdf','Jacques Chancel','sdmfogihsdfùgjs fùlgj sùflj gsdflgkjh','','','','','','','','','','','2','1','2','5','RmcSport','','2 /"' 5 pts','5/ ""1 pts') ?>

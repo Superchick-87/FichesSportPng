@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Mercredi 12 décembre','12h12','Racing 92','Montpellier','Stade Matmut Atlantique','M. Dumoulin','Jean-Louis Gasset','zrmgrhg ùzgljh zùljùjz ùlgkjh zùdlfkgjhz ùpo','Jacques Chancel','FGsdfmgnhsdfùlkh m!slkdfhg s!ldfkhg s!ldkhg !slkhg','','','','','','','','','','','2','2','2','6','Tf1','','2 /"' 5 pts','5/ ""1 pts') ?>

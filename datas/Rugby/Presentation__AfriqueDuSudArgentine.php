@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Samedi 23 octobre','14h05','Afrique du Sud','Argentine','TEST','TEST','TEST','TEST','TEST','TEST','','','','','','','','','','','2','0','3','5','France2','RugbyPlus','TEST','TEST') ?>

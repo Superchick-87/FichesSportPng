@@ -1,5 +1,0 @@
-<?php $DatasFront=array ('Samedi 20 novembre','21h00','France','Nouvelle-Zélande','Saint-Denis (Stade de France)','Wayne Barnes','80000','frais','bon','40-25','24-6','F. Galthié','Atonio par Bamba (48e), Willemse par Taofifenua (48e), Baille par Gros (49e), Mauvaka par Barlot (59e), Alldritt par Flament(61e), Ntamack par Jalibert (67e), Woki par Cretin (73e), Dupont par Lucu (76e)','I. Foster','Coles par Taukei\'aho (49e), Moody par Bower (49e), Laulala par Tu\'ungafasi (49e), Jordan par Havili (53e), Smith par Weber (60e), R. Ioane par Frizell (61e), Mo\'unga par McKenzie (71e)','4 essais : Mauvaka (3e, 32e), Ntamack (12e), Penaud (67e)
-4 transformations : Jaminet (4e, 13e, 33e, 68e)
-4 pénalités : Jaminet (26e, 55e, 64e, 80e)','3 essais : Barrett (47e), R. Ioane (50e), Savea (58e)
-2 transformations : Barrett (51e, 59e)
-2 pénalités : Barrett (7e, 10e)','','Savea (63e)','','','','-','-','-','-') ?>

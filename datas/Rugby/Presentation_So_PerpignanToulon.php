@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Vendredi 10 septembre','20h30','Perpignan','Toulon','Stade Matmut Atlantique','M. Dumoulin','Jean-Louis Gasset','dsFAEF F  FA F','Jacques Chancel','sdfg sdfgsdf gsdf gsdf','','','','','','','','','','','3','0','1','4','Equipe','','2 /"' 5 pts','5/ ""1 pts') ?>

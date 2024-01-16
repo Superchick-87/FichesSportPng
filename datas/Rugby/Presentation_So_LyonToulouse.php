@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Samedi 28 août','17h27','Lyon','Toulouse','Stade Matmut Atlantique','M. Dumoulin','Jean-Louis Gasset','Rédaction','Jacques Chancel','Dsi','','','','','','','','','','','8','0','0','8','CanalPlusSport','','','') ?>

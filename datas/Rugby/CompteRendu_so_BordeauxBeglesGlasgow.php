@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('Samedi 7 janvier','17h44','Bordeaux-Bègles','Glasgow','TEST','TEST','2','test','vv','1-0','0-0','dd','XX','dd','XX','XX','XX','XX','XX','XX','XX','XX','-','-','-','-') ?>

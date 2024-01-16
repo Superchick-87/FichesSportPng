@@ -1,4 +1,0 @@
-<?php $DatasFront=array ('Dimanche 6 février','16h00','France','Italie','Saint-Denis (Stade de France)','Mike Adamson (ECO)','78750','frais','bon','37-10','18-10','Fabien Galthié','Baille par Gros (50e), Atonio par Bamba (50e), Willemse par Taofifenua (56e), Danty par Moefana (58e), J. Marchand par Mauvaka (58e), Dupont par Lucu (70e), Alldritt par Cros (70e), Jaminet par Ramos (75e)','Kierna Crowley','Fischetti par Nemer (50e), Cannone par Fuser (50e), Lucchesi par Faiva (50e), Pasquali par Zilocchi (50e), Halafihi par Pettinelli (56e), Menoncello par Marin (58e), Ruzza par Cannone (66e), Varney par Braley (66e), Negri par Zuliani (70e)','5 essais : Jelonch (25e), Villière (40e, 48e, 81e), Penaud (67e).
-3 transformations : Jaminet (41e, 69e), Ntamack (82e).
-2 pénalités : Jaminet (4e, 33e)','1 essai : Menoncello (16e).
-1 transformation : Garbisi (17e)','','Garbisi (29e)','','','','-','-','-','-') ?>
