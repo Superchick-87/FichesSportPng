@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('2024-01-14','','Bayonne','Castres','TEST','MMcccvvvcc','Entraîneur 1',' Faites ce que vous devez faire avec le fichier ici','Entraîneur 2',' Faites ce que vous devez faire avec le fichier ici Faites ce que vous devez faire avec le fichier ici','','','','','','','','','','','1','4','12','17','RugbyPlus','','20e / 56 pts','v18ve / 46 pts') ?>

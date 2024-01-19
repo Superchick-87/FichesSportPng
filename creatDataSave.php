@@ -1,4 +1,6 @@
 ﻿<?php
+
+
 $Championnat = $_GET['Championnat'];
 $editeur = $_GET['Editeur'];
 
@@ -219,6 +221,21 @@ $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 // 		<img class="ecussonsverif" src="css/images/clubs/'.$discipline.'/'.ddc($ClubExt).'.png"/></br>
 // 	</div></br>';
 
+
+$nomFichier = 'datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($ClubDom) . '' . ddc($ClubExt) . '.php';
+// echo $nomFichier;
+// Vérifier si le fichier existe
+if (file_exists($nomFichier)) {
+	// Supprimer le fichier
+	if (unlink($nomFichier)) {
+		echo "Le fichier a été supprimé avec succès.";
+	} else {
+		echo "Erreur lors de la suppression du fichier.";
+	}
+} else {
+	echo "Le fichier n'existe pas.";
+}
+
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 // ::::::::::::: FABRICATION FICHIER CSV POUR JS-> INJECTION DONNEES  :::::::::::::
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -273,7 +290,7 @@ fclose($fichier_csv);
 
 $fichierv = fopen("datas/" . $discipline . "/Presentation_" . $editeur . "_" . ddc($ClubDom) . "" . ddc($ClubExt) . ".php", 'w+');
 $big = '$DatasFront';
-$texte = ("<?php " . $big . "=array ('" . dateToFrench($Date, 'l j F') . "','" . HdeHeure($Horaire) . "','" . apostropheencode($ClubDom) . "','" . apostropheencode($ClubExt) . "','" . $Lieu . "','" . apostropheencode($Arbitre) . "','" . apostropheencode($SelectionneursD) . "','" . apostropheencode($RemplacantsD) . "','" . apostropheencode($SelectionneursE) . "','" . apostropheencode($RemplacantsE) . "','" . $SerieDom1 . "','" . $SerieDom2 . "','" . $SerieDom3 . "','" . $SerieDom4 . "','" . $SerieDom5 . "','" . $SerieExt1 . "','" . $SerieExt2 . "','" . $SerieExt3 . "','" . $SerieExt4 . "','" . $SerieExt5 . "','" . $VictoiresDom . "','" . $Nuls . "','" . $VictoiresExt . "','" . $TotalConfrontations . "','" . $tv[0] . "','" . $tv[1] . "','" . $ClassScoreDom . "','" . $ClassScoreExt . "') ?>");
+$texte = ("<?php " . $big . "=array ('" . $Date . "','" . HdeHeure($Horaire) . "','" . apostropheencode($ClubDom) . "','" . apostropheencode($ClubExt) . "','" . $Lieu . "','" . apostropheencode($Arbitre) . "','" . apostropheencode($SelectionneursD) . "','" . apostropheencode($RemplacantsD) . "','" . apostropheencode($SelectionneursE) . "','" . apostropheencode($RemplacantsE) . "','" . $SerieDom1 . "','" . $SerieDom2 . "','" . $SerieDom3 . "','" . $SerieDom4 . "','" . $SerieDom5 . "','" . $SerieExt1 . "','" . $SerieExt2 . "','" . $SerieExt3 . "','" . $SerieExt4 . "','" . $SerieExt5 . "','" . $VictoiresDom . "','" . $Nuls . "','" . $VictoiresExt . "','" . $TotalConfrontations . "','" . $tv[0] . "','" . $tv[1] . "','" . $ClassScoreDom . "','" . $ClassScoreExt . "') ?>");
 
 fwrite($fichierv, $texte);
 fclose($fichierv);
@@ -283,7 +300,7 @@ fclose($fichierv);
 echo '
 <div id="messageUrl" style="display:block;">
 		<legend>"VISUALISER" pour vérifier votre composition</legend>
-	    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="' . $redirectionPre . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '") target="_blank" />
+	    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="' . $redirectionPre . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '") target="_blank" /> 
 </div>';
 
 $RencontreF = ddc($ClubDom) . "" . ddc($ClubExt);
@@ -302,6 +319,7 @@ function nomFormat($a)
 // include(dirname(__FILE__) . '/pdf_' . nomFormat($format) . '_Presentation.php');
 
 ?>
+
 <!-- <form id="emailForm" name="emailForm" method="post" action="">
 					<legend>"RETOUR" pour modifier votre composition</legend>
 					<div>

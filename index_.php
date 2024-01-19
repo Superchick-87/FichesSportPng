@@ -1,4 +1,6 @@
 <?php
+
+
 $tutu = 'kgkgk';
 $Championnat = urldecode($_GET['Championnat']);
 $editeur = $_GET['editeur'];
@@ -141,6 +143,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 				// changerActionSave();
 			}
 			switchFootRugbyOther();
+			restricChoixCheckBox();
 		};
 
 		/* Methode GET -> passe une seule variable */
@@ -187,12 +190,18 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 	};
 </script>
 <script type="text/javascript">
-	$('.single-checkbox').on('change', function() {
-		if ($('.single-checkbox:checked').length > 2) {
-			this.checked = false;
-		}
-	});
+	/**
+	 * Sert à restrindre le choix des télés à 2
+	 */
+	function restricChoixCheckBox() {
+		$('.single-checkbox').on('change', function() {
+			if ($('.single-checkbox:checked').length > 2) {
+				this.checked = false;
+			}
+		});
+	}
 </script>
+
 <script src="js/camelize.js" type="text/javascript"></script>
 <script src="js/affichageSchemaFoot.js" type="text/javascript"></script>
 <script src="js/menuDeroulant.js" type="text/javascript"></script>
