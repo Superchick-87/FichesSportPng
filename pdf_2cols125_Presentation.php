@@ -18,7 +18,7 @@ include(dirname(__FILE__) . '/includes/SinguPluriel_pdf.php');
 include(dirname(__FILE__) . '/includes/colorSet' . $discipline . '_pdf.php');
 include(dirname(__FILE__) . '/includes/colorVictoireDefaite.php');
 include(dirname(__FILE__) . '/includes/Pourcentage.php');
-include(dirname(__FILE__) . '/includes/dateToFrench.php');
+// include(dirname(__FILE__) . '/includes/dateToFrench.php');
 
 
 

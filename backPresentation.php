@@ -3,14 +3,15 @@
 
 $tutu = 'kgkgk';
 // $Championnat = urldecode($_GET['Championnat']);
+$Championnat = $_POST['Championnat'];
 // $Championnat = "Top 14";
-echo $Championnat = $_POST['Championnat'];
+// echo $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
-echo $_POST['choix1'];
-echo $_POST['choix2'];
+// echo $_POST['choix1'];
+// echo $_POST['choix2'];
 $RencontreF = $_POST['choix1'] . '' . $_POST['choix2'];
 // echo '<h1>',$Championnat,'</h1>';
-echo $editeur;
+// echo $editeur;
 // echo $editeur;
 
 
@@ -42,11 +43,6 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 	<script src="js/1121_jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
 </head>
-<!-- /**
-     * Ligne à garder pour V2 - voir bas pour l'autoplementation
-     * <body onload="javascript:affichageSchemaFoot(); menuDeroulant();autocompletion();">
-     */ -->
-
 <body>
 	<header>
 		<!-- <img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
@@ -67,7 +63,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
  =            		FORMULAIRE      	       		=
  =================================================-->
 
-	<form id="Formulaire" method="get" action="verifPresentation.php" style="display:block;">
+	<form id="Formulaire" method="get" action="verifPresentation.php" style="display:block;" name='toto'>
 		<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:block;">
 		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
 		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
@@ -77,30 +73,31 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-		include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.php');
-
-
-
-		// Fonction pour lire un fichier csv
-		// function read($csv)
-		// {
-		// 	$file = fopen($csv, 'r');
-		// 	while (!feof($file)) {
-		// 		$line[] = fgetcsv($file, 1024);
-		// 	}
-		// 	fclose($file);
-		// 	return $line;
-		// }
-		// $csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.csv';
-		// $csv = read($csv);
-		// // echo $csv[2][1];
-		// echo '<pre>';
-		// print_r($csv);
-		// echo '</pre>';
+			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.php');
+			/**
+			 * Fonction pour lire un fichier csv
+			 * si il est présent
+			 */
+			function read($csv)
+			{
+				$file = fopen($csv, 'r');
+				while (!feof($file)) {
+					$line[] = fgetcsv($file, 1024);
+				}
+				fclose($file);
+				return $line;
+			}
+			$csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.csv';
+			if (file_exists($csv)) {
+			$csv = read($csv);}
+			// echo $csv[2][5];
+			// echo '<pre>';
+			// print_r($csv);
+			// echo '</pre>';
 		?>
 		<!--=======================================
- =            PARTIE GENERIQUE             =
- ========================================-->
+		=            PARTIE GENERIQUE             =
+		========================================-->
 
 		<div class="infosHaut">
 			<!-- # -----------  Lieu  ------------->
@@ -148,8 +145,8 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<!--====  End of PARTIE GENERIQUE   ====-->
 
 		<!--=======================================
- =            PARTIE EQUIPE 1             =
- ========================================-->
+		=            PARTIE EQUIPE 1             =
+		========================================-->
 
 		<div class="blocHaut">
 			<div class="equipeGauche">
@@ -178,19 +175,25 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<div style="display:flex; justify-content: space-evenly; align-items: stretch;">
 							<div class="spacearound" style="order: 1;">
 								<label for="EquipeDom' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeDom' . $i . '" name="EquipeDom' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . @$_SESSION["EquipeDom" . $i . ""] . '">
+								<input type="text" id="EquipeDom' . $i . '" name="EquipeDom' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeDom' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . @$_SESSION["EquipeDom" . $i . ""] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] .'">
 							</div>
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeDomCap' . $i . '"><h4>Cap.</h4></label>
-								<select id="EquipeDomCap' . $i . '" name="EquipeDomCap' . $i . '" style="width:50px; height: 34px;">';
+								<select onchange="verifierChamps()" id="EquipeDomCap' . $i . '" name="EquipeDomCap' . $i . '" style="width:50px; height: 34px;">';
 
-					foreach ($capitaines as $capitaine) {
-						echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '">' . $capitaine . '</option>';
-					};
+								foreach ($capitaines as $capitaine) {
+									if ($csv[$i][6] == "(C)") {
+										$selected_D = ($capitaine == "(C)") ? "selected" : "";
+										echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" '.$selected_D.' onchange="verifierChamps()">' . $capitaine . '</option>';
+									}
+									else {
+										echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" onchange="verifierChamps()">' . $capitaine . '</option>';
+									}
+								};
 					echo '</select>
 								</div>
 							</div>';
@@ -235,7 +238,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					<h4 class="match"> Match ' . $i . '</h4>
 					<select class="SerieDom" name="SerieDom' . $i . '" onchange="Function(this.value);" required onchange="verifierChamps()">';
 					foreach ($series as $serie) {
-						echo '<option value="' . $serie . '" name="' . $serie . '">' . $serie . '</option>';
+						echo '<option value="' . @$serie . '" name="' . @$serie . '">' . @$serie . '</option>';
 					};
 					echo '</select>
 					</div>';
@@ -276,23 +279,30 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<div class="colChamps">
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeExt' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . @$_SESSION["EquipeExt" . $i . ""] . '">
+								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i+($entrees-1)][5] .'">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeExt' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . @$_SESSION["EquipeExt" . $i . ""] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] . '">
 							</div>
 							<div class="spacearound" style="order: 1;">
 								<label for="EquipeExtCap' . $i . '"><h4>Cap.</h4></label>
-								<select id="EquipeExtCap' . $i . '" name="EquipeExtCap' . $i . '" style="width:50px; height: 34px;">';
+								<select onchange="verifierChamps()" id="EquipeExtCap' . $i . '" name="EquipeExtCap' . $i . '" style="width:50px; height: 34px;">';
 
-					foreach ($capitaines as $capitaine) {
-						echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '">' . $capitaine . '</option>';
-					};
-					echo '</select>
-								</div>
-							</div>';
+						foreach ($capitaines as $capitaine) {
+							if ($csv[$i+($entrees-1)][6] == "(C)") {
+								$selected_E = ($capitaine == "(C)") ? "selected" : "";
+								echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" '.$selected_E.' >' . $capitaine . '</option>';
+							}
+							else {
+								echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" >' . $capitaine . '</option>';
+							}
+						};
+						echo '</select>
+									</div>
+								</div>';
 				};
+				
 				?>
 
 				<!-- # -----------  FIN AFFICHAGE CHAMPS JOUEURS EQUIPE 2  ------------->
@@ -346,8 +356,8 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<!--====  End of PARTIE EQUIPE 2   ====-->
 
 		<!--=======================================
- =            CONFRONTATIONS             =
- =======================================-->
+		=            CONFRONTATIONS             =
+		=======================================-->
 		<div class="ListeChampionnats">
 			<h2>Les dernières confrontations</h2>
 			<div class="flexConfrontations ListeChampionnats">

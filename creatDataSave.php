@@ -1,5 +1,6 @@
-﻿<?php
-
+﻿
+<?php
+// echo $_GET['SAVE'];
 
 $Championnat = $_GET['Championnat'];
 $editeur = $_GET['Editeur'];
@@ -110,6 +111,7 @@ $EquipeDomCap13 = $_GET["EquipeDomCap13"];
 $EquipeDomCap14 = $_GET["EquipeDomCap14"];
 $EquipeDomCap15 = $_GET["EquipeDomCap15"];
 
+echo '<h1>'.$EquipeDomCap15.'</h1>';
 /*----------  Sélectionneurs & Remplaçants  ----------*/
 
 $SelectionneursD = $_GET["SelectionneursD"];
@@ -304,7 +306,7 @@ echo '
 </div>';
 
 $RencontreF = ddc($ClubDom) . "" . ddc($ClubExt);
-// echo $RencontreF;
+echo $RencontreF;
 // echo $discipline;
 
 function nomFormat($a)
@@ -316,7 +318,7 @@ function nomFormat($a)
 // echo nomFormat($format);
 // echo $format;
 // $toto = nomFormat($format);
-// include(dirname(__FILE__) . '/pdf_' . nomFormat($format) . '_Presentation.php');
+include(dirname(__FILE__) . '/pdf_' . nomFormat($format) . '_Presentation.php');
 
 ?>
 

@@ -1,1 +1,1 @@
-<?php $DatasFront=array ('2024-01-20','19h34','Bayonne','Montpellier','TESTxxxx','vvvvvv','Entraîneur 1','Remplaçants 1','Entraîneur 2','Remplaçants 2','','','','','','','','','','','1','2','6','9','','','13e / 56 pts','18e / 46 pts') ?>
+<?php $DatasFront=array ('2024-01-20','19h34','Bayonne','Montpellier','TESTxxxx','vvvvvv','Entraîneur 1x','Remplaçants 1mmm','cEntraîneur 2','Remplaçants 2cWccs','','','','','','','','','','','1','5','6','12','CanalPlus','Equipe','13e / 56 pts','cx18e / 46 ptsc') ?>

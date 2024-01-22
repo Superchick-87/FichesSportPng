@@ -103,6 +103,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 	</div>
 
+
 	<!--=====================================================
 	=            		FIN FORMULAIRE      	       		=
 	======================================================-->
@@ -281,11 +282,11 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		var boutonContainer = document.getElementById('boutonContainer');
 		if (tousNonVides) {
 			// Tous les champs requis sont non vides, afficher le bouton
-			boutonContainer.innerHTML = '<input id="save" type="submit" onclick="supprimerTousRequired(); changerActionSave();" value="SAVE"/>' +
-				'<input id="validezback" type="submit" value="VALIDEZ"/>';
+			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); " value="SAVE"/>' +
+				'<input id="validezback" type="submit" name="VALIDEZ" value="VALIDEZ"/>';
 		} else {
 			// Au moins un champ requis est vide, masquer le bouton
-			boutonContainer.innerHTML = '<input id="save" type="submit" onclick="supprimerTousRequired(); changerActionSave();" value="SAVE"/>';
+			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); " value="SAVE"/>';
 		}
 	};
 </script>

@@ -1,10 +1,12 @@
 ﻿<?php
-session_start();
-if (!isset($_SESSION['count'])) {
-  $_SESSION['count'] = 0;
-} else {
-  $_SESSION['count']++;
-}
+$valid = $_GET['VALIDEZ'];
+$sav = $_GET['SAVE'];
+// echo $valid;
+
+// if (isset($sav)) {
+// 	echo $sav;
+// }
+
 ?>
 <?php
 	$Championnat = $_GET['Championnat'];
@@ -36,8 +38,6 @@ if (!isset($_SESSION['count'])) {
 	 * Présentation
 	 * Compte rendu
 	 */
-
-	// $when = ddc($_GET['When'];
 
 /*----------  INFOS GENERIQUE ET AFFICHAGE  ----------*/
 
@@ -185,10 +185,10 @@ if (!isset($_SESSION['count'])) {
 	$RemplacantsE=$_GET["RemplacantsE"];
 	
 
-	for ($i=1; $i < $entrees; $i++) { 
-		setcookie("EquipeDom".$i."", $_GET['EquipeDom'.$i.''], time() + 24*3600);
-		setcookie("EquipeExt".$i."", $_GET['EquipeExt'.$i.''], time() + 24*3600);
-	}
+	// for ($i=1; $i < $entrees; $i++) { 
+	// 	setcookie("EquipeDom".$i."", $_GET['EquipeDom'.$i.''], time() + 24*3600);
+	// 	setcookie("EquipeExt".$i."", $_GET['EquipeExt'.$i.''], time() + 24*3600);
+	// }
 
 	/*----------  CLASSEMENT / PTS OU SCORE  ----------*/
 
@@ -210,11 +210,15 @@ if (!isset($_SESSION['count'])) {
 	$SerieExt5=$_GET["SerieExt5"];
 
 	/*----------  CONFRONTATIONS  ----------*/
-	
+	function val_Min($x){
+		if ($x = '') {
+			return $x = 0;
+		}
+	}
 	$VictoiresDom=$_GET["VictoiresDom"];
 	$Nuls=$_GET["Nuls"];
 	$VictoiresExt=$_GET["VictoiresExt"];
-	$TotalConfrontations=$VictoiresDom+$Nuls+$VictoiresExt;
+	$TotalConfrontations=val_Min($VictoiresDom)+val_Min($Nuls)+val_Min($VictoiresExt);
 
 /*=====  End of RECUPERATION DES DONNEES  ======*/
 
@@ -227,7 +231,7 @@ if (!isset($_SESSION['count'])) {
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 		<link rel="stylesheet" href="/resources/demos/style.css">
+ 		<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
  		<link rel="stylesheet" type="text/css" href="css/style.css">
  		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="js/1121_jquery-ui.js"></script>
@@ -239,7 +243,6 @@ if (!isset($_SESSION['count'])) {
 		<img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
 	<header>
 		<h1><?php echo $Championnat; ?><br>Présentation</h1>
-		<h2>Back-office</h2>
 		<hr  class="separation">
 	</header>
 	<div id="resultat">
@@ -265,15 +268,15 @@ if (!isset($_SESSION['count'])) {
 	// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
 	// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-if ($discipline == 'Foot') {
-	include (dirname(__FILE__).'/includes/footTactique.php');
-}
-if ($discipline == 'Rugby') {
-	include (dirname(__FILE__).'/includes/rugbyTactique.php');
-}
-if ($discipline == 'Basket') {
-	include (dirname(__FILE__).'/includes/basketTactique.php');
-}
+		if ($discipline == 'Foot') {
+			include (dirname(__FILE__).'/includes/footTactique.php');
+		}
+		if ($discipline == 'Rugby') {
+			include (dirname(__FILE__).'/includes/rugbyTactique.php');
+		}
+		if ($discipline == 'Basket') {
+			include (dirname(__FILE__).'/includes/basketTactique.php');
+		}
 
 
 		// Paramétrage de l'écriture du futur fichier CSV
@@ -299,53 +302,53 @@ if ($discipline == 'Basket') {
 		// fermeture du fichier csv
 		fclose($fichier_csv);
 
-	// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-	// :::::: FABRICATION FICHIER PHP ARRAY POUR AFFICHAGE FRONT -> INJECTION DONNEES ::::::
-	// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+		// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		// :::::: FABRICATION FICHIER PHP ARRAY POUR AFFICHAGE FRONT -> INJECTION DONNEES ::::::
+		// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		function val_Null($x){
+			if ($x = null) {
+				return $x = '';
+			}
+		}
 		$fichierv = fopen("datas/".$discipline."/Presentation_".$editeur."_".ddc($ClubDom)."".ddc($ClubExt).".php", 'w+');
 		$big='$DatasFront';
-		$texte=("<?php ".$big."=array ('".dateToFrench($Date,'l j F')."','".HdeHeure($Horaire)."','".apostropheencode($ClubDom)."','".apostropheencode($ClubExt)."','".$Lieu."','".apostropheencode($Arbitre)."','".apostropheencode($SelectionneursD)."','".apostropheencode($RemplacantsD)."','".apostropheencode($SelectionneursE)."','".apostropheencode($RemplacantsE)."','".$SerieDom1."','".$SerieDom2."','".$SerieDom3."','".$SerieDom4."','".$SerieDom5."','".$SerieExt1."','".$SerieExt2."','".$SerieExt3."','".$SerieExt4."','".$SerieExt5."','".$VictoiresDom."','".$Nuls."','".$VictoiresExt."','".$TotalConfrontations."','".$tv[0]."','".$tv[1]."','".$ClassScoreDom."','".$ClassScoreExt."') ?>");
-
+		$texte=("<?php ".$big."=array ('".val_Null($Date)."','".val_Null(HdeHeure($Horaire))."','".apostropheencode($ClubDom)."','".apostropheencode($ClubExt)."','".val_Null($Lieu)."','".val_Null(apostropheencode($Arbitre))."','".val_Null(apostropheencode($SelectionneursD))."','".val_Null(apostropheencode($RemplacantsD))."','".val_Null(apostropheencode($SelectionneursE))."','".val_Null(apostropheencode($RemplacantsE))."','".$SerieDom1."','".$SerieDom2."','".$SerieDom3."','".$SerieDom4."','".$SerieDom5."','".$SerieExt1."','".$SerieExt2."','".$SerieExt3."','".$SerieExt4."','".$SerieExt5."','".val_Null($VictoiresDom)."','".val_Null($Nuls)."','".val_Null($VictoiresExt)."','".$TotalConfrontations."','".val_Null($tv[0])."','".val_Null($tv[1])."','".val_Null($ClassScoreDom)."','".val_Null($ClassScoreExt)."') ?>");
+		/*$texte=("<?php ".$big."=array ('".dateToFrench($Date,'l j F')."','".HdeHeure($Horaire)."','".apostropheencode($ClubDom)."','".apostropheencode($ClubExt)."','".$Lieu."','".apostropheencode($Arbitre)."','".apostropheencode($SelectionneursD)."','".apostropheencode($RemplacantsD)."','".apostropheencode($SelectionneursE)."','".apostropheencode($RemplacantsE)."','".$SerieDom1."','".$SerieDom2."','".$SerieDom3."','".$SerieDom4."','".$SerieDom5."','".$SerieExt1."','".$SerieExt2."','".$SerieExt3."','".$SerieExt4."','".$SerieExt5."','".$VictoiresDom."','".$Nuls."','".$VictoiresExt."','".$TotalConfrontations."','".$tv[0]."','".$tv[1]."','".$ClassScoreDom."','".$ClassScoreExt."') ?>");
+		*/
 		fwrite($fichierv,$texte);
 		fclose($fichierv);
-
-
-				
-		echo '
-		<div id="messageUrl" style="display:block;">
-				<legend>"VISUALISER" pour vérifier votre composition</legend>
-			    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'") target="_blank" />
-			    <legend>Copier / coller l\'iframe dans votre article pour le web</legend>
-			    <textarea onclick="this.select();" class="iframearea"> &lt;iframe src="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'" border="0" '.tailleiframe($editeur).'"&gt;&lt;/iframe></textarea>
-		</div>';
 	?>
 </div>
 
-		<?php
+<?php
+		echo '
+		<div id="messageUrl" style="display:block;">
+		<legend>"VISUALISER" pour vérifier votre composition</legend>
+		<input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'") target="_blank" />
+		</div>';
 		$RencontreF = ddc($ClubDom)."".ddc($ClubExt);
-		// echo $RencontreF;
-		// echo $discipline;
-		
 		function nomFormat($a){
 			$a = str_replace(' ','', $a);
 			$a = str_replace('x','', $a);
 			return $a;	
 		}
-		// echo nomFormat($format);
-		// echo $format;
-		// $toto = nomFormat($format);
-		include (dirname(__FILE__).'/pdf_'.nomFormat($format).'_Presentation.php');
+		if (isset($valid)) {
+			echo '
+				<div id="messageUrl" style="display:block;">
+					<legend>Copier / coller l\'iframe dans votre article pour le web</legend>
+					<textarea onclick="this.select();" class="iframearea"> &lt;iframe src="'.$redirectionPre.''.ddc($ClubDom).''.ddc($ClubExt).'&Discipline='.$discipline.'&Editeur='.$editeur.'" border="0" '.tailleiframe($editeur).'"&gt;&lt;/iframe></textarea>
+				</div>';
+			include (dirname(__FILE__).'/pdf_'.nomFormat($format).'_Presentation.php');
+		};
 		
-			?>
-			<form id="emailForm" name="emailForm" method="post" action="">
-					<legend>"RETOUR" pour modifier votre composition</legend>
-					<div>
-					<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)'/>
-					<!-- <input onclick="change_class()" name="SubmitBtn" type="submit" id="submitBtn" value="VALIDER"> -->
-					</div>
-			</form>
-
+			
+	?>
+	<!-- <form id="emailForm" name="emailForm" method="post" action="">
+			<legend>"RETOUR" pour modifier votre composition</legend>
+			<div>
+			<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)'/>
+			</div>
+	</form> -->
 	</body>
 	<footer style="background-image:url(css/images/signature<?php echo $editeur;?>.svg);"></footer>
 
