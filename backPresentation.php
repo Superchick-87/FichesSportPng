@@ -9,7 +9,8 @@ $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
 // echo $_POST['choix1'];
 // echo $_POST['choix2'];
-$RencontreF = $_POST['choix1'] . '' . $_POST['choix2'];
+$RencontreF = $_POST['choix1'] . ' ' . $_POST['choix2'];
+
 // echo '<h1>',$Championnat,'</h1>';
 // echo $editeur;
 // echo $editeur;
@@ -24,7 +25,7 @@ include(dirname(__FILE__) . '/includes/choixCompetition.php');
 include(dirname(__FILE__) . '/includes/Formts.php');
 include(dirname(__FILE__) . '/includes/tvs.php');
 include(dirname(__FILE__) . '/includes/HdeHeure.php');
-
+echo ddc($RencontreF);
 
 ?>
 <!DOCTYPE html>
@@ -43,6 +44,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 	<script src="js/1121_jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
 </head>
+
 <body>
 	<header>
 		<!-- <img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
@@ -64,7 +66,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
  =================================================-->
 
 	<form id="Formulaire" method="get" action="verifPresentation.php" style="display:block;" name='toto'>
-		<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:block;">
+		<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:none;">
 		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
 		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
 		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:none;">
@@ -73,27 +75,45 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.php');
-			/**
-			 * Fonction pour lire un fichier csv
-			 * si il est présent
-			 */
-			function read($csv)
-			{
-				$file = fopen($csv, 'r');
-				while (!feof($file)) {
-					$line[] = fgetcsv($file, 1024);
-				}
-				fclose($file);
-				return $line;
+		$nom_fichier = 'Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php';
+		if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
+			echo '<h2>' . "Cette fiche est en cours" . '</h2>';
+			echo '</br>';
+			// echo $nom_fichier;
+			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
+		} else {
+			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
+			echo '</br>';
+			// echo $nom_fichier;
+			$fichierv = fopen("datas/" . $discipline . "/Presentation_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
+			$big = '$DatasFront';
+			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
+			fwrite($fichierv, $texte);
+			fclose($fichierv);
+		}
+		include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
+
+		/**
+		 * Fonction pour lire un fichier csv
+		 * si il est présent
+		 */
+		function read($csv)
+		{
+			$file = fopen($csv, 'r');
+			while (!feof($file)) {
+				$line[] = fgetcsv($file, 1024);
 			}
-			$csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . $RencontreF . '.csv';
-			if (file_exists($csv)) {
-			$csv = read($csv);}
-			// echo $csv[2][5];
-			// echo '<pre>';
-			// print_r($csv);
-			// echo '</pre>';
+			fclose($file);
+			return $line;
+		}
+		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+		if (file_exists($csv)) {
+			$csv = read($csv);
+		}
+		// echo $csv[2][5];
+		// echo '<pre>';
+		// print_r($csv);
+		// echo '</pre>';
 		?>
 		<!--=======================================
 		=            PARTIE GENERIQUE             =
@@ -179,21 +199,20 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeDom' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] .'">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] . '">
 							</div>
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeDomCap' . $i . '"><h4>Cap.</h4></label>
 								<select onchange="verifierChamps()" id="EquipeDomCap' . $i . '" name="EquipeDomCap' . $i . '" style="width:50px; height: 34px;">';
 
-								foreach ($capitaines as $capitaine) {
-									if ($csv[$i][6] == "(C)") {
-										$selected_D = ($capitaine == "(C)") ? "selected" : "";
-										echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" '.$selected_D.' onchange="verifierChamps()">' . $capitaine . '</option>';
-									}
-									else {
-										echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" onchange="verifierChamps()">' . $capitaine . '</option>';
-									}
-								};
+					foreach ($capitaines as $capitaine) {
+						if ($csv[$i][6] == "(C)") {
+							$selected_D = ($capitaine == "(C)") ? "selected" : "";
+							echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" ' . $selected_D . ' onchange="verifierChamps()">' . $capitaine . '</option>';
+						} else {
+							echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" onchange="verifierChamps()">' . $capitaine . '</option>';
+						}
+					};
 					echo '</select>
 								</div>
 							</div>';
@@ -279,7 +298,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<div class="colChamps">
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeExt' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i+($entrees-1)][5] .'">
+								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][5] . '">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeExt' . $i . '"><h4>N°</h4></label>
@@ -289,20 +308,19 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 								<label for="EquipeExtCap' . $i . '"><h4>Cap.</h4></label>
 								<select onchange="verifierChamps()" id="EquipeExtCap' . $i . '" name="EquipeExtCap' . $i . '" style="width:50px; height: 34px;">';
 
-						foreach ($capitaines as $capitaine) {
-							if ($csv[$i+($entrees-1)][6] == "(C)") {
-								$selected_E = ($capitaine == "(C)") ? "selected" : "";
-								echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" '.$selected_E.' >' . $capitaine . '</option>';
-							}
-							else {
-								echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" >' . $capitaine . '</option>';
-							}
-						};
-						echo '</select>
+					foreach ($capitaines as $capitaine) {
+						if ($csv[$i + ($entrees - 1)][6] == "(C)") {
+							$selected_E = ($capitaine == "(C)") ? "selected" : "";
+							echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" ' . $selected_E . ' >' . $capitaine . '</option>';
+						} else {
+							echo '<option value="' . $capitaine . '" id="selDom' . $capitaine, $i . '" name="' . $capitaine . '" >' . $capitaine . '</option>';
+						}
+					};
+					echo '</select>
 									</div>
 								</div>';
 				};
-				
+
 				?>
 
 				<!-- # -----------  FIN AFFICHAGE CHAMPS JOUEURS EQUIPE 2  ------------->

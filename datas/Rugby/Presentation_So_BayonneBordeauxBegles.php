@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('2024-02-15','16h12','Bayonne','Bordeaux-Bègles','TEST','TEST','Entraîneur 1','','','','','','','','','','','','','','0','4','8','12','RmcSport','Tf1','13e / 56 pts','18e / 46 pts') ?>
