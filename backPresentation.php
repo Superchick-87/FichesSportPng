@@ -69,8 +69,8 @@ echo ddc($RencontreF);
 		<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:none;">
 		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
 		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
-		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:none;">
-		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:none;">
+		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:block;">
+		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:block;">
 		<?php echo '<input id="Championnat" name="Championnat" value= "' . $Championnat . '" style="display:none;">' ?>
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
@@ -87,7 +87,7 @@ echo ddc($RencontreF);
 			// echo $nom_fichier;
 			$fichierv = fopen("datas/" . $discipline . "/Presentation_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
 			$big = '$DatasFront';
-			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
+			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
 			fwrite($fichierv, $texte);
 			fclose($fichierv);
 		}
@@ -176,16 +176,22 @@ echo ddc($RencontreF);
 
 				<div id="schemaTac1" style="">
 					<h3>Schéma tactique</h3>
-					<select id="schemaTacSel1" name="schemaTactique1" class="largeurInput" onchange="affichageSchemaFoot();">
-						<?php
-						foreach ($schemaTactique as $schemaTactiq) {
-							echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema">' . $schemaTactiq . '</option>';
-						};
+					<select id="schemaTacSel1" name="schemaTactique1" class="largeurInput" onchange="affichageSchemaFoot(); verifierChamps();">
+						<?php 
+							foreach ($schemaTactique as $schemaTactiq) {
+								if ($schemaTactiq == $DatasFront[28]) {
+									$selected_D = ($schemaTactiq == $DatasFront[28]) ? "selected" : "";
+									echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
+								}	
+								else {
+									
+									echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
+								}
+							};
 						?>
 					</select>
 				</div>
 				<img onselect="affichageSchemaFoot();" id="schemaTacSel1Visu" class="tactiqueGauche" src="" /></td>
-
 				<!-- # -----------  FIN OPTION FOOT SCHEMA  ------------->
 
 				<!-- # -----------  AFFICHAGE CHAMPS JOUEURS EQUIPE 1  ------------->
@@ -279,11 +285,19 @@ echo ddc($RencontreF);
 
 				<div id="schemaTac2" style="">
 					<h3>Schéma tactique</h3>
-					<select id="schemaTacSel2" name="schemaTactique2" class="largeurInput" onchange="affichageSchemaFoot();">';
-						<?php
-						foreach ($schemaTactique as $schemaTactiq) {
-							echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '">' . $schemaTactiq . '</option>';
-						};
+					<select id="schemaTacSel2" name="schemaTactique2" class="largeurInput" onchange="affichageSchemaFoot(); verifierChamps();">';
+					
+						<?php 
+							foreach ($schemaTactique as $schemaTactiq) {
+								if ($schemaTactiq == $DatasFront[29]) {
+									$selected_D = ($schemaTactiq == $DatasFront[29]) ? "selected" : "";
+									echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
+								}	
+								else {
+									
+									echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
+								}
+							};
 						?>
 					</select>
 				</div>

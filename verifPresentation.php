@@ -294,7 +294,7 @@ $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 		// // vous devez impérativement utiliser la ligne ci-dessous pour corriger
 		// // les problèmes d'affichage des caractères internationaux (les accents par exemple)
 		// fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
-		print_r($lignes);
+		// print_r($lignes);
 		// Boucle foreach sur chaque ligne du tableau
 		foreach ($lignes as $ligne) {
 			// chaque ligne en cours de lecture est insérée dans le fichier
@@ -318,7 +318,7 @@ $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 		$big = '$DatasFront';
 		/*$texte=("<?php ".$big."=array ('".val_Null($Date)."','".val_Null(HdeHeure($Horaire))."','".apostropheencode($ClubDom)."','".apostropheencode($ClubExt)."','".val_Null($Lieu)."','".val_Null(apostropheencode($Arbitre))."','".val_Null(apostropheencode($SelectionneursD))."','".val_Null(apostropheencode($RemplacantsD))."','".val_Null(apostropheencode($SelectionneursE))."','".val_Null(apostropheencode($RemplacantsE))."','".$SerieDom1."','".$SerieDom2."','".$SerieDom3."','".$SerieDom4."','".$SerieDom5."','".$SerieExt1."','".$SerieExt2."','".$SerieExt3."','".$SerieExt4."','".$SerieExt5."','".val_Null($VictoiresDom)."','".val_Null($Nuls)."','".val_Null($VictoiresExt)."','".$TotalConfrontations."','".val_Null($tv[0])."','".val_Null($tv[1])."','".val_Null($ClassScoreDom)."','".val_Null($ClassScoreExt)."') ?>");
 		*/
-		$texte = ("<?php " . $big . "=array ('" . $Date . "','" . HdeHeure($Horaire) . "','" . apostropheencode($ClubDom) . "','" . apostropheencode($ClubExt) . "','" . $Lieu . "','" . apostropheencode($Arbitre) . "','" . apostropheencode($SelectionneursD) . "','" . apostropheencode($RemplacantsD) . "','" . apostropheencode($SelectionneursE) . "','" . apostropheencode($RemplacantsE) . "','" . $SerieDom1 . "','" . $SerieDom2 . "','" . $SerieDom3 . "','" . $SerieDom4 . "','" . $SerieDom5 . "','" . $SerieExt1 . "','" . $SerieExt2 . "','" . $SerieExt3 . "','" . $SerieExt4 . "','" . $SerieExt5 . "','" . $VictoiresDom . "','" . $Nuls . "','" . $VictoiresExt . "','" . $TotalConfrontations . "','" . $tv[0] . "','" . $tv[1] . "','" . $ClassScoreDom . "','" . $ClassScoreExt . "') ?>");
+		$texte = ("<?php " . $big . "=array ('" . $Date . "','" . HdeHeure($Horaire) . "','" . apostropheencode($ClubDom) . "','" . apostropheencode($ClubExt) . "','" . $Lieu . "','" . apostropheencode($Arbitre) . "','" . apostropheencode($SelectionneursD) . "','" . apostropheencode($RemplacantsD) . "','" . apostropheencode($SelectionneursE) . "','" . apostropheencode($RemplacantsE) . "','" . $SerieDom1 . "','" . $SerieDom2 . "','" . $SerieDom3 . "','" . $SerieDom4 . "','" . $SerieDom5 . "','" . $SerieExt1 . "','" . $SerieExt2 . "','" . $SerieExt3 . "','" . $SerieExt4 . "','" . $SerieExt5 . "','" . $VictoiresDom . "','" . $Nuls . "','" . $VictoiresExt . "','" . $TotalConfrontations . "','" . $tv[0] . "','" . $tv[1] . "','" . $ClassScoreDom . "','" . $ClassScoreExt . "','" . $tactiqueA . "','" . $tactiqueB . "') ?>");
 
 		fwrite($fichierv, $texte);
 		fclose($fichierv);
