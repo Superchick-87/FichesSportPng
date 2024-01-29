@@ -34,7 +34,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
 </head>
 
-<body onload="javascript:menuDeroulant(); menuDeroulant_M(); masqueTactique(); affichageSchemaFoot(); ">
+<body onload="javascript:menuDeroulant(); menuDeroulant_M(); masqueTactique(); ">
 	<header>
 		<img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
 		<h1><?php echo $Championnat; ?><br>Présentation</h1>
@@ -145,6 +145,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 			}
 			switchFootRugbyOther();
 			restricChoixCheckBox();
+			affichageSchemaFoot(); 
 		};
 
 		/* Methode GET -> passe une seule variable */

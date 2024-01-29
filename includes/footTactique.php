@@ -4,7 +4,21 @@
 ========================================*/
 	$lignes[]=array('picto','xm','ym','xd','yd','Nom','Cap','Numero','Club');	
 /*----------  Equipe Dom  ----------*/
-	if ($tactiqueA == "") {
+	
+if ($tactiqueA == "init") {
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+}	
+if ($tactiqueA == "") {
 		$lignes[] = array('','','','','',$EquipeDom1,$EquipeDomCap1,$EquipeDomNum1,$ClubDom);
 		$lignes[] = array('','','','','',$EquipeDom2,$EquipeDomCap2,$EquipeDomNum2,$ClubDom);
 		$lignes[] = array('','','','','',$EquipeDom3,$EquipeDomCap3,$EquipeDomNum3,$ClubDom);
@@ -136,6 +150,19 @@
 	}
 
 /*----------  Equipe Ext  ----------*/	
+if ($tactiqueB == "init") {
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+	$lignes[] = array('','','','','','','','','');
+}	
 	if ($tactiqueB == "") {
 		$lignes[] = array('','','','','',$EquipeExt1,$EquipeExtCap1,$EquipeExtNum1,$ClubExt);
 		$lignes[] = array('','','','','',$EquipeExt2,$EquipeExtCap2,$EquipeExtNum2,$ClubExt);

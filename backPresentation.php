@@ -75,13 +75,33 @@ echo ddc($RencontreF);
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
+
+
+
+// for ($i = 1; $i <= 12; $i++) {
+//     echo "EquipeDom$i : ${'EquipeDom' . $i}<br>";
+// }
+
 		$nom_fichier = 'Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php';
-		if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
+		/**
+		 * * Vérification fichier datas php
+		 * #1 si présent on l'include
+		 * #2 si absent on crée le fichier php vide
+		 * #3 on l'include
+		 */
+		
+		 /**
+		 * #1 si présent on l'include
+		 */
+		 if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
 			echo '<h2>' . "Cette fiche est en cours" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
 			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
 		} else {
+		 /**
+		 * #2 si absent on crée le fichier php vide
+		 */
 			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
@@ -91,11 +111,17 @@ echo ddc($RencontreF);
 			fwrite($fichierv, $texte);
 			fclose($fichierv);
 		}
+		/**
+		 * #3 on l'include
+		 */
 		include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
 
 		/**
-		 * Fonction pour lire un fichier csv
-		 * si il est présent
+		 * * FIN Vérification fichier datas php
+		 */
+
+		/**
+		 * * Fonction pour lire un fichier csvs
 		 */
 		function read($csv)
 		{
@@ -107,6 +133,53 @@ echo ddc($RencontreF);
 			return $line;
 		}
 		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+		/**
+		 * * Vérification fichier datas csv
+		 * #1 si présent on lit
+		 * #2 si absent on crée le fichier csv vide
+		 * #3 on l'include
+		 */
+		if (!file_exists($csv)) {
+			// $tactiqueA == "";
+			// $tactiqueB == "";
+			if  ($discipline == 'Foot') {
+				
+				for ($i = 1; $i <= 12; $i++) {
+					${"EquipeDom" . $i} = 'toto';
+					${"EquipeDomCap" . $i} = 'toto';
+					${"EquipeDomNum" . $i} = 'toto';
+					${"ClubDom"} = 'toto';
+				
+				}
+				include(dirname(__FILE__) . '/includes/footTactique.php');
+			
+			// Cré un nouveau fichier
+			// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
+			// if ($discipline == 'Rugby') {
+			// 	include(dirname(__FILE__) . '/includes/rugbyTactique.php');
+			// }
+			// if ($discipline == 'Basket') {
+			// 	include(dirname(__FILE__) . '/includes/basketTactique.php');
+			// }
+				
+			
+				// Paramétrage de l'écriture du futur fichier CSV
+				$chemin = 'datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
+
+				$fichier_csv = fopen($chemin, 'w+');
+
+				foreach ($lignes as $ligne) {
+					// chaque ligne en cours de lecture est insérée dans le fichier
+					// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
+					fputcsv($fichier_csv, $ligne, $delimiteur);
+				}
+
+				// fermeture du fichier csv
+			}
+			fclose($fichier_csv);
+			// $csv = read($csv);
+		}
 		if (file_exists($csv)) {
 			$csv = read($csv);
 		}
