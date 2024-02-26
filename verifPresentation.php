@@ -216,9 +216,9 @@ function val_Min($x)
 		return $x = 0;
 	}
 }
-$VictoiresDom = $_GET["VictoiresDom"];
-$Nuls = $_GET["Nuls"];
-$VictoiresExt = $_GET["VictoiresExt"];
+$VictoiresDom = val_Min($_GET["VictoiresDom"]);
+$Nuls = val_Min($_GET["Nuls"]);
+$VictoiresExt = val_Min($_GET["VictoiresExt"]);
 $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 
 /*=====  End of RECUPERATION DES DONNEES  ======*/

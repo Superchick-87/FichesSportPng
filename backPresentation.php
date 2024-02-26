@@ -140,17 +140,28 @@ echo ddc($RencontreF);
 		 * #3 on l'include
 		 */
 		if (!file_exists($csv)) {
-			// $tactiqueA == "";
-			// $tactiqueB == "";
 			if  ($discipline == 'Foot') {
 				
 				for ($i = 1; $i <= 12; $i++) {
-					${"EquipeDom" . $i} = 'toto';
-					${"EquipeDomCap" . $i} = 'toto';
-					${"EquipeDomNum" . $i} = 'toto';
-					${"ClubDom"} = 'toto';
-				
+					${"EquipeDom" . $i} = '';
+					${"EquipeDomCap" . $i} = '';
+					${"EquipeDomNum" . $i} = '';
+					${"ClubDom"} = '';
+					
 				}
+				for ($i = 1; $i <= 12; $i++) {
+					${"EquipeExt" . $i} = '';
+					${"EquipeExtCap" . $i} = '';
+					${"EquipeExtNum" . $i} = '';
+					${"ClubExt"} = '';
+					
+				}
+				/**
+				 * !REGLER LE PROBLEME DE VARIABLES QUI S'AFFICHENT EN ERREUR
+				 */
+				$tactiqueA == "w";
+					$tactiqueB == "";
+				
 				include(dirname(__FILE__) . '/includes/footTactique.php');
 			
 			// Cré un nouveau fichier
@@ -177,7 +188,7 @@ echo ddc($RencontreF);
 
 				// fermeture du fichier csv
 			}
-			fclose($fichier_csv);
+			// fclose($fichier_csv);
 			// $csv = read($csv);
 		}
 		if (file_exists($csv)) {

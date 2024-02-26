@@ -5,31 +5,31 @@
 	$lignes[]=array('picto','xm','ym','xd','yd','Nom','Cap','Numero','Club');	
 /*----------  Equipe Dom  ----------*/
 	
-if ($tactiqueA == "init") {
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-}	
-if ($tactiqueA == "") {
-		$lignes[] = array('','','','','',$EquipeDom1,$EquipeDomCap1,$EquipeDomNum1,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom2,$EquipeDomCap2,$EquipeDomNum2,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom3,$EquipeDomCap3,$EquipeDomNum3,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom4,$EquipeDomCap4,$EquipeDomNum4,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom5,$EquipeDomCap5,$EquipeDomNum5,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom6,$EquipeDomCap6,$EquipeDomNum6,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom7,$EquipeDomCap7,$EquipeDomNum7,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom8,$EquipeDomCap8,$EquipeDomNum8,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom9,$EquipeDomCap9,$EquipeDomNum9,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom10,$EquipeDomCap10,$EquipeDomNum10,$ClubDom);
-		$lignes[] = array('','','','','',$EquipeDom11,$EquipeDomCap11,$EquipeDomNum11,$ClubDom);
+// if ($tactiqueA == "init") {
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array(0,0,0,0,'','','','','');
+// 	$lignes[] = array('0','0','0','0','','','','','');
+// }	
+if ($tactiqueA == "w") {
+		$lignes[] = array('0','0','0','0',$EquipeDom1,$EquipeDomCap1,$EquipeDomNum1,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom2,$EquipeDomCap2,$EquipeDomNum2,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom3,$EquipeDomCap3,$EquipeDomNum3,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom4,$EquipeDomCap4,$EquipeDomNum4,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom5,$EquipeDomCap5,$EquipeDomNum5,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom6,$EquipeDomCap6,$EquipeDomNum6,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom7,$EquipeDomCap7,$EquipeDomNum7,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom8,$EquipeDomCap8,$EquipeDomNum8,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom9,$EquipeDomCap9,$EquipeDomNum9,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom10,$EquipeDomCap10,$EquipeDomNum10,$ClubDom);
+		$lignes[] = array('0','0','0','0',$EquipeDom11,$EquipeDomCap11,$EquipeDomNum11,$ClubDom);
 	}	
 	if ($tactiqueA == "3-4-2-1") {
 		$lignes[] = array('1.5','149','30','34','159',$EquipeDom1,$EquipeDomCap1,$EquipeDomNum1,$ClubDom);
@@ -150,19 +150,19 @@ if ($tactiqueA == "") {
 	}
 
 /*----------  Equipe Ext  ----------*/	
-if ($tactiqueB == "init") {
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-	$lignes[] = array('','','','','','','','','');
-}	
+// if ($tactiqueB == "init") {
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// 	$lignes[] = array('','','','','','','','','');
+// }	
 	if ($tactiqueB == "") {
 		$lignes[] = array('','','','','',$EquipeExt1,$EquipeExtCap1,$EquipeExtNum1,$ClubExt);
 		$lignes[] = array('','','','','',$EquipeExt2,$EquipeExtCap2,$EquipeExtNum2,$ClubExt);
