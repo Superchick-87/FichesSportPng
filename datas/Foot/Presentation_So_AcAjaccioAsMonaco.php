@@ -1,0 +1,1 @@
+<?php $DatasFront=array ('2024-02-10','19h22','AC Ajaccio','AS Monaco','TEST','TEST','Equipe1','x','Equipe2','x','','','','','','','','','','','2','1','16','19','Tf1','','20e / 56 pts','18ve / 46 ptsvv','3-4-3','4-4-2') ?>

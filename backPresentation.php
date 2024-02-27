@@ -78,9 +78,9 @@ echo ddc($RencontreF);
 
 
 
-// for ($i = 1; $i <= 12; $i++) {
-//     echo "EquipeDom$i : ${'EquipeDom' . $i}<br>";
-// }
+		// for ($i = 1; $i <= 12; $i++) {
+		//     echo "EquipeDom$i : ${'EquipeDom' . $i}<br>";
+		// }
 
 		$nom_fichier = 'Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php';
 		/**
@@ -89,19 +89,19 @@ echo ddc($RencontreF);
 		 * #2 si absent on crée le fichier php vide
 		 * #3 on l'include
 		 */
-		
-		 /**
+
+		/**
 		 * #1 si présent on l'include
 		 */
-		 if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
+		if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
 			echo '<h2>' . "Cette fiche est en cours" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
 			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
 		} else {
-		 /**
-		 * #2 si absent on crée le fichier php vide
-		 */
+			/**
+			 * #2 si absent on crée le fichier php vide
+			 */
 			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
@@ -140,40 +140,38 @@ echo ddc($RencontreF);
 		 * #3 on l'include
 		 */
 		if (!file_exists($csv)) {
-			if  ($discipline == 'Foot') {
-				
+			if ($discipline == 'Foot') {
+
 				for ($i = 1; $i <= 12; $i++) {
 					${"EquipeDom" . $i} = '';
 					${"EquipeDomCap" . $i} = '';
 					${"EquipeDomNum" . $i} = '';
 					${"ClubDom"} = '';
-					
 				}
 				for ($i = 1; $i <= 12; $i++) {
 					${"EquipeExt" . $i} = '';
 					${"EquipeExtCap" . $i} = '';
 					${"EquipeExtNum" . $i} = '';
 					${"ClubExt"} = '';
-					
 				}
 				/**
 				 * !REGLER LE PROBLEME DE VARIABLES QUI S'AFFICHENT EN ERREUR
 				 */
 				$tactiqueA == "w";
-					$tactiqueB == "";
-				
+				$tactiqueB == "";
+
 				include(dirname(__FILE__) . '/includes/footTactique.php');
-			
-			// Cré un nouveau fichier
-			// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-			// if ($discipline == 'Rugby') {
-			// 	include(dirname(__FILE__) . '/includes/rugbyTactique.php');
-			// }
-			// if ($discipline == 'Basket') {
-			// 	include(dirname(__FILE__) . '/includes/basketTactique.php');
-			// }
-				
-			
+
+				// Cré un nouveau fichier
+				// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
+				// if ($discipline == 'Rugby') {
+				// 	include(dirname(__FILE__) . '/includes/rugbyTactique.php');
+				// }
+				// if ($discipline == 'Basket') {
+				// 	include(dirname(__FILE__) . '/includes/basketTactique.php');
+				// }
+
+
 				// Paramétrage de l'écriture du futur fichier CSV
 				$chemin = 'datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
 				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
@@ -261,17 +259,16 @@ echo ddc($RencontreF);
 				<div id="schemaTac1" style="">
 					<h3>Schéma tactique</h3>
 					<select id="schemaTacSel1" name="schemaTactique1" class="largeurInput" onchange="affichageSchemaFoot(); verifierChamps();">
-						<?php 
-							foreach ($schemaTactique as $schemaTactiq) {
-								if ($schemaTactiq == $DatasFront[28]) {
-									$selected_D = ($schemaTactiq == $DatasFront[28]) ? "selected" : "";
-									echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
-								}	
-								else {
-									
-									echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
-								}
-							};
+						<?php
+						foreach ($schemaTactique as $schemaTactiq) {
+							if ($schemaTactiq == $DatasFront[28]) {
+								$selected_D = ($schemaTactiq == $DatasFront[28]) ? "selected" : "";
+								echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
+							} else {
+
+								echo '<option value="' . $schemaTactiq . '" id="selDomSchemaA' . $schemaTactiq . '" name="nameDomSchema" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
+							}
+						};
 						?>
 					</select>
 				</div>
@@ -289,7 +286,7 @@ echo ddc($RencontreF);
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeDom' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
 							</div>
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeDomCap' . $i . '"><h4>Cap.</h4></label>
@@ -370,18 +367,17 @@ echo ddc($RencontreF);
 				<div id="schemaTac2" style="">
 					<h3>Schéma tactique</h3>
 					<select id="schemaTacSel2" name="schemaTactique2" class="largeurInput" onchange="affichageSchemaFoot(); verifierChamps();">';
-					
-						<?php 
-							foreach ($schemaTactique as $schemaTactiq) {
-								if ($schemaTactiq == $DatasFront[29]) {
-									$selected_D = ($schemaTactiq == $DatasFront[29]) ? "selected" : "";
-									echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
-								}	
-								else {
-									
-									echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
-								}
-							};
+
+						<?php
+						foreach ($schemaTactique as $schemaTactiq) {
+							if ($schemaTactiq == $DatasFront[29]) {
+								$selected_D = ($schemaTactiq == $DatasFront[29]) ? "selected" : "";
+								echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" ' . $selected_D . ' >' . $schemaTactiq . '</option>';
+							} else {
+
+								echo '<option value="' . $schemaTactiq . '" id="selDom' . $schemaTactiq . '" name="' . $schemaTactiq . '" onchange="verifierChamps()">' . $schemaTactiq . '</option>';
+							}
+						};
 						?>
 					</select>
 				</div>
@@ -391,16 +387,17 @@ echo ddc($RencontreF);
 
 				<!-- # -----------  AFFICHAGE CHAMPS JOUEURS EQUIPE 2  ------------->
 				<?php
+				// <input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][5] . '">
 				for ($i = 1; $i < $entrees; $i++) {
 					echo '
 						<div class="colChamps">
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeExt' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][5] . '">
+								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeExt' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" value="' . $csv[$i][7] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
 							</div>
 							<div class="spacearound" style="order: 1;">
 								<label for="EquipeExtCap' . $i . '"><h4>Cap.</h4></label>

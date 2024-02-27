@@ -4,8 +4,20 @@
 $tutu = 'kgkgk';
 $Championnat = urldecode($_GET['Championnat']);
 $editeur = $_GET['editeur'];
-// $typeFiche = $_GET['Type'];
-// echo $editeur;
+$typeFiche = $_GET['Type'];
+echo $typeFiche;
+function choixType($x)
+{
+	$z = '';
+	if ($x == 'Presentation') {
+		$z = 'backPresentation.php';
+		return $z;
+	} else {
+		$z = 'backCompteRendu.php';
+		return $z;
+	}
+};
+echo '<input id="type" type="text" value="' . choixType($typeFiche) . '" style="display:block;">';
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
 include(dirname(__FILE__) . '/includes/accesserver.php');
@@ -126,7 +138,6 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		}
 		if ((MenuA === 'Choix') || (MenuB === 'Choix')) {
 			document.getElementById("txtHint").innerHTML = "";
-
 			return;
 		}
 		if (MenuA === MenuB) {
@@ -145,17 +156,21 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 			}
 			switchFootRugbyOther();
 			restricChoixCheckBox();
-			affichageSchemaFoot(); 
+			affichageSchemaFoot();
+
 		};
 
 		/* Methode GET -> passe une seule variable */
 		/* Methode POST -> passe plusieurs variables */
 		// xhttp.open("GET", "getuser.php?choix1="+str,true);
 		// xhttp.send();
-		xhttp.open("POST", "backPresentation.php", true);
+		var type = document.getElementById('type').value;
+		console.log(type);
+		xhttp.open("POST", type, true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send("Championnat=" + Championnat + "&editeur=" + Editeur + "&choix1=" + MenuA + "&choix2=" + MenuB);
 	};
+
 
 	/**
 	 * Sert à effacer le champ N° quand le sport est "rugby"
@@ -263,6 +278,15 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		// Changer la valeur de l'attribut action
 		myFormc.action = "creatDataSave.php";
 	};
+	/**
+	 * Fonction qui remet les menus choix des équipes sur 'Choix' en cas de retour 
+	 * via la flèche back du navigateur par l'utilisateur après avoir 'SAVE' ou 'VALIDER' 
+	 * S'inplémente dans la fonction 'verifierChamps()'
+	 */
+	function razMenuEquipes() {
+		document.getElementById('choix1').value = 'Choix';
+		document.getElementById('choix2').value = 'Choix';
+	}
 
 	/**
 	 * Fonction qui affiche ou masque les boutons
@@ -283,11 +307,11 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		var boutonContainer = document.getElementById('boutonContainer');
 		if (tousNonVides) {
 			// Tous les champs requis sont non vides, afficher le bouton
-			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); " value="SAVE"/>' +
-				'<input id="validezback" type="submit" name="VALIDEZ" value="VALIDEZ"/>';
+			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); razMenuEquipes();" value="SAVE"/>' +
+				'<input id="validezback" name="VALIDEZ" type="submit" onclick="razMenuEquipes();" value="VALIDEZ"/>';
 		} else {
 			// Au moins un champ requis est vide, masquer le bouton
-			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); " value="SAVE"/>';
+			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); razMenuEquipes();" value="SAVE"/>';
 		}
 	};
 </script>
