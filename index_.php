@@ -17,6 +17,17 @@ function choixType($x)
 		return $z;
 	}
 };
+function typeNoDdc($x)
+{
+	$z = '';
+	if ($x == 'Presentation') {
+		$z = 'Présentation';
+		return $z;
+	} else {
+		$z = 'Compte Rendu';
+		return $z;
+	}
+};
 echo '<input id="type" type="text" value="' . choixType($typeFiche) . '" style="display:block;">';
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
@@ -31,7 +42,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 <html>
 
 <head>
-	<title>Présentation - Composition des équipes</title>
+	<title><?php echo typeNoDdc($typeFiche); ?> - Composition des équipes</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="css/roll.css" rel="stylesheet">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -49,7 +60,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 <body onload="javascript:menuDeroulant(); menuDeroulant_M(); masqueTactique(); ">
 	<header>
 		<img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
-		<h1><?php echo $Championnat; ?><br>Présentation</h1>
+		<h1><?php echo $Championnat; ?><br><?php echo typeNoDdc($typeFiche); ?></h1>
 		<!-- <h2>Back-office</h2> -->
 		<hr class="separation">
 	</header>
@@ -157,6 +168,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 			switchFootRugbyOther();
 			restricChoixCheckBox();
 			affichageSchemaFoot();
+			displayScoreBasket();
 
 		};
 
@@ -222,12 +234,15 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 <script src="js/camelize.js" type="text/javascript"></script>
 <script src="js/affichageSchemaFoot.js" type="text/javascript"></script>
 <script src="js/menuDeroulant.js" type="text/javascript"></script>
-<!-- <script>menuDeroulantBis();</script> -->
-<!-- <script>menuDeroulant();</script> -->
-<script>
-	menuDeroulant_M();
-</script>
+<script src="js/SaveValidation.js" type="text/javascript"></script>
+<script src="js/restrictionsFormulaire.js" type="text/javascript"></script>
 
+<!-- <script>
+	displayChampNum();
+</script> -->
+<script>
+
+</script>
 <script>
 	const element_D = document.getElementById('choix_D');
 	const element_M = document.getElementById('choix_M');
@@ -237,83 +252,6 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		element_M.remove();
 	}
 	console.log(screen.width);
-	// function screem(){
-	// }
-</script>
-<script>
-	/**
-	 * * Fonctions pour gérer la sauvegarde et la génération des datas
-	 * via deux boutons 'Save' et 'Valider' selon l'état de remplissage
-	 * du formlaire avec un renvoi sur une page distinct
-	 * 'Save' -> 'creatDataSave.php'
-	 * 'Valider' -> 'verifPresentation.php' 
-	 */
-
-	/**
-	 * Fonction qui supprime l'attribut 'required'
-	 * pour 'Save', tous les champs ne peuvent pas être remplis
-	 */
-	function supprimerTousRequired() {
-		// Récupérer tous les champs de saisie requis dans le formulaire
-		var inputs = document.querySelectorAll('#Formulaire input[required]');
-		var textarea = document.querySelectorAll('#Formulaire textarea[required]');
-		// Parcourir tous les champs de saisie et supprimer l'attribut required
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].removeAttribute('required');
-		}
-		for (var i = 0; i < textarea.length; i++) {
-			textarea[i].removeAttribute('required');
-		}
-	};
-
-	/**
-	 * Fonction qui renvoie sur la page 'creatDataSave.php'
-	 * les datas sont générées en partie
-	 * par défaut 'verifPresentation.php' renseigné dans l'attribut 'action'
-	 * du tag 'form'
-	 */
-	function changerActionSave() {
-		// Récupérer le formulaire par son ID
-		var myFormc = document.querySelector("form");
-		// Changer la valeur de l'attribut action
-		myFormc.action = "creatDataSave.php";
-	};
-	/**
-	 * Fonction qui remet les menus choix des équipes sur 'Choix' en cas de retour 
-	 * via la flèche back du navigateur par l'utilisateur après avoir 'SAVE' ou 'VALIDER' 
-	 * S'inplémente dans la fonction 'verifierChamps()'
-	 */
-	function razMenuEquipes() {
-		document.getElementById('choix1').value = 'Choix';
-		document.getElementById('choix2').value = 'Choix';
-	}
-
-	/**
-	 * Fonction qui affiche ou masque les boutons
-	 * selon l'état de remplissage du formulaire
-	 */
-	function verifierChamps() {
-		// Récupérer tous les champs de saisie requis dans le formulaire
-		var inputs = document.querySelectorAll('#Formulaire input[required]');
-		// Vérifier si tous les champs requis ont une valeur
-		var tousNonVides = true;
-		for (var i = 0; i < inputs.length; i++) {
-			if (inputs[i].value === '') {
-				tousNonVides = false;
-				break; // S'il y en a au moins un vide, on peut arrêter la boucle
-			}
-		}
-		// Afficher ou masquer le bouton en fonction du résultat
-		var boutonContainer = document.getElementById('boutonContainer');
-		if (tousNonVides) {
-			// Tous les champs requis sont non vides, afficher le bouton
-			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); razMenuEquipes();" value="SAVE"/>' +
-				'<input id="validezback" name="VALIDEZ" type="submit" onclick="razMenuEquipes();" value="VALIDEZ"/>';
-		} else {
-			// Au moins un champ requis est vide, masquer le bouton
-			boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); razMenuEquipes();" value="SAVE"/>';
-		}
-	};
 </script>
 
 </html>

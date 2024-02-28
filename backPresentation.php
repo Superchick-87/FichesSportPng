@@ -75,13 +75,6 @@ echo ddc($RencontreF);
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-
-
-
-		// for ($i = 1; $i <= 12; $i++) {
-		//     echo "EquipeDom$i : ${'EquipeDom' . $i}<br>";
-		// }
-
 		$nom_fichier = 'Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php';
 		/**
 		 * * Vérification fichier datas php
@@ -208,7 +201,7 @@ echo ddc($RencontreF);
 					<h3>Lieu</h3>
 				</label>
 
-				<input style="width:180px;" value="<?php echo $DatasFront[4]; ?>" type="text" id="Lieu" name="stade" size="15" placeholder="Ex. Stade Matmut Atlantique" required onchange="verifierChamps()" onchange="verifierChamps()">
+				<input style="width:180px;" value="<?php echo $DatasFront[4]; ?>" type="text" id="Lieu" name="stade" size="15" placeholder="Ex. Stade Matmut Atlantique" required onchange="verifierChamps()">
 			</div>
 			<div class="boiteHaut">
 				<label for="Date">
@@ -500,9 +493,7 @@ echo ddc($RencontreF);
 		</div>
 
 		<!-- # -----------  FIN PAR DEFAUT SELECT  ------------->
-		<!-- <input id="validezback" type="submit" value="VALIDEZ"/> -->
 		<div id="boutonContainer">
-			<!-- <input id="save" type="submit" value="SAVE" /> -->
 		</div>
 	</form>
 
