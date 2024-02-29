@@ -1,21 +1,8 @@
 <?php
-
-
 $tutu = 'kgkgk';
-// $Championnat = urldecode($_GET['Championnat']);
 $Championnat = $_POST['Championnat'];
-// $Championnat = "Top 14";
-// echo $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
-// echo $_POST['choix1'];
-// echo $_POST['choix2'];
 $RencontreF = $_POST['choix1'] . ' ' . $_POST['choix2'];
-
-// echo '<h1>',$Championnat,'</h1>';
-// echo $editeur;
-// echo $editeur;
-
-
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
 include(dirname(__FILE__) . '/includes/accesserver.php');
@@ -25,8 +12,6 @@ include(dirname(__FILE__) . '/includes/choixCompetition.php');
 include(dirname(__FILE__) . '/includes/Formts.php');
 include(dirname(__FILE__) . '/includes/tvs.php');
 include(dirname(__FILE__) . '/includes/HdeHeure.php');
-echo ddc($RencontreF);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +23,6 @@ echo ddc($RencontreF);
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="js/1121_jquery-ui.js"></script>
@@ -47,18 +31,10 @@ echo ddc($RencontreF);
 
 <body>
 	<header>
-		<!-- <img class="logoCompetition" src="css/images/<?php echo ddc($Championnat); ?>.png">
-		<h1><?php echo $Championnat; ?><br>Présentation</h1> -->
-		<!-- <h2>Back-office</h2> -->
-		<!-- <hr  class="separation"> -->
 	</header>
-	<!-- <h2>Rencontre</h2>
-	<p id="AlertSel" class="" style="display: block;">Sélectionner vos équipes</p> -->
-
-
 	<!-- // //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////        CHOIX DES EQUIPES        ///////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////// // -->
+	////////////////////////////////// CHOIX DES EQUIPES ///////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 	<!--=================================================
@@ -69,8 +45,8 @@ echo ddc($RencontreF);
 		<input id="discipline" type="text" value="<?php echo $discipline; ?>" style="display:none;">
 		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
 		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
-		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:block;">
-		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:block;">
+		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:none;">
+		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:none;">
 		<?php echo '<input id="Championnat" name="Championnat" value= "' . $Championnat . '" style="display:none;">' ?>
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
@@ -386,11 +362,11 @@ echo ddc($RencontreF);
 						<div class="colChamps">
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeExt' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
+								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][5] . '">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeExt' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][7] . '">
 							</div>
 							<div class="spacearound" style="order: 1;">
 								<label for="EquipeExtCap' . $i . '"><h4>Cap.</h4></label>

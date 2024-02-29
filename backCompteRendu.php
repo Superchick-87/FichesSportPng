@@ -1,12 +1,4 @@
 <?php
-session_start();
-if (!isset($_SESSION['count'])) {
-	$_SESSION['count'] = 0;
-} else {
-	$_SESSION['count']++;
-}
-?>
-<?php
 $tutu = 'kgkgk';
 $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
@@ -59,10 +51,10 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
  =================================================-->
 
 	<form id="Formulaire" method="get" action="verifCompteRendu.php" style="display:block;">
-		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:block;">
-		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:block;">
-		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:none;">
-		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:none;">
+		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
+		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
+		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:block;">
+		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:block;">
 		<?php echo '<input id="Championnat" name="Championnat" value= "' . $Championnat . '" style="display:none;">' ?>
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
@@ -142,21 +134,9 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				/**
 				 * !REGLER LE PROBLEME DE VARIABLES QUI S'AFFICHENT EN ERREUR
 				 */
-				$tactiqueA == "w";
-				$tactiqueB == "";
-
+				// $tac == "init";
+				// $tactiqueB = "B";
 				include(dirname(__FILE__) . '/includes/footTactique.php');
-
-				// Cré un nouveau fichier
-				// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-				// if ($discipline == 'Rugby') {
-				// 	include(dirname(__FILE__) . '/includes/rugbyTactique.php');
-				// }
-				// if ($discipline == 'Basket') {
-				// 	include(dirname(__FILE__) . '/includes/basketTactique.php');
-				// }
-
-
 				// Paramétrage de l'écriture du futur fichier CSV
 				$chemin = 'datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
 				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
@@ -168,19 +148,16 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
 					fputcsv($fichier_csv, $ligne, $delimiteur);
 				}
-
 				// fermeture du fichier csv
+				fclose($fichier_csv);
 			}
-			// fclose($fichier_csv);
-			// $csv = read($csv);
-		}
-		if (file_exists($csv)) {
+		} else {
 			$csv = read($csv);
 		}
 		// echo $csv[2][5];
-		echo '<pre>';
-		print_r($csv);
-		echo '</pre>';
+		// echo '<pre>';
+		// print_r($csv);
+		// echo '</pre>';
 		?>
 
 		<!--=======================================
@@ -263,7 +240,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					<h3>Score QT 1</h3>
 				</label>
 				<input class="score b" style="width:50px;" type="number" min="0" id="ScoreQt1Dom" name="ScoreQt1Dom" required onchange="verifierChamps()">
-				<input class="score b" style="width:50px;" type="number" min="0" id="ScoreQt1Ext" name="ScoreQt1Ext" rrequired onchange="verifierChamps()">
+				<input class="score b" style="width:50px;" type="number" min="0" id="ScoreQt1Ext" name="ScoreQt1Ext" required onchange="verifierChamps()">
 			</div>
 			<div>
 				<label for="ScoreQt2">
@@ -439,11 +416,11 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<div class="colChamps">
 							<div class="spacearound" style="order: 3;">
 								<label for="EquipeExt' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
+								<input type="text" id="EquipeExt' . $i . '" name="EquipeExt' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][5] . '">
 							</div>
 							<div class="spacearound champsNumeros" style="order: 2;">
 								<label for="EquipeExt' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
+								<input class="champsNumerosInp" type="number" min="0" id="EquipeExtNum' . $i . '" name="EquipeExtNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i + ($entrees - 1)][7] . '">
 							</div>
 							<div class="spacearound" style="order: 1;">
 								<label for="EquipeExtCap' . $i . '"><h4>Cap.</h4></label>

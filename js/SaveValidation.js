@@ -71,3 +71,6 @@ function verifierChamps() {
         boutonContainer.innerHTML = '<input id="save" name="SAVE" type="submit" onclick="supprimerTousRequired(); razMenuEquipes();" value="SAVE"/>';
     }
 };
+
+
+

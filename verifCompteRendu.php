@@ -1,6 +1,6 @@
 ﻿<?php
-$valid = $_GET['VALIDEZ'];
-$sav = $_GET['SAVE'];
+@$valid = $_GET['VALIDEZ'];
+@$sav = $_GET['SAVE'];
 
 $Championnat = $_GET['Championnat'];
 $editeur = $_GET['Editeur'];
@@ -339,8 +339,6 @@ $ClassScoreExt = $_GET["ClassPtsScoreExt"];
 		<div id="messageUrl" style="display:block;">
 				<legend>"VISUALISER" pour vérifier votre composition</legend>
 			    <input id="visualiser" type=button value="VISUALISER" onclick=window.open(href="' . $redirectionCompR . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '") target="_blank" />
-			    <legend>Copier / coller l\'iframe dans votre article pour le web</legend>
-			    <textarea onclick="this.select();" class="iframearea"> &lt;iframe src="' . $redirectionCompR . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '" border="0" ' . tailleiframe($editeur) . '"&gt;&lt;/iframe></textarea>
 		</div>';
 		?>
 	</div>
@@ -356,18 +354,22 @@ $ClassScoreExt = $_GET["ClassPtsScoreExt"];
 		$a = str_replace('x', '', $a);
 		return $a;
 	}
-	// echo nomFormat($format);
-	// echo $format;
-	// $toto = nomFormat($format);
+	if (isset($valid)) {
+		echo '
+				<div id="messageUrl" style="display:block;">
+					<legend>Copier / coller l\'iframe dans votre article pour le web</legend>
+					<textarea onclick="this.select();" class="iframearea"> &lt;iframe src="' . $redirectionPre . '' . ddc($ClubDom) . '' . ddc($ClubExt) . '&Discipline=' . $discipline . '&Editeur=' . $editeur . '" border="0" ' . tailleiframe($editeur) . '"&gt;&lt;/iframe></textarea>
+				</div>';
+		include(dirname(__FILE__) . '/pdf_' . nomFormat($format) . '_ComptR.php');
+	};
 
-	// include(dirname(__FILE__) . '/pdf_' . nomFormat($format) . '_ComptR.php');
+
 
 	?>
 	<form id="emailForm" name="emailForm" method="post" action="">
 		<legend>"RETOUR" pour modifier votre composition</legend>
 		<div>
 			<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)' />
-			<!-- <input onclick="change_class()" name="SubmitBtn" type="submit" id="submitBtn" value="VALIDER"> -->
 		</div>
 	</form>
 

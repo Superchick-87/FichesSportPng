@@ -1,11 +1,7 @@
 <?php
-
-
-$tutu = 'kgkgk';
 $Championnat = urldecode($_GET['Championnat']);
 $editeur = $_GET['editeur'];
 $typeFiche = $_GET['Type'];
-echo $typeFiche;
 function choixType($x)
 {
 	$z = '';
@@ -28,7 +24,7 @@ function typeNoDdc($x)
 		return $z;
 	}
 };
-echo '<input id="type" type="text" value="' . choixType($typeFiche) . '" style="display:block;">';
+echo '<input id="type" type="text" value="' . choixType($typeFiche) . '" style="display:none;">';
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
 include(dirname(__FILE__) . '/includes/accesserver.php');
@@ -48,9 +44,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="js/1121_jquery-ui.js"></script>
@@ -169,6 +163,8 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 			restricChoixCheckBox();
 			affichageSchemaFoot();
 			displayScoreBasket();
+
+
 
 		};
 

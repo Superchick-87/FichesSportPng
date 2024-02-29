@@ -1,12 +1,6 @@
 ﻿<?php
-$valid = $_GET['VALIDEZ'];
-$sav = $_GET['SAVE'];
-// echo $valid;
-
-// if (isset($sav)) {
-// 	echo $sav;
-// }
-
+@$valid = $_GET['VALIDEZ'];
+@$sav = $_GET['SAVE'];
 ?>
 <?php
 $Championnat = $_GET['Championnat'];
@@ -184,12 +178,6 @@ $EquipeExtCap15 = $_GET["EquipeExtCap15"];
 $SelectionneursE = $_GET["SelectionneursE"];
 $RemplacantsE = $_GET["RemplacantsE"];
 
-
-// for ($i=1; $i < $entrees; $i++) { 
-// 	setcookie("EquipeDom".$i."", $_GET['EquipeDom'.$i.''], time() + 24*3600);
-// 	setcookie("EquipeExt".$i."", $_GET['EquipeExt'.$i.''], time() + 24*3600);
-// }
-
 /*----------  CLASSEMENT / PTS OU SCORE  ----------*/
 
 $ClassScoreDom = $_GET["ClassPtsScoreDom"];
@@ -219,9 +207,6 @@ function val_Min($x)
 $VictoiresDom = $_GET["VictoiresDom"];
 $Nuls = $_GET["Nuls"];
 $VictoiresExt = $_GET["VictoiresExt"];
-// $VictoiresDom = val_Min($_GET["VictoiresDom"]);
-// $Nuls = val_Min($_GET["Nuls"]);
-// $VictoiresExt = val_Min($_GET["VictoiresExt"]);
 $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 
 /*=====  End of RECUPERATION DES DONNEES  ======*/
@@ -352,12 +337,12 @@ $TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
 
 
 	?>
-	<!-- <form id="emailForm" name="emailForm" method="post" action="">
-			<legend>"RETOUR" pour modifier votre composition</legend>
-			<div>
-			<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)'/>
-			</div>
-	</form> -->
+	<form id="emailForm" name="emailForm" method="post" action="">
+		<legend>"RETOUR" pour modifier votre composition</legend>
+		<div>
+			<input id='visualiser' type=button value='RETOUR' onclick='history.go(-1)' />
+		</div>
+	</form>
 </body>
 <footer style="background-image:url(css/images/signature<?php echo $editeur; ?>.svg);"></footer>
 
