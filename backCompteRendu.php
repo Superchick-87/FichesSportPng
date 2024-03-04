@@ -141,8 +141,8 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 				if ($discipline == 'Foot') {
-					@$tactiqueA == "";
-					@$tactiqueB == "";
+					@$tactiqueA = "";
+					@$tactiqueB = "";
 					include(dirname(__FILE__) . '/includes/footTactique.php');
 				}
 				if ($discipline == 'Rugby') {
