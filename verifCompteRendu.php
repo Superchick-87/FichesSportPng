@@ -57,22 +57,22 @@ $ScoreMiTps = $ScoreMitpsDom . '-' . $ScoreMitpsExt;
 
 /*----------  Score Basket Quarts-temps  ----------*/
 
-$ScoreQt1Dom = $_GET['ScoreQt1Dom'];
-$ScoreQt1Ext = $_GET['ScoreQt1Ext'];
+@$ScoreQt1Dom = $_GET['ScoreQt1Dom'];
+@$ScoreQt1Ext = $_GET['ScoreQt1Ext'];
 
-$ScoreQt2Dom = $_GET['ScoreQt2Dom'];
-$ScoreQt2Ext = $_GET['ScoreQt2Ext'];
+@$ScoreQt2Dom = $_GET['ScoreQt2Dom'];
+@$ScoreQt2Ext = $_GET['ScoreQt2Ext'];
 
-$ScoreQt3Dom = $_GET['ScoreQt3Dom'];
-$ScoreQt3Ext = $_GET['ScoreQt3Ext'];
+@$ScoreQt3Dom = $_GET['ScoreQt3Dom'];
+@$ScoreQt3Ext = $_GET['ScoreQt3Ext'];
 
-$ScoreQt4Dom = $_GET['ScoreQt4Dom'];
-$ScoreQt4Ext = $_GET['ScoreQt4Ext'];
+@$ScoreQt4Dom = $_GET['ScoreQt4Dom'];
+@$ScoreQt4Ext = $_GET['ScoreQt4Ext'];
 
-$ScoreQt1 = $ScoreQt1Dom . '-' . $ScoreQt1Ext;
-$ScoreQt2 = $ScoreQt2Dom . '-' . $ScoreQt2Ext;
-$ScoreQt3 = $ScoreQt3Dom . '-' . $ScoreQt3Ext;
-$ScoreQt4 = $ScoreQt4Dom . '-' . $ScoreQt4Ext;
+@$ScoreQt1 = $ScoreQt1Dom . '-' . $ScoreQt1Ext;
+@$ScoreQt2 = $ScoreQt2Dom . '-' . $ScoreQt2Ext;
+@$ScoreQt3 = $ScoreQt3Dom . '-' . $ScoreQt3Ext;
+@$ScoreQt4 = $ScoreQt4Dom . '-' . $ScoreQt4Ext;
 
 // echo $ScoreQt1.'<br>';
 // echo $ScoreQt2.'<br>';
@@ -83,28 +83,62 @@ $ScoreQt4 = $ScoreQt4Dom . '-' . $ScoreQt4Ext;
 
 $format = $_GET['format'];
 
+function tactA($x){
+	$p = '';
+	if (isset($x)) {
+		$p = 'A';
+		return $p;
+	}
+	else {
+		return $x;
+	}
+};
+function tactB($x){
+	$p = '';
+	if (isset($x)) {
+		$p = 'B';
+		return $p;
+	}
+	else {
+		
+	}
+};
+
 $tactiqueA = $_GET['schemaTactiqueA'];
 $tactiqueB = $_GET['schemaTactiqueB'];
 
 /*--------------------  EQUIPE 1  --------------------*/
-
+if ($discipline == 'Foot') {
+	for ($i = 1; $i <= 12; $i++) {
+		${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom". $i]);
+		// ${"EquipeDomCap" . $i} = '';
+		// ${"EquipeDomNum" . $i} = '';
+		${"ClubDom"} = $ClubDom;
+	}
+	// for ($i = 1; $i <= 12; $i++) {
+	// 	${"EquipeExt" . $i} = '';
+	// 	${"EquipeExtCap" . $i} = '';
+	// 	${"EquipeExtNum" . $i} = '';
+	// 	${"ClubExt"} = $_POST['choix2'];
+	// }
+}
 /*----------  Noms des joueurs  ----------*/
 
-$EquipeDom1 = apostropheencode($_GET["EquipeDom1"]);
-$EquipeDom2 = apostropheencode($_GET["EquipeDom2"]);
-$EquipeDom3 = apostropheencode($_GET["EquipeDom3"]);
-$EquipeDom4 = apostropheencode($_GET["EquipeDom4"]);
-$EquipeDom5 = apostropheencode($_GET["EquipeDom5"]);
-$EquipeDom6 = apostropheencode($_GET["EquipeDom6"]);
-$EquipeDom7 = apostropheencode($_GET["EquipeDom7"]);
-$EquipeDom8 = apostropheencode($_GET["EquipeDom8"]);
-$EquipeDom9 = apostropheencode($_GET["EquipeDom9"]);
-$EquipeDom10 = apostropheencode($_GET["EquipeDom10"]);
-$EquipeDom11 = apostropheencode($_GET["EquipeDom11"]);
-$EquipeDom12 = apostropheencode($_GET["EquipeDom12"]);
-$EquipeDom13 = apostropheencode($_GET["EquipeDom13"]);
-$EquipeDom14 = apostropheencode($_GET["EquipeDom14"]);
-$EquipeDom15 = apostropheencode($_GET["EquipeDom15"]);
+// $EquipeDom1 = apostropheencode($_GET["EquipeDom1"]);
+// $EquipeDom2 = apostropheencode($_GET["EquipeDom2"]);
+// $EquipeDom3 = apostropheencode($_GET["EquipeDom3"]);
+// $EquipeDom4 = apostropheencode($_GET["EquipeDom4"]);
+// $EquipeDom5 = apostropheencode($_GET["EquipeDom5"]);
+// $EquipeDom6 = apostropheencode($_GET["EquipeDom6"]);
+// $EquipeDom7 = apostropheencode($_GET["EquipeDom7"]);
+// $EquipeDom8 = apostropheencode($_GET["EquipeDom8"]);
+// $EquipeDom9 = apostropheencode($_GET["EquipeDom9"]);
+// $EquipeDom10 = apostropheencode($_GET["EquipeDom10"]);
+// $EquipeDom11 = apostropheencode($_GET["EquipeDom11"]);
+// $EquipeDom12 = apostropheencode($_GET["EquipeDom12"]);
+// $EquipeDom13 = apostropheencode($_GET["EquipeDom13"]);
+// $EquipeDom14 = apostropheencode($_GET["EquipeDom14"]);
+// $EquipeDom15 = apostropheencode($_GET["EquipeDom15"]);
 
 /*----------  N° des joueurs  ----------*/
 function toto($a)
@@ -115,22 +149,23 @@ function toto($a)
 		return $a;
 	}
 }
+$EquipeDomNum1 = $_GET["EquipeDomNum1"];
+$EquipeDomNum2 = $_GET["EquipeDomNum2"];
+$EquipeDomNum3 = $_GET["EquipeDomNum3"];
+$EquipeDomNum4 = $_GET["EquipeDomNum4"];
+$EquipeDomNum5 = $_GET["EquipeDomNum5"];
+$EquipeDomNum6 = $_GET["EquipeDomNum6"];
+$EquipeDomNum7 = $_GET["EquipeDomNum7"];
+$EquipeDomNum8 = $_GET["EquipeDomNum8"];
+$EquipeDomNum9 = $_GET["EquipeDomNum9"];
+$EquipeDomNum10 = $_GET["EquipeDomNum10"];
+$EquipeDomNum11 = $_GET["EquipeDomNum11"];
+$EquipeDomNum12 = $_GET["EquipeDomNum12"];
+$EquipeDomNum13 = $_GET["EquipeDomNum13"];
+$EquipeDomNum14 = $_GET["EquipeDomNum14"];
+$EquipeDomNum15 = $_GET["EquipeDomNum15"];
 // toto($E);
-$EquipeDomNum1 = toto($_GET["EquipeDomNum1"]);
-$EquipeDomNum2 = toto($_GET["EquipeDomNum2"]);
-$EquipeDomNum3 = toto($_GET["EquipeDomNum3"]);
-$EquipeDomNum4 = toto($_GET["EquipeDomNum4"]);
-$EquipeDomNum5 = toto($_GET["EquipeDomNum5"]);
-$EquipeDomNum6 = toto($_GET["EquipeDomNum6"]);
-$EquipeDomNum7 = toto($_GET["EquipeDomNum7"]);
-$EquipeDomNum8 = toto($_GET["EquipeDomNum8"]);
-$EquipeDomNum9 = toto($_GET["EquipeDomNum9"]);
-$EquipeDomNum10 = toto($_GET["EquipeDomNum10"]);
-$EquipeDomNum11 = toto($_GET["EquipeDomNum11"]);
-$EquipeDomNum12 = toto($_GET["EquipeDomNum12"]);
-$EquipeDomNum13 = toto($_GET["EquipeDomNum13"]);
-$EquipeDomNum14 = toto($_GET["EquipeDomNum14"]);
-$EquipeDomNum15 = toto($_GET["EquipeDomNum15"]);
+
 
 /*----------  Capitaine  ----------*/
 

@@ -51,8 +51,8 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
  =================================================-->
 
 	<form id="Formulaire" method="get" action="verifCompteRendu.php" style="display:block;">
-		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:none;">
-		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:none;">
+		<input id="equipeA" type="text" name="RencontreA" value="<?php echo $_POST['choix1']; ?>" style="display:block;">
+		<input id="equipeB" type="text" name="RencontreB" value="<?php echo $_POST['choix2']; ?>" style="display:block;">
 		<input id="schemaTactiqueA" type="text" name="schemaTactiqueA" value="" style="display:block;">
 		<input id="schemaTactiqueB" type="text" name="schemaTactiqueB" value="" style="display:block;">
 		<?php echo '<input id="Championnat" name="Championnat" value= "' . $Championnat . '" style="display:none;">' ?>
@@ -117,25 +117,25 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		 * #3 on l'include
 		 */
 		if (!file_exists($csv)) {
+			$ClubDom = $_POST['choix1'];
+			$ClubExt = $_POST['choix2'];
+			// ::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
 			if ($discipline == 'Foot') {
-
 				for ($i = 1; $i <= 12; $i++) {
 					${"EquipeDom" . $i} = '';
 					${"EquipeDomCap" . $i} = '';
 					${"EquipeDomNum" . $i} = '';
-					${"ClubDom"} = '';
+					${"ClubDom"} = $_POST['choix1'];
 				}
 				for ($i = 1; $i <= 12; $i++) {
 					${"EquipeExt" . $i} = '';
 					${"EquipeExtCap" . $i} = '';
 					${"EquipeExtNum" . $i} = '';
-					${"ClubExt"} = '';
+					${"ClubExt"} = $_POST['choix2'];
 				}
-				/**
-				 * !REGLER LE PROBLEME DE VARIABLES QUI S'AFFICHENT EN ERREUR
-				 */
-				// $tac == "init";
-				// $tactiqueB = "B";
+
+				$tactiqueA == "";
+				$tactiqueB == "";
 				include(dirname(__FILE__) . '/includes/footTactique.php');
 				// Paramétrage de l'écriture du futur fichier CSV
 				$chemin = 'datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
@@ -149,15 +149,40 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					fputcsv($fichier_csv, $ligne, $delimiteur);
 				}
 				// fermeture du fichier csv
-				fclose($fichier_csv);
+				// fclose($fichier_csv);
 			}
-		} else {
+			
+			// ::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
+			if ($discipline == 'Rugby') {
+				for ($i = 1; $i <= 16; $i++) {
+					${"EquipeDom" . $i} = '';
+					${"EquipeDomCap" . $i} = '';
+					${"ClubDom"} = $_POST['choix1'];
+				}
+				for ($i = 1; $i <= 16; $i++) {
+					${"EquipeExt" . $i} = '';
+					${"EquipeExtCap" . $i} = '';
+					${"ClubExt"} = $_POST['choix2'];
+				}
+				include(dirname(__FILE__) . '/includes/rugbyTactique.php');
+				$chemin = 'datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
+
+				$fichier_csv = fopen($chemin, 'w+');
+
+				foreach ($lignes as $ligne) {
+					// chaque ligne en cours de lecture est insérée dans le fichier
+					// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
+					fputcsv($fichier_csv, $ligne, $delimiteur);
+				}
+			}
+			if ($discipline == 'Basket') {
+				include(dirname(__FILE__) . '/includes/basketTactique.php');
+			}
+		}
+		if (file_exists($csv)) {
 			$csv = read($csv);
 		}
-		// echo $csv[2][5];
-		// echo '<pre>';
-		// print_r($csv);
-		// echo '</pre>';
 		?>
 
 		<!--=======================================
@@ -304,19 +329,22 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				<!-- # -----------  AFFICHAGE CHAMPS JOUEURS EQUIPE 1  ------------->
 				<?php
 				for ($i = 1; $i < $entrees; $i++) {
-					echo '
+					
+						# code...
+						echo '
 						<div style="display:flex; justify-content: space-evenly; align-items: stretch;">
-							<div class="spacearound" style="order: 1;">
-								<label for="EquipeDom' . $i . '"><h4>Nom ' . $i . '</h4></label>
-								<input type="text" id="EquipeDom' . $i . '" name="EquipeDom' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
-							</div>
-							<div class="spacearound champsNumeros" style="order: 2;">
-								<label for="EquipeDom' . $i . '"><h4>N°</h4></label>
-								<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
-							</div>
-							<div class="spacearound" style="order: 3;">
-								<label for="EquipeDomCap' . $i . '"><h4>Cap.</h4></label>
-								<select id="EquipeDomCap' . $i . '" name="EquipeDomCap' . $i . '" style="width:50px; height: 34px;" onchange="verifierChamps()">';
+						<div class="spacearound" style="order: 1;">
+						<label for="EquipeDom' . $i . '"><h4>Nom ' . $i . '</h4></label>
+						<input type="text" id="EquipeDom' . $i . '" name="EquipeDom' . $i . '" placeholder="Nom du joueur" required onchange="verifierChamps()" value="' . $csv[$i][5] . '">
+						</div>
+						<div class="spacearound champsNumeros" style="order: 2;">
+						<label for="EquipeDom' . $i . '"><h4>N°</h4></label>
+						<input class="champsNumerosInp" type="number" min="0" id="EquipeDomNum' . $i . '" name="EquipeDomNum' . $i . '" style="width:50px;" placeholder="Son n°" required onchange="verifierChamps()" value="' . $csv[$i][7] . '">
+						</div>
+						<div class="spacearound" style="order: 3;">
+						<label for="EquipeDomCap' . $i . '"><h4>Cap.</h4></label>
+						<select id="EquipeDomCap' . $i . '" name="EquipeDomCap' . $i . '" style="width:50px; height: 34px;" onchange="verifierChamps()">';
+				
 
 					foreach ($capitaines as $capitaine) {
 						if ($csv[$i][6] == "(C)") {
