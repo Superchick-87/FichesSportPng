@@ -118,6 +118,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		<input id="equipeB" type="text" name="RencontreB" value="" style="display:none;">
 		<?php echo '<input id="Championnat" name="Championnat" value= "' . $Championnat . '" style="display:none;">' ?>
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
+		<?php echo '<input id="typeFiche" name="typeFiche" value= "' . $typeFiche . '" style="display:none;">' ?>
 	</div>
 
 
@@ -136,6 +137,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		var MenuB = document.getElementById('choix2').value;
 		var Championnat = document.getElementById('Championnat').value;
 		var Editeur = document.getElementById('Editeur').value;
+		var typeFiche = document.getElementById('typeFiche').value;
 		var xhttp;
 		if (str == "") {
 			document.getElementById("txtHint").innerHTML = "";
@@ -176,7 +178,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		console.log(type);
 		xhttp.open("POST", type, true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Championnat=" + Championnat + "&editeur=" + Editeur + "&choix1=" + MenuA + "&choix2=" + MenuB);
+		xhttp.send("Championnat=" + Championnat + "&editeur=" + Editeur + "&choix1=" + MenuA + "&choix2=" + MenuB+ "&typeFiche=" + typeFiche);
 	};
 
 

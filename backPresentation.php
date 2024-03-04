@@ -3,6 +3,14 @@ $tutu = 'kgkgk';
 $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
 $RencontreF = $_POST['choix1'] . ' ' . $_POST['choix2'];
+
+$ClubDom = $_POST['choix1'];
+$ClubExt = $_POST['choix2'];
+echo $ClubDom;
+echo $ClubExt;
+
+$typeFiche = $_POST['typeFiche'];
+echo $typeFiche;
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
 include(dirname(__FILE__) . '/includes/accesserver.php');
@@ -51,7 +59,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-		$nom_fichier = 'Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php';
+		$nom_fichier = ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.php';
 		/**
 		 * * Vérification fichier datas php
 		 * #1 si présent on l'include
@@ -74,7 +82,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
-			$fichierv = fopen("datas/" . $discipline . "/Presentation_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
+			$fichierv = fopen("datas/" . $discipline . "/".ddc($typeFiche)."_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
 			$big = '$DatasFront';
 			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
 			fwrite($fichierv, $texte);
@@ -101,70 +109,63 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			fclose($file);
 			return $line;
 		}
-		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+		
 		/**
 		 * * Vérification fichier datas csv
-		 * #1 si présent on lit
-		 * #2 si absent on crée le fichier csv vide
+		 * #1 si absent on crée le fichier csv vide
+		 * #2 si présent on lit
 		 * #3 on l'include
 		 */
 		if (!file_exists($csv)) {
-			if ($discipline == 'Foot') {
-
-				for ($i = 1; $i <= 12; $i++) {
-					${"EquipeDom" . $i} = '';
-					${"EquipeDomCap" . $i} = '';
-					${"EquipeDomNum" . $i} = '';
-					${"ClubDom"} = '';
-				}
-				for ($i = 1; $i <= 12; $i++) {
-					${"EquipeExt" . $i} = '';
-					${"EquipeExtCap" . $i} = '';
-					${"EquipeExtNum" . $i} = '';
-					${"ClubExt"} = '';
-				}
-				/**
-				 * !REGLER LE PROBLEME DE VARIABLES QUI S'AFFICHENT EN ERREUR
-				 */
-				$tactiqueA == "w";
-				$tactiqueB == "";
-
-				include(dirname(__FILE__) . '/includes/footTactique.php');
-
-				// Cré un nouveau fichier
-				// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-				// if ($discipline == 'Rugby') {
-				// 	include(dirname(__FILE__) . '/includes/rugbyTactique.php');
-				// }
-				// if ($discipline == 'Basket') {
-				// 	include(dirname(__FILE__) . '/includes/basketTactique.php');
-				// }
-
-
-				// Paramétrage de l'écriture du futur fichier CSV
-				$chemin = 'datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.csv';
-				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
-
-				$fichier_csv = fopen($chemin, 'w+');
-
-				foreach ($lignes as $ligne) {
-					// chaque ligne en cours de lecture est insérée dans le fichier
-					// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
-					fputcsv($fichier_csv, $ligne, $delimiteur);
-				}
-
-				// fermeture du fichier csv
+			for ($i = 1; $i < $entrees; $i++) {
+				${"EquipeDom" . $i} = '';
+				${"EquipeDomCap" . $i} = '';
+				${"EquipeDomNum" . $i} = '';
+				${"ClubDom"} = $ClubDom;
 			}
+			for ($i = 1; $i < $entrees; $i++) {
+				${"EquipeExt" . $i} = '';
+				${"EquipeExtCap" . $i} = '';
+				${"EquipeExtNum" . $i} = '';
+				${"ClubExt"} = $ClubExt;
+			}
+
+			// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+			// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
+			// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+			if ($discipline == 'Foot') {
+				@$tactiqueA == "";
+				@$tactiqueB == "";
+				include(dirname(__FILE__) . '/includes/footTactique.php');
+			}
+			if ($discipline == 'Rugby') {
+				include(dirname(__FILE__) . '/includes/rugbyTactique.php');
+			}
+			if ($discipline == 'Basket') {
+				include(dirname(__FILE__) . '/includes/basketTactique.php');
+			}
+
+			// Paramétrage de l'écriture du futur fichier CSV
+			$chemin = 'datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+			$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
+
+			$fichier_csv = fopen($chemin, 'w+');
+
+			foreach ($lignes as $ligne) {
+				// chaque ligne en cours de lecture est insérée dans le fichier
+				// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
+				fputcsv($fichier_csv, $ligne, $delimiteur);
+			}
+			// fermeture du fichier csv
 			// fclose($fichier_csv);
-			// $csv = read($csv);
 		}
-		if (file_exists($csv)) {
-			$csv = read($csv);
-		}
-		// echo $csv[2][5];
-		// echo '<pre>';
-		// print_r($csv);
-		// echo '</pre>';
+		
+	if (file_exists($csv)) {
+		$csv = read($csv);
+	}
+		
 		?>
 		<!--=======================================
 		=            PARTIE GENERIQUE             =

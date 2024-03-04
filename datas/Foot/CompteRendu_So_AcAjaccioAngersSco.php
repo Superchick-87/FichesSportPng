@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('2024-02-09','16h11','AC Ajaccio','Angers SCO','Lieu','Arbitre','10000','météo','terrain','4-2','2-1','Entraîneur 1','Remplacement(s) 1','Entraîneur 2','Remplacement(s) 2','But(s) 1','But(s) 2','Avertissement(s) 1','Avertissement(s) 2','','','-','-','-','-','3-5-2','4-4-2') ?>

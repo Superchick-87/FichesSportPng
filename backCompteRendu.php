@@ -3,10 +3,15 @@ $tutu = 'kgkgk';
 $Championnat = $_POST['Championnat'];
 $editeur = $_POST['editeur'];
 // echo $editeur;
-echo $_POST['choix1'];
-echo $_POST['choix2'];
 $RencontreF = $_POST['choix1'] . ' ' . $_POST['choix2'];
 
+$ClubDom = $_POST['choix1'];
+$ClubExt = $_POST['choix2'];
+echo $ClubDom;
+echo $ClubExt;
+
+$typeFiche = $_POST['typeFiche'];
+echo $typeFiche;
 include(dirname(__FILE__) . '/includes/ddc.php');
 include(dirname(__FILE__) . '/includes/EquipesStades' . ddc($Championnat) . '.php');
 include(dirname(__FILE__) . '/includes/accesserver.php');
@@ -59,7 +64,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-		$nom_fichier = 'CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.php';
+		$nom_fichier = ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.php';
 		/**
 		 * * Vérification fichier datas php
 		 * #1 si présent on l'include
@@ -74,7 +79,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			echo '<h2>' . "Cette fiche est en cours" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
-			include(dirname(__FILE__) . '/datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.php');
+			include(dirname(__FILE__) . '/datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.php');
 		} else {
 			/**
 			 * #2 si absent on crée le fichier php vide
@@ -82,7 +87,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
 			echo '</br>';
 			// echo $nom_fichier;
-			$fichierv = fopen("datas/" . $discipline . "/CompteRendu_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
+			$fichierv = fopen("datas/" . $discipline . "/".ddc($typeFiche)."_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
 			$big = '$DatasFront';
 			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
 			fwrite($fichierv, $texte);
@@ -91,7 +96,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		/**
 		 * #3 on l'include
 		 */
-		include(dirname(__FILE__) . '/datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.php');
+		include(dirname(__FILE__) . '/datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.php');
 
 		/**
 		 * * FIN Vérification fichier datas php
@@ -110,33 +115,43 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			return $line;
 		}
 		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
+		
 		/**
 		 * * Vérification fichier datas csv
-		 * #1 si présent on lit
-		 * #2 si absent on crée le fichier csv vide
+		 * #1 si absent on crée le fichier csv vide
+		 * #2 si présent on lit
 		 * #3 on l'include
 		 */
 		if (!file_exists($csv)) {
-			$ClubDom = $_POST['choix1'];
-			$ClubExt = $_POST['choix2'];
-			// ::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-			if ($discipline == 'Foot') {
-				for ($i = 1; $i <= 12; $i++) {
+				for ($i = 1; $i < $entrees; $i++) {
 					${"EquipeDom" . $i} = '';
 					${"EquipeDomCap" . $i} = '';
 					${"EquipeDomNum" . $i} = '';
 					${"ClubDom"} = $_POST['choix1'];
 				}
-				for ($i = 1; $i <= 12; $i++) {
+				for ($i = 1; $i < $entrees; $i++) {
 					${"EquipeExt" . $i} = '';
 					${"EquipeExtCap" . $i} = '';
 					${"EquipeExtNum" . $i} = '';
 					${"ClubExt"} = $_POST['choix2'];
 				}
 
-				$tactiqueA == "";
-				$tactiqueB == "";
-				include(dirname(__FILE__) . '/includes/footTactique.php');
+				// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+				// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
+				// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+				if ($discipline == 'Foot') {
+					@$tactiqueA == "";
+					@$tactiqueB == "";
+					include(dirname(__FILE__) . '/includes/footTactique.php');
+				}
+				if ($discipline == 'Rugby') {
+					include(dirname(__FILE__) . '/includes/rugbyTactique.php');
+				}
+				if ($discipline == 'Basket') {
+					include(dirname(__FILE__) . '/includes/basketTactique.php');
+				}
+
 				// Paramétrage de l'écriture du futur fichier CSV
 				$chemin = 'datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
 				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
@@ -152,42 +167,14 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				// fclose($fichier_csv);
 			}
 			
-			// ::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-			if ($discipline == 'Rugby') {
-				for ($i = 1; $i <= 16; $i++) {
-					${"EquipeDom" . $i} = '';
-					${"EquipeDomCap" . $i} = '';
-					${"ClubDom"} = $_POST['choix1'];
-				}
-				for ($i = 1; $i <= 16; $i++) {
-					${"EquipeExt" . $i} = '';
-					${"EquipeExtCap" . $i} = '';
-					${"ClubExt"} = $_POST['choix2'];
-				}
-				include(dirname(__FILE__) . '/includes/rugbyTactique.php');
-				$chemin = 'datas/' . $discipline . '/CompteRendu_' . $editeur . '_' . ddc($RencontreF) . '.csv';
-				$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
-
-				$fichier_csv = fopen($chemin, 'w+');
-
-				foreach ($lignes as $ligne) {
-					// chaque ligne en cours de lecture est insérée dans le fichier
-					// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
-					fputcsv($fichier_csv, $ligne, $delimiteur);
-				}
-			}
-			if ($discipline == 'Basket') {
-				include(dirname(__FILE__) . '/includes/basketTactique.php');
-			}
-		}
 		if (file_exists($csv)) {
 			$csv = read($csv);
 		}
 		?>
 
 		<!--=======================================
- =            PARTIE GENERIQUE             =
- ========================================-->
+		=            PARTIE GENERIQUE             =
+		========================================-->
 		<!-- # -----------  Scrore final  ------------->
 		<div class="infosHaut">
 			<div>
@@ -290,13 +277,9 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 			</div>
 		</div>
 
+<!--====  End of PARTIE GENERIQUE   ====-->
 
-
-		<!--====  End of PARTIE GENERIQUE   ====-->
-
-		<!-- <div style="display: flex; justify-content: space-around;"> -->
-
-		<!--=======================================
+<!--=======================================
  =            PARTIE EQUIPE 1             =
  ========================================-->
 		<hr class="separation">
@@ -404,9 +387,9 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				<hr id="filetMob">
 			</div>
 
-			<!--====  End of PARTIE EQUIPE 1   ====-->
+<!--====  End of PARTIE EQUIPE 1   ====-->
 
-			<!--=======================================
+<!--=======================================
  =            PARTIE EQUIPE 2             =
  =======================================-->
 			<div class="equipeDroite">
@@ -517,22 +500,6 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 
 		<!--====  End of PARTIE EQUIPE 2   ====-->
 
-		<!--=======================================
- =            CONFRONTATIONS             =
- =======================================-->
-
-		<!--  <h3>Les dernières confrontations entre les deux équipes</h3>
-		 <div class="flexConfrontations">
-		 	<h4> Victoire(s) équipe 1</h4>
-		 	<input type="number" min="0" name="VictoiresDom" class="SerieExt" placeholder="ex.3" required maxlength="2">
-		 	<h4> Nul(s)</h4>
-		 	<input type="number" min="0" name="Nuls" class="SerieExt" placeholder="ex.3" required maxlength="2">
-		 	<h4> Victoire(s) équipe 2</h4>
-		 	<input type="number" min="0" name="VictoiresExt" class="SerieExt" placeholder="ex.3" required maxlength="2">
-		 </div> -->
-
-		<!--====  End of CONFRONTATIONS    ====-->
-
 		<!-- # -----------  FORMAT PAR DEFAUT SELECT (à garder) ------------->
 		<hr class="separation">
 		<div style="display: none;">
@@ -553,7 +520,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		</div>
 	</form>
 
-	<!--=====================================================
+<!--=====================================================
  =            		FIN FORMULAIRE      	       		=
  ======================================================-->
 
@@ -567,25 +534,6 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		}
 	});
 </script>
-<!-- <script src="js/camelize.js" type="text/javascript"></script>
-<script src="js/affichageSchemaFoot.js" type="text/javascript"></script>
-<script src="js/menuDeroulant.js" type="text/javascript"></script>
-<script>
-	menuDeroulantBis();
-</script>
-<script>
-	menuDeroulant();
-</script>
-<script>
-	menuDeroulant_M();
-</script> -->
-<!-- <script src="js/restrictionsFormulaire.js" type="text/javascript"></script>
-<script>
-	displayChampNum();
-</script>
-<script>
-	displayScoreBasket();
-</script> -->
 <script>
 	const element_D = document.getElementById('choix_D');
 	const element_M = document.getElementById('choix_M');
