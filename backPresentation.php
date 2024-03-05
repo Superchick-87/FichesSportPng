@@ -40,11 +40,6 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 <body>
 	<header>
 	</header>
-	<!-- // //////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////// CHOIX DES EQUIPES ///////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
 	<!--=================================================
  =            		FORMULAIRE      	       		=
  =================================================-->
@@ -59,114 +54,14 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 		<?php echo '<input id="Editeur" name="Editeur" value= "' . $editeur . '" style="display:none;">' ?>
 
 		<?php
-		$nom_fichier = ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.php';
 		/**
-		 * * Vérification fichier datas php
-		 * #1 si présent on l'include
-		 * #2 si absent on crée le fichier php vide
-		 * #3 on l'include
+		 * * Include sert à l'initialisation ou à la lecture des fichiers datas :
+		 * @ csv
+		 * £ php
 		 */
-
-		/**
-		 * #1 si présent on l'include
-		 */
-		if (file_exists('datas/' . $discipline . '/' . $nom_fichier)) {
-			echo '<h2>' . "Cette fiche est en cours" . '</h2>';
-			echo '</br>';
-			// echo $nom_fichier;
-			include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
-		} else {
-			/**
-			 * #2 si absent on crée le fichier php vide
-			 */
-			echo '<h2>' . "Vous débutez une nouvelle fiche" . '</h2>';
-			echo '</br>';
-			// echo $nom_fichier;
-			$fichierv = fopen("datas/" . $discipline . "/".ddc($typeFiche)."_" . $editeur . "_" . ddc($RencontreF) . ".php", 'w+');
-			$big = '$DatasFront';
-			$texte = ("<?php " . $big . "=array ('','','','','','','','','','','','','','','','','','','','','','','','','','','','','','') ?>");
-			fwrite($fichierv, $texte);
-			fclose($fichierv);
-		}
-		/**
-		 * #3 on l'include
-		 */
-		include(dirname(__FILE__) . '/datas/' . $discipline . '/Presentation_' . $editeur . '_' . ddc($RencontreF) . '.php');
-
-		/**
-		 * * FIN Vérification fichier datas php
-		 */
-
-		/**
-		 * * Fonction pour lire un fichier csvs
-		 */
-		function read($csv)
-		{
-			$file = fopen($csv, 'r');
-			while (!feof($file)) {
-				$line[] = fgetcsv($file, 1024);
-			}
-			fclose($file);
-			return $line;
-		}
-		$csv = dirname(__FILE__) . '/datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.csv';
-		
-		/**
-		 * * Vérification fichier datas csv
-		 * #1 si absent on crée le fichier csv vide
-		 * #2 si présent on lit
-		 * #3 on l'include
-		 */
-		if (!file_exists($csv)) {
-			for ($i = 1; $i < $entrees; $i++) {
-				${"EquipeDom" . $i} = '';
-				${"EquipeDomCap" . $i} = '';
-				${"EquipeDomNum" . $i} = '';
-				${"ClubDom"} = $ClubDom;
-			}
-			for ($i = 1; $i < $entrees; $i++) {
-				${"EquipeExt" . $i} = '';
-				${"EquipeExtCap" . $i} = '';
-				${"EquipeExtNum" . $i} = '';
-				${"ClubExt"} = $ClubExt;
-			}
-
-			// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-			// 	::::::::::::::::::::::::::::  CHOIX DU SPORT  :::::::::::::::::::::::::::::::: 
-			// 	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-			if ($discipline == 'Foot') {
-				@$tactiqueA == "";
-				@$tactiqueB == "";
-				include(dirname(__FILE__) . '/includes/footTactique.php');
-			}
-			if ($discipline == 'Rugby') {
-				include(dirname(__FILE__) . '/includes/rugbyTactique.php');
-			}
-			if ($discipline == 'Basket') {
-				include(dirname(__FILE__) . '/includes/basketTactique.php');
-			}
-
-			// Paramétrage de l'écriture du futur fichier CSV
-			$chemin = 'datas/' . $discipline . '/'.ddc($typeFiche).'_' . $editeur . '_' . ddc($RencontreF) . '.csv';
-			$delimiteur = ','; // Pour une tabulation, utiliser $delimiteur = "t";
-
-			$fichier_csv = fopen($chemin, 'w+');
-
-			foreach ($lignes as $ligne) {
-				// chaque ligne en cours de lecture est insérée dans le fichier
-				// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
-				fputcsv($fichier_csv, $ligne, $delimiteur);
-			}
-			// fermeture du fichier csv
-			// fclose($fichier_csv);
-		}
-		
-	if (file_exists($csv)) {
-		$csv = read($csv);
-	}
-		
+		include(dirname(__FILE__) . '/includes/datasCreateOrDone.php');
 		?>
+
 		<!--=======================================
 		=            PARTIE GENERIQUE             =
 		========================================-->
@@ -178,7 +73,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					<h3>Lieu</h3>
 				</label>
 
-				<input style="width:180px;" value="<?php echo $DatasFront[4]; ?>" type="text" id="Lieu" name="stade" size="15" placeholder="Ex. Stade Matmut Atlantique" required onchange="verifierChamps()">
+				<input style="width:180px;" value="<?php echo @$DatasFront[4]; ?>" type="text" id="Lieu" name="stade" size="15" placeholder="Ex. Stade Matmut Atlantique" required onchange="verifierChamps()">
 			</div>
 			<div class="boiteHaut">
 				<label for="Date">
@@ -196,7 +91,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				<label for="Arbitre">
 					<h3>Arbitre</h3>
 				</label>
-				<input value="<?php echo $DatasFront[5]; ?>" type="text" id="Arbitre" name="Arbitre" size="15" placeholder="Entrez le nom de l'arbitre" required onchange="verifierChamps()" maxlength="50">
+				<input value="<?php echo @$DatasFront[5]; ?>" type="text" id="Arbitre" name="Arbitre" size="15" placeholder="Entrez le nom de l'arbitre" required onchange="verifierChamps()" maxlength="50">
 			</div>
 		</div>
 		<div class="boiteHaut">
@@ -206,7 +101,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 				<?php
 				foreach ($tvs as $tv) {
 					echo '<label class="container">
-	            	<input onchange="verifierChamps()" ' . chekecTV($DatasFront[24], $DatasFront[25], $tv) . ' class="single-checkbox" type="checkbox" id="sel' . $tv . '" name="tv[]" value="' . $tv . '">
+	            	<input onchange="verifierChamps()" ' . chekecTV(@$DatasFront[24], @$DatasFront[25], $tv) . ' class="single-checkbox" type="checkbox" id="sel' . $tv . '" name="tv[]" value="' . $tv . '">
 	            	<img class="checkmark choix" src="css/images/tv/' . $tv . '.png" alt="' . $tv . '">
 	            	</label>';
 				};
@@ -282,11 +177,11 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					<label for="equipeAS">
 						<h3>Entraîneur(s)</h3>
 					</label>
-					<input required onchange="verifierChamps()" value="<?php echo $DatasFront[6]; ?>" type="text" id="SelectionneursD" name="SelectionneursD" placeholder="ex. Avants : M. x / Arrières : M. y" maxlength="300"><br />
+					<input required onchange="verifierChamps()" value="<?php echo @$DatasFront[6]; ?>" type="text" id="SelectionneursD" name="SelectionneursD" placeholder="ex. Avants : M. x / Arrières : M. y" maxlength="300"><br />
 					<label for="RemplacantsD">
 						<h3>Remplaçants</h3>
 					</label>
-					<textarea required onchange="verifierChamps()" maxlength="200" id="RemplacantsD" name="RemplacantsD" cols="20" rows="40" placeholder="200 signes max."><?php echo $DatasFront[7]; ?></textarea>
+					<textarea required onchange="verifierChamps()" maxlength="200" id="RemplacantsD" name="RemplacantsD" cols="20" rows="40" placeholder="200 signes max."><?php echo @$DatasFront[7]; ?></textarea>
 				</div>
 
 				<!-- # -----------  FIN AFFICHAGE CHAMPS ENTRAINEURS || REMPLCANTS EQUIPE 1  ------------->
@@ -298,7 +193,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<h3>Classement / pts</h3>
 						<p class="ssmarge">(Facultatif)</p>
 					</label>
-					<input onchange="verifierChamps()" value="<?php echo $DatasFront[26]; ?>" id="ClassPtsDom" type="text" name="ClassPtsScoreDom">
+					<input onchange="verifierChamps()" value="<?php echo @$DatasFront[26]; ?>" id="ClassPtsDom" type="text" name="ClassPtsScoreDom">
 				</div>
 				<hr id="filetMob">
 
@@ -396,11 +291,11 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 					<label for="equipeAS">
 						<h3>Entraîneur(s)</h3>
 					</label>
-					<input required onchange="verifierChamps()" value="<?php echo $DatasFront[8]; ?>" type="text" class="champDroite" id="SelectionneursE" name="SelectionneursE" placeholder="ex. Avants : M. x / Arrières : M. y" maxlength="300">
+					<input required onchange="verifierChamps()" value="<?php echo @$DatasFront[8]; ?>" type="text" class="champDroite" id="SelectionneursE" name="SelectionneursE" placeholder="ex. Avants : M. x / Arrières : M. y" maxlength="300">
 					<label for="RemplacantsE">
 						<h3>Remplaçants</h3>
 					</label>
-					<textarea required onchange="verifierChamps()" maxlength="200" id="RemplacantsE" name="RemplacantsE" cols="20" rows="40" placeholder="200 signes max."><?php echo $DatasFront[9]; ?></textarea>
+					<textarea required onchange="verifierChamps()" maxlength="200" id="RemplacantsE" name="RemplacantsE" cols="20" rows="40" placeholder="200 signes max."><?php echo @$DatasFront[9]; ?></textarea>
 				</div>
 				<!-- # -----------  FIN AFFICHAGE CHAMPS ENTRAINEURS || REMPLCANTS EQUIPE 2  ------------->
 
@@ -410,7 +305,7 @@ include(dirname(__FILE__) . '/includes/HdeHeure.php');
 						<h3>Classement / pts</h3>
 						<p class="ssmarge">(Facultatif)</p>
 					</label>
-					<input onchange="verifierChamps()" value="<?php echo $DatasFront[27]; ?>" id="ClassPtsExt" type="text" name="ClassPtsScoreExt" class="champDroite">
+					<input onchange="verifierChamps()" value="<?php echo @$DatasFront[27]; ?>" id="ClassPtsExt" type="text" name="ClassPtsScoreExt" class="champDroite">
 				</div>
 				<hr id="filetMob">
 				<!-- # -----------  FIN AFFICHAGE CHAMPS CLASSEMENT || POINTS EQUIPE 2  ------------->

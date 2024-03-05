@@ -1,5 +1,5 @@
 picto,xm,ym,xd,yd,Nom,Cap,numero,Club
-1.5,250,270,275,50,,,1,"Afrique du Sud"
+1.5,250,270,275,50,Equipe1,,1,"Afrique du Sud"
 1.5,150,270,275,155,,,2,"Afrique du Sud"
 1.5,45,270,275,265,,,3,"Afrique du Sud"
 1.5,200,225,225,110,,,4,"Afrique du Sud"
@@ -13,8 +13,8 @@ picto,xm,ym,xd,yd,Nom,Cap,numero,Club
 1.5,195,90,85,110,,,12,"Afrique du Sud"
 1.5,100,90,85,205,,,13,"Afrique du Sud"
 1.5,25,90,85,300,,,14,"Afrique du Sud"
-1.5,150,50,40,155,,,15,"Afrique du Sud"
-1.5,45,315,355,265,,,1,Argentine
+1.5,150,50,40,155,"Nom 115",,15,"Afrique du Sud"
+1.5,45,315,355,265,"Nom 21",,1,Argentine
 1.5,150,315,355,155,,,2,Argentine
 1.5,250,315,355,50,,,3,Argentine
 1.5,200,360,405,200,,,4,Argentine
@@ -28,4 +28,4 @@ picto,xm,ym,xd,yd,Nom,Cap,numero,Club
 1.5,105,495,545,205,,,12,Argentine
 1.5,200,495,545,110,,,13,Argentine
 1.5,275,495,545,15,,,14,Argentine
-1.5,150,535,590,155,,,15,Argentine
+1.5,150,535,590,155,Equipe215,,15,Argentine

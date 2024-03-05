@@ -19,22 +19,19 @@ include(dirname(__FILE__) . '/includes/choixCompetition.php');
 include(dirname(__FILE__) . '/includes/pdf_DateEtHeure.php');
 include(dirname(__FILE__) . '/includes/confrontations.php');
 include(dirname(__FILE__) . '/includes/tailleiframe.php');
-
-
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-/*================================================
-=            RECUPERATION DES DONNEES            =
-================================================*/
-/*----------  type de fiche  ----------*/
+
 /**
- *
- * Présentation
- * Compte rendu
+ * *                                       
+ * * RECUPERATION DES DONNEES PRESENTATION 
+ * *                                       
+
+ * £ #1 PHP - Toutes données sauf compos
+ * @ #2 CSV - Compo des équipes 
  */
 
-/*----------  INFOS GENERIQUE ET AFFICHAGE  ----------*/
-
+// *> ----------  Données concernant la rencontre ----------
 $ClubDom = $_GET['RencontreA'];
 $ClubExt = $_GET['RencontreB'];
 $Lieu = apostropheencode($_GET['stade']);
@@ -42,89 +39,73 @@ $Date = $_GET['Date'];
 $Horaire = $_GET['Horaire'];
 $Arbitre = $_GET['Arbitre'];
 @$tv = $_GET['tv'];
+
+// *> ----------  Tactique & format ----------
+$format = $_GET['format'];
 $tactiqueA = $_GET['schemaTactiqueA'];
 $tactiqueB = $_GET['schemaTactiqueB'];
-$format = $_GET['format'];
 
-/*--------------------  EQUIPE 1  --------------------*/
-
-// @ #2 Données pour fichier CSV 
-
-/*--------------------  EQUIPE DOM  --------------------*/
-for ($i = 1; $i < $entrees; $i++) {
-	${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom". $i]);
-	${"EquipeDomCap" . $i} = $_GET["EquipeDomCap". $i];
-	${"EquipeDomNum" . $i} = $_GET["EquipeDomNum". $i];
-	${"ClubDom"} = $ClubDom;
-}
-
-/*--------------------  EQUIPE EXT  --------------------*/
-for ($i = 1; $i < $entrees; $i++) {
-	${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt". $i]); 
-	${"EquipeExtCap" . $i} = $_GET["EquipeExtCap". $i];
-	${"EquipeExtNum" . $i} = $_GET["EquipeExtNum". $i];
-	${"ClubExt"} = $ClubExt; 
-}
-
-// @ FIN #2 Données pour fichier CSV 
-
-
-function toto($a)
-{
-	if (!isset($a)) {
-		return $a = '';
-	} else {
-		return $a;
-	}
-}
-
-
-/*----------  Sélectionneurs & Remplaçants  ----------*/
-
+// *> ----------  Sélectionneurs & Remplaçants  ----------*/
 $SelectionneursD = $_GET["SelectionneursD"];
 $RemplacantsD = $_GET["RemplacantsD"];
-
-/*------------------  FIN EQUIPE 1  ------------------*/
-
-
-
-/*----------  Sélectionneurs & Remplaçants  ----------*/
-
 $SelectionneursE = $_GET["SelectionneursE"];
 $RemplacantsE = $_GET["RemplacantsE"];
 
-/*----------  CLASSEMENT / PTS OU SCORE  ----------*/
-
+// *> ----------  CLASSEMENT / PTS OU SCORE  ----------
 $ClassScoreDom = $_GET["ClassPtsScoreDom"];
-$ClassScoreExt = $_GET["ClassPtsScoreExt"];
+@$ClassScoreExt = $_GET["ClassPtsScoreExt"];
 
-/*----------  SERIE EN COURS  ----------*/
-
+// *> ----------  SERIE EN COURS  ----------
 @$SerieDom1 = $_GET["SerieDom1"];
 @$SerieDom2 = $_GET["SerieDom2"];
 @$SerieDom3 = $_GET["SerieDom3"];
 @$SerieDom4 = $_GET["SerieDom4"];
 @$SerieDom5 = $_GET["SerieDom5"];
-
 @$SerieExt1 = $_GET["SerieExt1"];
 @$SerieExt2 = $_GET["SerieExt2"];
 @$SerieExt3 = $_GET["SerieExt3"];
 @$SerieExt4 = $_GET["SerieExt4"];
 @$SerieExt5 = $_GET["SerieExt5"];
 
-/*----------  CONFRONTATIONS  ----------*/
+// *> ----------  CONFRONTATIONS  ----------
 function val_Min($x)
 {
 	if ($x == '') {
-		return $x = 0;
+		$x == 0;
+		return $x;
+	} else {
+		return $x;
 	}
 };
-$VictoiresDom = val_Min($_GET["VictoiresDom"]);
-$Nuls = val_Min($_GET["Nuls"]);
-$VictoiresExt = val_Min($_GET["VictoiresExt"]);
-$TotalConfrontations = $VictoiresDom + $Nuls + $VictoiresExt;
+$VictoiresDom = $_GET["VictoiresDom"];
+$Nuls = $_GET["Nuls"];
+$VictoiresExt = $_GET["VictoiresExt"];
+@$TotalConfrontations = val_Min($VictoiresDom) + val_Min($Nuls) + val_Min($VictoiresExt);
 
-/*=====  End of RECUPERATION DES DONNEES  ======*/
+// £ FIN #1 Données pour fichier PHP 
+
+// @ #2 Données pour fichier CSV 
+/*--------------------  EQUIPE DOM  --------------------*/
+for ($i = 1; $i < $entrees; $i++) {
+	${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom" . $i]);
+	${"EquipeDomCap" . $i} = $_GET["EquipeDomCap" . $i];
+	${"EquipeDomNum" . $i} = $_GET["EquipeDomNum" . $i];
+	${"ClubDom"} = $ClubDom;
+}
+
+/*--------------------  EQUIPE EXT  --------------------*/
+for ($i = 1; $i < $entrees; $i++) {
+	${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt" . $i]);
+	${"EquipeExtCap" . $i} = $_GET["EquipeExtCap" . $i];
+	${"EquipeExtNum" . $i} = $_GET["EquipeExtNum" . $i];
+	${"ClubExt"} = $ClubExt;
+}
+
+// @ FIN #2 Données pour fichier CSV 
+
+/**                                           
+ * * FIN RECUPERATION DES DONNEES PRESENTATION 
+ */
 
 ?>
 <!DOCTYPE html>

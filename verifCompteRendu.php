@@ -20,17 +20,17 @@ include(dirname(__FILE__) . '/includes/tailleiframe.php');
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /**
- * *                           
- * * RECUPERATION DES DONNEES  
- * *                           
- * 
+ * *                                       
+ * * RECUPERATION DES DONNEES COMPTE RENDU 
+ * *                                       
+ 
  * £ #1 PHP - Toutes données sauf compos
  * @ #2 CSV - Compo des équipes 
  */
 
 // £ #1 Données pour fichier PHP 
 
-/*----------  Données concernant la rencontre ----------*/
+// *> ----------  Données concernant la rencontre ----------*/
 $ClubDom = $_GET['RencontreA'];
 $ClubExt = $_GET['RencontreB'];
 
@@ -50,18 +50,13 @@ $Terrain = strtolower($_GET['Terrain']);
 $ScoreMitpsDom = $_GET['ScoreMitpsDom'];
 $ScoreMitpsExt = $_GET['ScoreMitpsExt'];
 $ScoreMiTps = $ScoreMitpsDom . '-' . $ScoreMitpsExt;
-
-
-/*----------  Score Basket Quarts-temps  ----------*/
+// *> ----------  Score Basket Quarts-temps  ----------
 @$ScoreQt1Dom = $_GET['ScoreQt1Dom'];
 @$ScoreQt1Ext = $_GET['ScoreQt1Ext'];
-
 @$ScoreQt2Dom = $_GET['ScoreQt2Dom'];
 @$ScoreQt2Ext = $_GET['ScoreQt2Ext'];
-
 @$ScoreQt3Dom = $_GET['ScoreQt3Dom'];
 @$ScoreQt3Ext = $_GET['ScoreQt3Ext'];
-
 @$ScoreQt4Dom = $_GET['ScoreQt4Dom'];
 @$ScoreQt4Ext = $_GET['ScoreQt4Ext'];
 
@@ -70,55 +65,52 @@ $ScoreMiTps = $ScoreMitpsDom . '-' . $ScoreMitpsExt;
 @$ScoreQt3 = $ScoreQt3Dom . '-' . $ScoreQt3Ext;
 @$ScoreQt4 = $ScoreQt4Dom . '-' . $ScoreQt4Ext;
 
-/*----------  Tactique & format ----------*/
+// *> ----------  Tactique & format ----------
 $format = $_GET['format'];
 $tactiqueA = $_GET['schemaTactiqueA'];
 $tactiqueB = $_GET['schemaTactiqueB'];
 
-/*----------  Sélectionneurs & Remplaçants  ----------*/
+// *> ----------  Sélectionneurs & Remplaçants  ----------
 $SelectionneursD = $_GET["SelectionneursD"];
 $RemplacantsD = $_GET["RemplacantsD"];
 $ButeursD = $_GET["buteursD"];
 $JaunesD = $_GET["jaunesD"];
 $RougesD = $_GET["rougesD"];
 
-/*----------  Sélectionneurs & Remplaçants  ----------*/
+// *> ----------  Sélectionneurs & Remplaçants  ----------
 $SelectionneursE = $_GET["SelectionneursE"];
 $RemplacantsE = $_GET["RemplacantsE"];
 $ButeursE = $_GET["buteursE"];
 $JaunesE = $_GET["jaunesE"];
 $RougesE = $_GET["rougesE"];
 
-/*----------  CLASSEMENT / PTS OU SCORE  ----------*/
+// *> ----------  CLASSEMENT / PTS OU SCORE  ----------
 @$ClassScoreDom = $_GET["ClassPtsScoreDom"];
 @$ClassScoreExt = $_GET["ClassPtsScoreExt"];
 
 // £ FIN #1 Données pour fichier PHP 
 
 // @ #2 Données pour fichier CSV 
-
 /*--------------------  EQUIPE DOM  --------------------*/
-	for ($i = 1; $i < $entrees; $i++) {
-		${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom". $i]);
-		${"EquipeDomCap" . $i} = $_GET["EquipeDomCap". $i];
-		${"EquipeDomNum" . $i} = $_GET["EquipeDomNum". $i];
-		${"ClubDom"} = $ClubDom;
-	}
+for ($i = 1; $i < $entrees; $i++) {
+	${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom" . $i]);
+	${"EquipeDomCap" . $i} = $_GET["EquipeDomCap" . $i];
+	${"EquipeDomNum" . $i} = $_GET["EquipeDomNum" . $i];
+	${"ClubDom"} = $ClubDom;
+}
 
 /*--------------------  EQUIPE EXT  --------------------*/
-	for ($i = 1; $i < $entrees; $i++) {
-		${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt". $i]); 
-		${"EquipeExtCap" . $i} = $_GET["EquipeExtCap". $i];
-		${"EquipeExtNum" . $i} = $_GET["EquipeExtNum". $i];
-		${"ClubExt"} = $ClubExt; 
-	}
+for ($i = 1; $i < $entrees; $i++) {
+	${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt" . $i]);
+	${"EquipeExtCap" . $i} = $_GET["EquipeExtCap" . $i];
+	${"EquipeExtNum" . $i} = $_GET["EquipeExtNum" . $i];
+	${"ClubExt"} = $ClubExt;
+}
 
 // @ FIN #2 Données pour fichier CSV 
 
-/**
- * *                              
- * * FIN RECUPERATION DES DONNEES 
- * *                              
+/**                                           
+ * * FIN RECUPERATION DES DONNEES COMPTE RENDU 
  */
 
 ?>
