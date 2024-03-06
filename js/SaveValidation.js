@@ -52,6 +52,7 @@ function razMenuEquipes() {
 function verifierChamps() {
     // Récupérer tous les champs de saisie requis dans le formulaire
     var inputs = document.querySelectorAll('#Formulaire input[required]');
+    var textarea = document.querySelectorAll('#Formulaire textarea[required]');
     // Vérifier si tous les champs requis ont une valeur
     var tousNonVides = true;
     for (var i = 0; i < inputs.length; i++) {
@@ -60,6 +61,13 @@ function verifierChamps() {
             break; // S'il y en a au moins un vide, on peut arrêter la boucle
         }
     }
+    for (var i = 0; i < textarea.length; i++) {
+        if (textarea[i].value.trim() === '') {
+            tousNonVides = false;
+            break; // S'il y en a au moins un vide, on peut arrêter la boucle
+        }
+    }
+
     // Afficher ou masquer le bouton en fonction du résultat
     var boutonContainer = document.getElementById('boutonContainer');
     if (tousNonVides) {

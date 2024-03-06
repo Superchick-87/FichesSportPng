@@ -85,15 +85,14 @@ $VictoiresExt = $_GET["VictoiresExt"];
 // £ FIN #1 Données pour fichier PHP 
 
 // @ #2 Données pour fichier CSV 
-/*--------------------  EQUIPE DOM  --------------------*/
+//$ --------------------  EQUIPE DOM  --------------------*/
 for ($i = 1; $i < $entrees; $i++) {
 	${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom" . $i]);
 	${"EquipeDomCap" . $i} = $_GET["EquipeDomCap" . $i];
 	${"EquipeDomNum" . $i} = $_GET["EquipeDomNum" . $i];
 	${"ClubDom"} = $ClubDom;
 }
-
-/*--------------------  EQUIPE EXT  --------------------*/
+//$ --------------------  EQUIPE EXT  --------------------*/
 for ($i = 1; $i < $entrees; $i++) {
 	${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt" . $i]);
 	${"EquipeExtCap" . $i} = $_GET["EquipeExtCap" . $i];
@@ -117,7 +116,6 @@ for ($i = 1; $i < $entrees; $i++) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="js/1121_jquery-ui.js"></script>

@@ -33,24 +33,23 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 // *> ----------  Données concernant la rencontre ----------*/
 $ClubDom = $_GET['RencontreA'];
 $ClubExt = $_GET['RencontreB'];
-
-$ScoreFinalDom = $_GET['ScoreFinalDom'];
-$ScoreFinalExt = $_GET['ScoreFinalExt'];
-$ScoreFinal = $ScoreFinalDom . '-' . $ScoreFinalExt;
-
 $Lieu = apostropheencode($_GET['stade']);
 $Date = $_GET['Date'];
 $Horaire = $_GET['Horaire'];
 $Arbitre = $_GET['Arbitre'];
 $Spectateurs = strtolower($_GET['Spectateurs']);
-
 $Meteo = strtolower($_GET['Meteo']);
 $Terrain = strtolower($_GET['Terrain']);
 
+// *> ---------- Score mi-temps et final ----------
 $ScoreMitpsDom = $_GET['ScoreMitpsDom'];
 $ScoreMitpsExt = $_GET['ScoreMitpsExt'];
 $ScoreMiTps = $ScoreMitpsDom . '-' . $ScoreMitpsExt;
-// *> ----------  Score Basket Quarts-temps  ----------
+$ScoreFinalDom = $_GET['ScoreFinalDom'];
+$ScoreFinalExt = $_GET['ScoreFinalExt'];
+$ScoreFinal = $ScoreFinalDom . '-' . $ScoreFinalExt;
+
+// *> ---------- Score Basket Quarts-temps ----------
 @$ScoreQt1Dom = $_GET['ScoreQt1Dom'];
 @$ScoreQt1Ext = $_GET['ScoreQt1Ext'];
 @$ScoreQt2Dom = $_GET['ScoreQt2Dom'];
@@ -91,15 +90,14 @@ $RougesE = $_GET["rougesE"];
 // £ FIN #1 Données pour fichier PHP 
 
 // @ #2 Données pour fichier CSV 
-/*--------------------  EQUIPE DOM  --------------------*/
+//$ --------------------  EQUIPE DOM  --------------------*/
 for ($i = 1; $i < $entrees; $i++) {
 	${"EquipeDom" . $i} = apostropheencode($_GET["EquipeDom" . $i]);
 	${"EquipeDomCap" . $i} = $_GET["EquipeDomCap" . $i];
 	${"EquipeDomNum" . $i} = $_GET["EquipeDomNum" . $i];
 	${"ClubDom"} = $ClubDom;
 }
-
-/*--------------------  EQUIPE EXT  --------------------*/
+//$ --------------------  EQUIPE EXT  --------------------*/
 for ($i = 1; $i < $entrees; $i++) {
 	${"EquipeExt" . $i} = apostropheencode($_GET["EquipeExt" . $i]);
 	${"EquipeExtCap" . $i} = $_GET["EquipeExtCap" . $i];
@@ -182,9 +180,6 @@ for ($i = 1; $i < $entrees; $i++) {
 		// w+ : vide et réécrit nouvelles données -consulter http://php.net/manual/fr/function.fopen.php
 		$fichier_csv = fopen($chemin, 'w+');
 
-		// // Si votre fichier a vocation a être importé dans Excel,
-		// // vous devez impérativement utiliser la ligne ci-dessous pour corriger
-		// // les problèmes d'affichage des caractères internationaux (les accents par exemple)
 		// fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
 
 		// Boucle foreach sur chaque ligne du tableau
