@@ -1,265 +1,911 @@
-.PlayerNumber{font-size: 15px;font-family: 'Oswald', sans-serif;font-weight: 500;}
-.Nul{background-color: #9f9f9f;}
+.PlayerNumber {
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.Nul {
+    background-color: #9f9f9f;
+}
 
 /************ National ***************/
-.AcAjaccio{background-color: #ff0000; fill: #ff0000; color:#FFFFFF;}
-.AcAjaccioNumber{fill: #FFFFFF;}
+.AcAjaccio {
+    background-color: #ff0000;
+    fill: #ff0000;
+    color: #FFFFFF;
+}
 
-.Amiens{background-color: #D3D3D3; fill: #D3D3D3; color:#000000;}
-.AmiensNumber{fill: #000000;}
+.AcAjaccioNumber {
+    fill: #FFFFFF;
+}
 
-.AngersSco{background-color: #000000; fill: #000000; color:#FFFFFF;}
-.AngersScoNumber{fill: #FFFFFF;}
+.Amiens {
+    background-color: #D3D3D3;
+    fill: #D3D3D3;
+    color: #000000;
+}
 
-.Auxerre{background-color: #0837a4; fill: #0837a4; color:#FFFFFF;}
-.AuxerreNumber{fill: #FFFFFF;}
+.AmiensNumber {
+    fill: #000000;
+}
 
-.Bastia{background-color: #3838ff; fill: #3838ff; color:#FFFFFF;}
-.BastiaNumber{fill: #FFFFFF;}
+.AngersSco {
+    background-color: #000000;
+    fill: #000000;
+    color: #FFFFFF;
+}
 
-.BergeracFc{background-color: #1A3E70; fill: #1A3E70; color:#FFFFFF;}
-.BergeracFcNumber{fill: #FFFFFF;}
+.AngersScoNumber {
+    fill: #FFFFFF;
+}
 
-.Bordeaux{background-color: #001b50; fill: #001b50; color:#FFFFFF;}
-.BordeauxNumber{fill: #FFFFFF;}
+.Auxerre {
+    background-color: #0837a4;
+    fill: #0837a4;
+    color: #FFFFFF;
+}
 
-.Brest{background-color: #E90F24; fill: #E90F24; color:#000000;}
-.BrestNumber{fill: #000000;}
+.AuxerreNumber {
+    fill: #FFFFFF;
+}
 
-.Caen{background-color: #000066; fill: #000066; color:#FFFFFF;}
-.CaenNumber{fill: #FFFFFF;}
+.Bastia {
+    background-color: #3838ff;
+    fill: #3838ff;
+    color: #FFFFFF;
+}
 
-.Chambly{background-color: #0000ff; fill: #0000ff; color:#FFFFFF;}
-.ChamblyNumber{fill: #FFFFFF;}
+.BastiaNumber {
+    fill: #FFFFFF;
+}
 
-.Chateauroux{background-color: #000077; fill: #000077; color:#FFFFFF;}
-.ChateaurouxNumber{fill: #FFFFFF;}
+.BergeracFc {
+    background-color: #1A3E70;
+    fill: #1A3E70;
+    color: #FFFFFF;
+}
 
-.Clermont{background-color: #ff0000; fill: #ff0000; color:#FFFFFF;}
-.ClermontNumber{fill: #FFFFFF;}
+.BergeracFcNumber {
+    fill: #FFFFFF;
+}
 
-.DijonFco{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.DijonFcoNumber{fill: #FFFFFF;}
+.Bordeaux {
+    background-color: #001b50;
+    fill: #001b50;
+    color: #FFFFFF;
+}
 
-.Dunkerque{background-color: #f5f5f5; fill: #f5f5f5; color:#1441c8;}
-.DunkerqueNumber{fill: #1441c8;}
+.BordeauxNumber {
+    fill: #FFFFFF;
+}
 
-.Grenoble{background-color: #0000ff; fill: #0000ff; color:#FFFFFF;}
-.GrenobleNumber{fill: #FFFFFF;}
+.Brest {
+    background-color: #E90F24;
+    fill: #E90F24;
+    color: #000000;
+}
 
-.Laval{background-color: #FF7500; fill: #FF7500; color:#000000;}
-.LavalNumber{fill: #000000;}
+.BrestNumber {
+    fill: #000000;
+}
 
-.LeHavre{background-color: #000064; fill: #000064; color:#FFFFFF;}
-.LeHavreNumber{fill: #FFFFFF;}
+.Caen {
+    background-color: #000066;
+    fill: #000066;
+    color: #FFFFFF;
+}
 
-.Lille{background-color: #be201a; fill: #be201a; color:#FFFFFF;}
-.LilleNumber{fill: #FFFFFF;}
+.CaenNumber {
+    fill: #FFFFFF;
+}
 
-.Lorient{background-color: #EA490A; fill: #EA490A; color:#FFFFFF;}
-.LorientNumber{fill: #FFFFFF;}
+.Chambly {
+    background-color: #0000ff;
+    fill: #0000ff;
+    color: #FFFFFF;
+}
 
-.Lyon{background-color: #D3D3D3; fill: #D3D3D3; color:#000000;}
-.LyonNumber{fill: #000000;}
+.ChamblyNumber {
+    fill: #FFFFFF;
+}
 
-.Marseille{background-color: #D3D3D3; fill: #D3D3D3; color:#000000;}
-.MarseilleNumber{fill: #000000;}
+.Chateauroux {
+    background-color: #000077;
+    fill: #000077;
+    color: #FFFFFF;
+}
 
-.AsMonaco{background-color: #dc0900; fill: #dc0900; color:#FFFFFF;}
-.AsMonacoNumber{fill: #FFFFFF;}
+.ChateaurouxNumber {
+    fill: #FFFFFF;
+}
 
-.Montpellier{background-color: #2b3149; fill: #2b3149; color:#FFFFFF;}
-.MontpellierNumber{fill: #FFFFFF;}
+.Clermont {
+    background-color: #ff0000;
+    fill: #ff0000;
+    color: #FFFFFF;
+}
 
-.Nancy{background-color: #FFFFFF; fill: #FFFFFF; color:#ff0000;}
-.NancyNumber{fill: #ff0000;}
+.ClermontNumber {
+    fill: #FFFFFF;
+}
 
-.FCAnnecy{background-color: #ff0000; fill: #ff0000; color:#FFFFFF;}
-.FCAnnecyNumber{fill: #FFFFFF;}
+.Concarneau {
+    background-color: #3838ff;
+    fill: #3838ff;
+    color: #FFFFFF;
+}
 
-.FcNantes{background-color: #ffd800; fill: #ffd800; color:#000000;}
-.FcNantesNumber{fill: #000000;}
+.ConcarneauNumber {
+    fill: #FFFFFF;
+}
 
-.Nimes{background-color: #be201a; fill: #be201a; color:#FFFFFF;}
-.NimesNumber{fill: #FFFFFF;}
+.DijonFco {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
 
-.OgcNice{background-color: #be201a; fill: #be201a; color:#FFFFFF;}
-.OgcNiceNumber{fill: #FFFFFF;}
+.DijonFcoNumber {
+    fill: #FFFFFF;
+}
 
-.Niort{background-color: #2f2fff; fill: #2f2fff; color:#FFFFFF;}
-.NiortNumber{fill: #FFFFFF;}
+.Dunkerque {
+    background-color: #f5f5f5;
+    fill: #f5f5f5;
+    color: #1441c8;
+}
 
-.Reims{background-color: #d31b23; fill: #d31b23; color:#FFFFFF;}
-.ReimsNumber{fill: #FFFFFF;}
+.DunkerqueNumber {
+    fill: #1441c8;
+}
 
-.Rennes{background-color: #db3243; fill: #db3243; color:#FFFFFF;}
-.RennesNumber{fill: #FFFFFF;}
+.Grenoble {
+    background-color: #0000ff;
+    fill: #0000ff;
+    color: #FFFFFF;
+}
 
-.AsSaintEtienne{background-color: #3a5c49; fill: #3a5c49; color:#FFFFFF;}
-.AsSaintEtienneNumber{fill: #FFFFFF;}
+.GrenobleNumber {
+    fill: #FFFFFF;
+}
 
-.FcMetz{background-color: #b50b37; fill: #b50b37; color:#000000;}
-.FcMetzNumber{fill: #000000;}
+.Laval {
+    background-color: #FF7500;
+    fill: #FF7500;
+    color: #000000;
+}
 
-.ParisFc{background-color: #000040; fill: #000040; color:#FFFFFF;}
-.ParisFcNumber{fill: #FFFFFF;}
+.LavalNumber {
+    fill: #000000;
+}
 
-.ParisSg{background-color: #295182; fill: #295182; color:#FFFFFF;}
-.ParisSgNumber{fill: #FFFFFF;}
+.LeHavre {
+    background-color: #000064;
+    fill: #000064;
+    color: #FFFFFF;
+}
 
-.Pau{background-color: #ebdb14; fill: #ebdb14; color:#0000ff;}
-.PauNumber{fill: #0000ff;}
+.LeHavreNumber {
+    fill: #FFFFFF;
+}
 
-.Rodez{background-color: #fd1c1c; fill: #fd1c1c; color:#f3e805;}
-.RodezNumber{fill: #f3e805;}
+.Lille {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #FFFFFF;
+}
 
-.Quevilly{background-color: #df031d; fill: #df031d; color:#FFFFFF;}
-.QuevillyNumber{fill: #FFFFFF;}
+.LilleNumber {
+    fill: #FFFFFF;
+}
 
-.Sochaux{background-color: #f8d322; fill: #f8d322; color:#0000ff;}
-.SochauxNumber{fill: #0000ff;}
+.Lorient {
+    background-color: #EA490A;
+    fill: #EA490A;
+    color: #FFFFFF;
+}
 
-.Toulouse{background-color: #7857C8; fill: #7857C8; color:#FFFFFF;}
-.ToulouseNumber{fill: #FFFFFF;}
+.LorientNumber {
+    fill: #FFFFFF;
+}
 
-.Troyes{background-color: #3838ff; fill: #3838ff; color:#FFFFFF;}
-.TroyesNumber{fill: #FFFFFF;}
+.Lyon {
+    background-color: #D3D3D3;
+    fill: #D3D3D3;
+    color: #000000;
+}
 
-.RcStrasbourg{background-color: #1942b9; fill: #1942b9; color:#FFFFFF;}
-.RcStrasbourgNumber{fill: #FFFFFF;}
+.LyonNumber {
+    fill: #000000;
+}
 
-.RcLens{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.RcLensNumber{fill: #FFFFFF;}
+.Marseille {
+    background-color: #D3D3D3;
+    fill: #D3D3D3;
+    color: #000000;
+}
 
-.Valenciennes{background-color: #df031d; fill: #df031d; color:#FFFFFF;}
-.ValenciennesNumber{fill: #FFFFFF;}
+.MarseilleNumber {
+    fill: #000000;
+}
 
-.Versailles{background-color: #0837a4; fill: #0837a4; color:#FFFFFF;}
-.VersaillesNumber{fill: #FFFFFF;}
+.AsMonaco {
+    background-color: #dc0900;
+    fill: #dc0900;
+    color: #FFFFFF;
+}
 
-.VillefrancheBeaujolais{background-color: #1942b9; fill: #1942b9; color:#FFFFFF;}
-.VillefrancheBeaujolaisNumber{fill: #FFFFFF;}
+.AsMonacoNumber {
+    fill: #FFFFFF;
+}
+
+.Guingamp {
+    background-color: #dc0900;
+    fill: #dc0900;
+    color: #FFFFFF;
+}
+
+.GuingampNumber {
+    fill: #FFFFFF;
+}
+
+.Montpellier {
+    background-color: #2b3149;
+    fill: #2b3149;
+    color: #FFFFFF;
+}
+
+.MontpellierNumber {
+    fill: #FFFFFF;
+}
+
+.Nancy {
+    background-color: #FFFFFF;
+    fill: #FFFFFF;
+    color: #ff0000;
+}
+
+.NancyNumber {
+    fill: #ff0000;
+}
+
+.FCAnnecy {
+    background-color: #ff0000;
+    fill: #ff0000;
+    color: #FFFFFF;
+}
+
+.FCAnnecyNumber {
+    fill: #FFFFFF;
+}
+
+.FcNantes {
+    background-color: #ffd800;
+    fill: #ffd800;
+    color: #000000;
+}
+
+.FcNantesNumber {
+    fill: #000000;
+}
+
+.Nimes {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #FFFFFF;
+}
+
+.NimesNumber {
+    fill: #FFFFFF;
+}
+
+.OgcNice {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #FFFFFF;
+}
+
+.OgcNiceNumber {
+    fill: #FFFFFF;
+}
+
+.Niort {
+    background-color: #2f2fff;
+    fill: #2f2fff;
+    color: #FFFFFF;
+}
+
+.NiortNumber {
+    fill: #FFFFFF;
+}
+
+.Reims {
+    background-color: #d31b23;
+    fill: #d31b23;
+    color: #FFFFFF;
+}
+
+.ReimsNumber {
+    fill: #FFFFFF;
+}
+
+.Rennes {
+    background-color: #db3243;
+    fill: #db3243;
+    color: #FFFFFF;
+}
+
+.RennesNumber {
+    fill: #FFFFFF;
+}
+
+.AsSaintEtienne {
+    background-color: #3a5c49;
+    fill: #3a5c49;
+    color: #FFFFFF;
+}
+
+.AsSaintEtienneNumber {
+    fill: #FFFFFF;
+}
+
+.FcMetz {
+    background-color: #b50b37;
+    fill: #b50b37;
+    color: #000000;
+}
+
+.FcMetzNumber {
+    fill: #000000;
+}
+
+.ParisFc {
+    background-color: #000040;
+    fill: #000040;
+    color: #FFFFFF;
+}
+
+.ParisFcNumber {
+    fill: #FFFFFF;
+}
+
+.ParisSg {
+    background-color: #295182;
+    fill: #295182;
+    color: #FFFFFF;
+}
+
+.ParisSgNumber {
+    fill: #FFFFFF;
+}
+
+.Pau {
+    background-color: #ebdb14;
+    fill: #ebdb14;
+    color: #0000ff;
+}
+
+.PauNumber {
+    fill: #0000ff;
+}
+
+.Rodez {
+    background-color: #fd1c1c;
+    fill: #fd1c1c;
+    color: #f3e805;
+}
+
+.RodezNumber {
+    fill: #f3e805;
+}
+
+.Quevilly {
+    background-color: #df031d;
+    fill: #df031d;
+    color: #FFFFFF;
+}
+
+.QuevillyNumber {
+    fill: #FFFFFF;
+}
+
+.Sochaux {
+    background-color: #f8d322;
+    fill: #f8d322;
+    color: #0000ff;
+}
+
+.SochauxNumber {
+    fill: #0000ff;
+}
+
+.Toulouse {
+    background-color: #7857C8;
+    fill: #7857C8;
+    color: #FFFFFF;
+}
+
+.ToulouseNumber {
+    fill: #FFFFFF;
+}
+
+.Troyes {
+    background-color: #3838ff;
+    fill: #3838ff;
+    color: #FFFFFF;
+}
+
+.TroyesNumber {
+    fill: #FFFFFF;
+}
+
+.RcStrasbourg {
+    background-color: #1942b9;
+    fill: #1942b9;
+    color: #FFFFFF;
+}
+
+.RcStrasbourgNumber {
+    fill: #FFFFFF;
+}
+
+.RcLens {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
+
+.RcLensNumber {
+    fill: #FFFFFF;
+}
+
+.Valenciennes {
+    background-color: #df031d;
+    fill: #df031d;
+    color: #FFFFFF;
+}
+
+.ValenciennesNumber {
+    fill: #FFFFFF;
+}
+
+.Versailles {
+    background-color: #0837a4;
+    fill: #0837a4;
+    color: #FFFFFF;
+}
+
+.VersaillesNumber {
+    fill: #FFFFFF;
+}
+
+.VillefrancheBeaujolais {
+    background-color: #1942b9;
+    fill: #1942b9;
+    color: #FFFFFF;
+}
+
+.VillefrancheBeaujolaisNumber {
+    fill: #FFFFFF;
+}
 
 /************ International ***************/
-.AfriqueDuSud{background-color: #FCCB12; fill: #FCCB12; color:#0F793B;}
-.AfriqueDuSudNumber{fill: #0F793B;}
+.AfriqueDuSud {
+    background-color: #FCCB12;
+    fill: #FCCB12;
+    color: #0F793B;
+}
 
-.Allemagne{background-color: #e6e6e6; fill: #e6e6e6; color:#000000;}
-.AllemagneNumber{fill: #000000;}
+.AfriqueDuSudNumber {
+    fill: #0F793B;
+}
 
-.Angleterre{background-color: #e6e6e6; fill: #e6e6e6; color:#df031d;}
-.AngleterreNumber{fill: #df031d;}
+.Allemagne {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #000000;
+}
 
-.ArabieSaoudite{background-color: #e6e6e6; fill: #e6e6e6; color: #0F793B;}
-.ArabieSaouditeNumber{fill:  #0F793B;}
+.AllemagneNumber {
+    fill: #000000;
+}
 
-.Australie{background-color: #f1b700; fill: #f1b700; color:#007964;}
-.AustralieNumber{fill: #007964;}
+.Angleterre {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #df031d;
+}
 
-.Autriche{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.AutricheNumber{fill: #FFFFFF;}
+.AngleterreNumber {
+    fill: #df031d;
+}
 
-.Belgique{background-color: #e23727; fill: #e23727; color:#000000;}
-.BelgiqueNumber{fill: #000000;}
+.ArabieSaoudite {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #0F793B;
+}
 
-.Bosnie{background-color: #2b40f7; fill: #2b40f7; color:#ffffff;}
-.BosnieNumber{fill: #ffffff;}
+.ArabieSaouditeNumber {
+    fill: #0F793B;
+}
 
-.Bresil{background-color: #ffe611; fill: #ffe611; color:#008837;}
-.BresilNumber{fill: #008837;}
+.Australie {
+    background-color: #f1b700;
+    fill: #f1b700;
+    color: #007964;
+}
 
-.Bulgarie{background-color: #e6e6e6; fill: #e6e6e6; color:#000000;}
-.BulgarieNumber{fill: #000000;}
+.AustralieNumber {
+    fill: #007964;
+}
 
-.Danemark{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.DanemarkNumber{fill: #FFFFFF;}
+.Autriche {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
 
-.Cameroun{background-color: #449d47; fill: #449d47; color:#f8d712;}
-.CamerounNumber{fill: #f8d712;}
+.AutricheNumber {
+    fill: #FFFFFF;
+}
 
-.Canada{background-color: #E90F24; fill: #E90F24; color:#ffffff;}
-.CanadaNumber{fill: #ffffff;}
+.Belgique {
+    background-color: #e23727;
+    fill: #e23727;
+    color: #000000;
+}
 
-.CoreeDuSud{background-color: #da3641; fill: #da3641; color:#ffffff;}
-.CoreeDuSudNumber{fill: #ffffff;}
+.BelgiqueNumber {
+    fill: #000000;
+}
 
-.CostaRica{background-color: #E90F24; fill: #E90F24; color:#ffffff;}
-.CostaRicaNumber{fill: #ffffff;}
+.Bosnie {
+    background-color: #2b40f7;
+    fill: #2b40f7;
+    color: #ffffff;
+}
 
-.CoteDIvoire{background-color: #FEA10B; fill: #FEA10B; color:#00a18a;}
-.CoteDIvoireNumber{fill: #00a18a;}
+.BosnieNumber {
+    fill: #ffffff;
+}
 
-.Croatie{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.CroatieNumber{fill: #FFFFFF;}
+.Bresil {
+    background-color: #ffe611;
+    fill: #ffe611;
+    color: #008837;
+}
 
-.Espagne{background-color: #c22c1e; fill: #c22c1e; color:#FEA10B;}
-.EspagneNumber{fill: #FEA10B;}
+.BresilNumber {
+    fill: #008837;
+}
 
-.Equateur{background-color: #f9ef4b; fill: #f9ef4b; color:#000000;}
-.EquateurNumber{fill: #000000;}
+.Bulgarie {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #000000;
+}
 
-.EtatsUnis{background-color: #e7e4e4; fill: #e7e4e4; color:#1b316a;}
-.EtatsUnisNumber{fill: #1b316a;}
+.BulgarieNumber {
+    fill: #000000;
+}
 
-.Finlande{background-color: #e6e6e6; fill: #e6e6e6; color:#000000;}
-.FinlandeNumber{fill: #000000;}
+.Danemark {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
 
-.France{background-color: #1b316a; fill: #1b316a; color:#ffffff;}
-.FranceNumber{fill: #ffffff;}
+.DanemarkNumber {
+    fill: #FFFFFF;
+}
 
-.Ghana{background-color: #e50009; fill: #e50009; color:#118e34;}
-.GhanaNumber{fill: #118e34;}
+.Cameroun {
+    background-color: #449d47;
+    fill: #449d47;
+    color: #f8d712;
+}
 
-.Hongrie{background-color: #e33827; fill: #e33827; color:#ffffff;}
-.HongrieNumber{fill: #ffffff;}
+.CamerounNumber {
+    fill: #f8d712;
+}
 
-.Italie{background-color: #3447cd; fill: #3447cd; color:#ffffff;}
-.ItalieNumber{fill: #ffffff;}
+.Canada {
+    background-color: #E90F24;
+    fill: #E90F24;
+    color: #ffffff;
+}
 
-.Iran{background-color: #d2d0d0; fill: #d2d0d0; color:#be201a;}
-.IranNumber{fill: #be201a;}
+.CanadaNumber {
+    fill: #ffffff;
+}
 
-.Japon{background-color: #0837a4; fill: #0837a4; color:#FFFFFF;}
-.JaponNumber{fill: #FFFFFF;}
+.CoreeDuSud {
+    background-color: #da3641;
+    fill: #da3641;
+    color: #ffffff;
+}
 
-.Kazakhstan{background-color: #f9ef4b; fill: #f9ef4b; color:#000000;}
-.KazakhstanNumber{fill: #000000;}
+.CoreeDuSudNumber {
+    fill: #ffffff;
+}
 
-.Maroc{background-color: #be201a; fill: #be201a; color:#FFFFFF;}
-.MarocNumber{fill: #FFFFFF;}
+.CostaRica {
+    background-color: #E90F24;
+    fill: #E90F24;
+    color: #ffffff;
+}
 
-.Mexique{background-color: #3a5c49; fill: #3a5c49; color:#FFFFFF;}
-.MexiqueNumber{fill: #FFFFFF;}
+.CostaRicaNumber {
+    fill: #ffffff;
+}
 
-.PaysDeGalles{background-color: #E90F24; fill: #E90F24; color:#ffffff;}
-.PaysDeGallesNumber{fill: #ffffff;}
+.CoteDIvoire {
+    background-color: #FEA10B;
+    fill: #FEA10B;
+    color: #00a18a;
+}
 
-.PaysBas{background-color: #FF7500; fill: #FF7500; color:#ffffff;}
-.PaysBasNumber{fill: #ffffff;}
+.CoteDIvoireNumber {
+    fill: #00a18a;
+}
 
-.Pologne{background-color: #e6e6e6; fill: #e6e6e6; color:#df031d;}
-.PologneNumber{fill: #df031d;}
+.Croatie {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
 
-.Portugal{background-color: #be201a; fill: #be201a; color:#F6B75A;}
-.PortugalNumber{fill: #F6B75A;}
+.CroatieNumber {
+    fill: #FFFFFF;
+}
 
-.Qatar{background-color: #660E36; fill: #660E36; color:#FFFFFF;}
-.QatarNumber{fill: #FFFFFF;}
+.Espagne {
+    background-color: #c22c1e;
+    fill: #c22c1e;
+    color: #FEA10B;
+}
 
-.Serbie{background-color: #be201a; fill: #be201a; color:#FFFFFF;}
-.SerbieNumber{fill: #FFFFFF;}
+.EspagneNumber {
+    fill: #FEA10B;
+}
 
-.Suisse{background-color: #E90F24; fill: #E90F24; color:#ffffff;}
-.SuisseNumber{fill: #ffffff;}
+.Equateur {
+    background-color: #f9ef4b;
+    fill: #f9ef4b;
+    color: #000000;
+}
 
-.Senegal{background-color: #1D7D82; fill: #1D7D82; color: #B5E900;}
-.SenegalNumber{fill: #B5E900;}
+.EquateurNumber {
+    fill: #000000;
+}
 
-.Tunisie{background-color: #d0112b; fill: #d0112b; color:#FFFFFF;}
-.TunisieNumber{fill: #FFFFFF;}
+.EtatsUnis {
+    background-color: #e7e4e4;
+    fill: #e7e4e4;
+    color: #1b316a;
+}
 
-.Ukraine{background-color: #ecbd4a; fill: #ecbd4a; color:#000000;}
-.UkraineNumber{fill: #000000;}
+.EtatsUnisNumber {
+    fill: #1b316a;
+}
 
-.Uruguay{background-color: #55b5e5; fill: #55b5e5; color:#000000;}
-.UruguayNumber{fill: #000000;}
+.Finlande {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #000000;
+}
+
+.FinlandeNumber {
+    fill: #000000;
+}
+
+.France {
+    background-color: #1b316a;
+    fill: #1b316a;
+    color: #ffffff;
+}
+
+.FranceNumber {
+    fill: #ffffff;
+}
+
+.Grece {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #000000;
+}
+
+.GreceNumber {
+    fill: #000000;
+}
+
+.Ghana {
+    background-color: #e50009;
+    fill: #e50009;
+    color: #118e34;
+}
+
+.GhanaNumber {
+    fill: #118e34;
+}
+
+.Hongrie {
+    background-color: #e33827;
+    fill: #e33827;
+    color: #ffffff;
+}
+
+.HongrieNumber {
+    fill: #ffffff;
+}
+
+.Italie {
+    background-color: #3447cd;
+    fill: #3447cd;
+    color: #ffffff;
+}
+
+.ItalieNumber {
+    fill: #ffffff;
+}
+
+.Iran {
+    background-color: #d2d0d0;
+    fill: #d2d0d0;
+    color: #be201a;
+}
+
+.IranNumber {
+    fill: #be201a;
+}
+
+.Japon {
+    background-color: #0837a4;
+    fill: #0837a4;
+    color: #FFFFFF;
+}
+
+.JaponNumber {
+    fill: #FFFFFF;
+}
+
+.Kazakhstan {
+    background-color: #f9ef4b;
+    fill: #f9ef4b;
+    color: #000000;
+}
+
+.KazakhstanNumber {
+    fill: #000000;
+}
+
+.Maroc {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #FFFFFF;
+}
+
+.MarocNumber {
+    fill: #FFFFFF;
+}
+
+.Mexique {
+    background-color: #3a5c49;
+    fill: #3a5c49;
+    color: #FFFFFF;
+}
+
+.MexiqueNumber {
+    fill: #FFFFFF;
+}
+
+.PaysDeGalles {
+    background-color: #E90F24;
+    fill: #E90F24;
+    color: #ffffff;
+}
+
+.PaysDeGallesNumber {
+    fill: #ffffff;
+}
+
+.PaysBas {
+    background-color: #FF7500;
+    fill: #FF7500;
+    color: #ffffff;
+}
+
+.PaysBasNumber {
+    fill: #ffffff;
+}
+
+.Pologne {
+    background-color: #e6e6e6;
+    fill: #e6e6e6;
+    color: #df031d;
+}
+
+.PologneNumber {
+    fill: #df031d;
+}
+
+.Portugal {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #F6B75A;
+}
+
+.PortugalNumber {
+    fill: #F6B75A;
+}
+
+.Qatar {
+    background-color: #660E36;
+    fill: #660E36;
+    color: #FFFFFF;
+}
+
+.QatarNumber {
+    fill: #FFFFFF;
+}
+
+.Serbie {
+    background-color: #be201a;
+    fill: #be201a;
+    color: #FFFFFF;
+}
+
+.SerbieNumber {
+    fill: #FFFFFF;
+}
+
+.Suisse {
+    background-color: #E90F24;
+    fill: #E90F24;
+    color: #ffffff;
+}
+
+.SuisseNumber {
+    fill: #ffffff;
+}
+
+.Senegal {
+    background-color: #1D7D82;
+    fill: #1D7D82;
+    color: #B5E900;
+}
+
+.SenegalNumber {
+    fill: #B5E900;
+}
+
+.Tunisie {
+    background-color: #d0112b;
+    fill: #d0112b;
+    color: #FFFFFF;
+}
+
+.TunisieNumber {
+    fill: #FFFFFF;
+}
+
+.Ukraine {
+    background-color: #ecbd4a;
+    fill: #ecbd4a;
+    color: #000000;
+}
+
+.UkraineNumber {
+    fill: #000000;
+}
+
+.Uruguay {
+    background-color: #55b5e5;
+    fill: #55b5e5;
+    color: #000000;
+}
+
+.UruguayNumber {
+    fill: #000000;
+}

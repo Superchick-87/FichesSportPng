@@ -57,7 +57,7 @@ $editeur = $_GET['editeur'];
 				?>
 				</div>
 		</div> -->
-	<footer style="background-image:url(css/images/signature<?php echo $editeur; ?>.svg);"></footer>
+	<footer style="background-size: contain; background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
 </body>
 
 </html>

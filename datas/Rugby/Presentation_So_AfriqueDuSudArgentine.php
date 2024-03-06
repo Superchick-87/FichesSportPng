@@ -1,1 +1,0 @@
-<?php $DatasFront=array ('2024-03-23','22h09','Afrique du Sud','Argentine','TEST','vvvvvv','Entraîneur 1','Remplaçants','Entraîneur 2','Remplaçants','','','','','','','','','','','2','0','0','2','Tf1','W9','20e / 56 pts','18ve / 46 pts','','') ?>

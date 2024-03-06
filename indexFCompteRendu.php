@@ -247,7 +247,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/colorSet' . $sport . '.cs
 
 
 	</section>
-	<footer style="background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
+	<footer style="background-size: contain; background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
 </body>
 
 <script type="text/javascript">

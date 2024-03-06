@@ -128,7 +128,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 
 	<div id="txtHint">
 	</div>
-	<footer style="background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
+	<footer style="background-size: contain; background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
 </body>
 
 <script type="text/javascript">
@@ -178,7 +178,7 @@ include(dirname(__FILE__) . '/includes/tvs.php');
 		console.log(type);
 		xhttp.open("POST", type, true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Championnat=" + Championnat + "&editeur=" + Editeur + "&choix1=" + MenuA + "&choix2=" + MenuB+ "&typeFiche=" + typeFiche);
+		xhttp.send("Championnat=" + Championnat + "&editeur=" + Editeur + "&choix1=" + MenuA + "&choix2=" + MenuB + "&typeFiche=" + typeFiche);
 	};
 
 

@@ -232,7 +232,7 @@ echo '<link rel="stylesheet" type="text/css" href="css/colorSet' . $sport . '.cs
 		</div>
 
 	</section>
-	<footer style="background-image:url(css/images/signature<?php echo $editeur; ?>.svg);"></footer>
+	<footer style="background-size: contain; background-image:url(css/images/signature<?php echo $editeur; ?>.png);"></footer>
 </body>
 <script type="text/javascript">
 	var sport = document.getElementById('sport').value;
